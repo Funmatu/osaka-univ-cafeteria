@@ -271,397 +271,865 @@ async function scrapeMenuData() {
 // サンプルメニューデータを生成する関数
 function generateSampleMenuData() {
   return [
-  {
-    "id": 1,
-    "name": "ダッカルビ風野菜炒め",
-    "name_en": "Stir fried chicken and vegetables with sweet chili sauce",
-    "price": 297,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
+    {
+      "id": 1,
+      "name": "欧風チーズカレー",
+      "price": 638,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 745,
+      "nutrition": {
+        "protein": 23.4,
+        "fat": 26.5,
+        "carbs": 106.3,
+        "salt": 2.9,
+        "calcium": 255,
+        "iron": 1.0,
+        "vitaminA": 85,
+        "vitaminB1": 0.10,
+        "vitaminB2": 0.18,
+        "vitaminC": 4,
+        "veg": 43
+      }
+    },
+    {
+      "id": 2,
+      "name": "欧風カレー",
+      "price": 517,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 601,
+      "nutrition": {
+        "protein": 13.6,
+        "fat": 15.3,
+        "carbs": 105.6,
+        "salt": 2.3,
+        "calcium": 32,
+        "iron": 0.9,
+        "vitaminA": 14,
+        "vitaminB1": 0.09,
+        "vitaminB2": 0.07,
+        "vitaminC": 4,
+        "veg": 43
+      }
+    },
+    {
+      "id": 3,
+      "name": "スライスオクラ Okra",
+      "price": 77,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 15,
+      "nutrition": {
+        "protein": 1.1,
+        "fat": 0.1,
+        "carbs": 3.8,
+        "salt": 0.0,
+        "calcium": 45,
+        "iron": 0.3,
+        "vitaminA": 30,
+        "vitaminB1": 0.05,
+        "vitaminB2": 0.05,
+        "vitaminC": 4,
+        "veg": 50
+      }
+    },
+    {
+      "id": 4,
+      "name": "だし巻き Omlet with japanese soup",
+      "price": 77,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 98,
+      "nutrition": {
+        "protein": 6.2,
+        "fat": 6.1,
+        "carbs": 3.5,
+        "salt": 1.0,
+        "calcium": 25,
+        "iron": 0.8,
+        "vitaminA": 111,
+        "vitaminB1": 0.04,
+        "vitaminB2": 0.04,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 5,
+      "name": "ライス大 Boiled rice",
+      "price": 187,
+      "category": "staple-food",
+      "categoryName": "主食",
+      "imageUrl": null,
+      "calories": 484,
+      "nutrition": {
+        "protein": 7.8,
+        "fat": 0.9,
+        "carbs": 115,
+        "salt": 0.0,
+        "calcium": 9,
+        "iron": 0.3,
+        "vitaminA": 0,
+        "vitaminB1": 0.06,
+        "vitaminB2": 0.03,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 6,
+      "name": "ライスミニ Boiled rice",
+      "price": 88,
+      "category": "staple-food",
+      "categoryName": "主食",
+      "imageUrl": null,
+      "calories": 156,
+      "nutrition": {
+        "protein": 2.5,
+        "fat": 0.3,
+        "carbs": 37.1,
+        "salt": 0.0,
+        "calcium": 3,
+        "iron": 0.1,
+        "vitaminA": 0,
+        "vitaminB1": 0.02,
+        "vitaminB2": 0.01,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 7,
+      "name": "ライス中 Boiled rice",
+      "price": 154,
+      "category": "staple-food",
+      "categoryName": "主食",
+      "imageUrl": null,
+      "calories": 374,
+      "nutrition": {
+        "protein": 6,
+        "fat": 0.7,
+        "carbs": 89,
+        "salt": 0.0,
+        "calcium": 7,
+        "iron": 0.2,
+        "vitaminA": 0,
+        "vitaminB1": 0.05,
+        "vitaminB2": 0.02,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 8,
+      "name": "肉じゃがコロッケ Fried beef croquette",
+      "price": 132,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 252,
+      "nutrition": {
+        "protein": 3.4,
+        "fat": 17.5,
+        "carbs": 20.3,
+        "salt": 0.9,
+        "calcium": 11,
+        "iron": 0.4,
+        "vitaminA": 19,
+        "vitaminB1": 0.06,
+        "vitaminB2": 0.03,
+        "vitaminC": 5,
+        "veg": 9
+      }
+    },
+    {
+      "id": 9,
+      "name": "オクラ巣ごもり玉子 Okra and half boiled egg with soy sauce",
+      "price": 99,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 94,
+      "nutrition": {
+        "protein": 7.8,
+        "fat": 6.4,
+        "carbs": 3.4,
+        "salt": 0.7,
+        "calcium": 60,
+        "iron": 1.4,
+        "vitaminA": 108,
+        "vitaminB1": 0.06,
+        "vitaminB2": 0.25,
+        "vitaminC": 2,
+        "veg": 33
+      }
+    },
+    {
+      "id": 10,
+      "name": "まぐとろキムチ丼　中 Bowl of rice with kimchi grated yam， soy sauce",
+      "price": 539,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 492,
+      "nutrition": {
+        "protein": 15.7,
+        "fat": 5.4,
+        "carbs": 99.3,
+        "salt": 1.9,
+        "calcium": 38,
+        "iron": 1.2,
+        "vitaminA": 37,
+        "vitaminB1": 0.15,
+        "vitaminB2": 0.1,
+        "vitaminC": 12,
+        "veg": 37
+      }
+    },
+    {
+      "id": 11,
+      "name": "味噌汁 Miso soup",
+      "price": 44,
+      "category": "soup",
+      "categoryName": "汁物",
+      "imageUrl": null,
+      "calories": 38,
+      "nutrition": {
+        "protein": 2.1,
+        "fat": 1.9,
+        "carbs": 2.8,
+        "salt": 1.2,
+        "calcium": 28,
+        "iron": 0.5,
+        "vitaminA": 1,
+        "vitaminB1": 0.00,
+        "vitaminB2": 0.01,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 12,
+      "name": "ハンバーグサルサソース Hamburg steak with salsa sauce",
+      "price": 253,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 223,
+      "nutrition": {
+        "protein": 14.9,
+        "fat": 11.1,
+        "carbs": 14.5,
+        "salt": 1.7,
+        "calcium": 36,
+        "iron": 1.3,
+        "vitaminA": 36,
+        "vitaminB1": 0.14,
+        "vitaminB2": 0.13,
+        "vitaminC": 9,
+        "veg": 23
+      }
+    },
+    {
+      "id": 13,
+      "name": "ミニサラダ Cabbage and potherb mustard salad",
+      "price": 55,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 6,
+      "nutrition": {
+        "protein": 0.3,
+        "fat": 0.1,
+        "carbs": 1.6,
+        "salt": 0.0,
+        "calcium": 11,
+        "iron": 0.1,
+        "vitaminA": 7,
+        "vitaminB1": 0.01,
+        "vitaminB2": 0.01,
+        "vitaminC": 9,
+        "veg": 33
+      }
+    },
+    {
+      "id": 14,
+      "name": "パイタンうどん Hot whitewheat noodles with based on pork bone and pork meat",
+      "price": 440,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 461,
+      "nutrition": {
+        "protein": 13.5,
+        "fat": 11.5,
+        "carbs": 75.7,
+        "salt": 6.6,
+        "calcium": 35,
+        "iron": 1.0,
+        "vitaminA": 13,
+        "vitaminB1": 0.15,
+        "vitaminB2": 0.07,
+        "vitaminC": 2,
+        "veg": 5
+      }
+    },
+    {
+      "id": 15,
+      "name": "冷奴 Tofu with ginger leek",
+      "price": 55,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 47,
+      "nutrition": {
+        "protein": 4.4,
+        "fat": 2.9,
+        "carbs": 2,
+        "salt": 0.1,
+        "calcium": 26,
+        "iron": 1.0,
+        "vitaminA": 1,
+        "vitaminB1": 0.09,
+        "vitaminB2": 0.03,
+        "vitaminC": 2,
+        "veg": 1
+      }
+    },
+    {
+      "id": 16,
+      "name": "ダッカルビ風野菜炒め Stir fried chicken and vegetables with sweet chili sauce",
+      "price": 297,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 276,
+      "nutrition": {
+        "protein": 9.9,
+        "fat": 16.8,
+        "carbs": 24.6,
+        "salt": 2.1,
+        "calcium": 73,
+        "iron": 1.2,
+        "vitaminA": 168,
+        "vitaminB1": 0.13,
+        "vitaminB2": 0.15,
+        "vitaminC": 56,
+        "veg": 199
+      }
+    },
+    {
+      "id": 17,
+      "name": "温泉玉子 Half boiled egg with soy sauce",
+      "price": 55,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 83,
+      "nutrition": {
+        "protein": 7.0,
+        "fat": 6.4,
+        "carbs": 0.7,
+        "salt": 0.5,
+        "calcium": 30,
+        "iron": 1.2,
+        "vitaminA": 88,
+        "vitaminB1": 0.03,
+        "vitaminB2": 0.22,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 18,
+      "name": "チゲ豆腐 Simmered pork tofu and vegetables in chili based soup",
+      "price": 297,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 243,
+      "nutrition": {
+        "protein": 18.1,
+        "fat": 13.4,
+        "carbs": 15.2,
+        "salt": 4.2,
+        "calcium": 93,
+        "iron": 2.7,
+        "vitaminA": 47,
+        "vitaminB1": 0.42,
+        "vitaminB2": 0.23,
+        "vitaminC": 17,
+        "veg": 102
+      }
+    },
+    {
+      "id": 19,
+      "name": "スパイスチキンサラダ Steamed chicken and vegetables",
+      "price": 132,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 51,
+      "nutrition": {
+        "protein": 5.2,
+        "fat": 0.9,
+        "carbs": 7.2,
+        "salt": 0.2,
+        "calcium": 23,
+        "iron": 0.4,
+        "vitaminA": 4,
+        "vitaminB1": 0.06,
+        "vitaminB2": 0.04,
+        "vitaminC": 17,
+        "veg": 60
+      }
+    },
+    {
+      "id": 20,
+      "name": "かけそば Hot buckwheat noodles in Japanese soup",
+      "price": 286,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 321,
+      "nutrition": {
+        "protein": 14,
+        "fat": 2.4,
+        "carbs": 60.9,
+        "salt": 3.8,
+        "calcium": 26,
+        "iron": 2.0,
+        "vitaminA": 6,
+        "vitaminB1": 0.2,
+        "vitaminB2": 0.08,
+        "vitaminC": 2,
+        "veg": 5
+      }
+    },
+    {
+      "id": 21,
+      "name": "やみつきキャベツ Boiled cabbage and corn mixed with salt based sauce",
+      "price": 99,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 50,
+      "nutrition": {
+        "protein": 1.2,
+        "fat": 2.5,
+        "carbs": 6.9,
+        "salt": 0.5,
+        "calcium": 32,
+        "iron": 0.2,
+        "vitaminA": 3,
+        "vitaminB1": 0.04,
+        "vitaminB2": 0.03,
+        "vitaminC": 29,
+        "veg": 79
+      }
+    },
+    {
+      "id": 22,
+      "name": "鯖生姜煮 Simmered mackerel in soy sauce",
+      "price": 253,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 195,
+      "nutrition": {
+        "protein": 9.5,
+        "fat": 14.2,
+        "carbs": 5.6,
+        "salt": 0.8,
+        "calcium": 5,
+        "iron": 0.6,
+        "vitaminA": 23,
+        "vitaminB1": 0.08,
+        "vitaminB2": 0.2,
+        "vitaminC": 1,
+        "veg": 0
+      }
+    },
+    {
+      "id": 23,
+      "name": "かき揚げうどん Hot whitewheat noodles with Tempurafried vegetables in Japanese soup",
+      "price": 374,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 464,
+      "nutrition": {
+        "protein": 9.5,
+        "fat": 10.4,
+        "carbs": 83.1,
+        "salt": 4.3,
+        "calcium": 31,
+        "iron": 0.9,
+        "vitaminA": 146,
+        "vitaminB1": 0.12,
+        "vitaminB2": 0.06,
+        "vitaminC": 4,
+        "veg": 30
+      }
+    },
+    {
+      "id": 24,
+      "name": "かけうどん Hot whitewheat noodles in Japanese soup",
+      "price": 286,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 346,
+      "nutrition": {
+        "protein": 8.8,
+        "fat": 2,
+        "carbs": 73.4,
+        "salt": 4.2,
+        "calcium": 21,
+        "iron": 0.7,
+        "vitaminA": 6,
+        "vitaminB1": 0.1,
+        "vitaminB2": 0.05,
+        "vitaminC": 2,
+        "veg": 5
+      }
+    },
+    {
+      "id": 25,
+      "name": "豚汁 Miso soup with pork vegetables",
+      "price": 132,
+      "category": "soup",
+      "categoryName": "汁物",
+      "imageUrl": null,
+      "calories": 91,
+      "nutrition": {
+        "protein": 5.4,
+        "fat": 3.4,
+        "carbs": 9.9,
+        "salt": 1.5,
+        "calcium": 29,
+        "iron": 0.8,
+        "vitaminA": 110,
+        "vitaminB1": 0.16,
+        "vitaminB2": 0.07,
+        "vitaminC": 4,
+        "veg": 54
+      }
+    },
+    {
+      "id": 26,
+      "name": "マカロニサラダ Macaroni salad with mayonnaise based sauce",
+      "price": 77,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 136,
+      "nutrition": {
+        "protein": 1.8,
+        "fat": 9.6,
+        "carbs": 10.4,
+        "salt": 0.6,
+        "calcium": 7,
+        "iron": 0.4,
+        "vitaminA": 26,
+        "vitaminB1": 0.03,
+        "vitaminB2": 0.03,
+        "vitaminC": 0,
+        "veg": 3
+      }
+    },
+    {
+      "id": 27,
+      "name": "フライドチキン Fried chicken",
+      "price": 209,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 229,
+      "nutrition": {
+        "protein": 6.6,
+        "fat": 13.7,
+        "carbs": 20,
+        "salt": 1.4,
+        "calcium": 9,
+        "iron": 0.4,
+        "vitaminA": 21,
+        "vitaminB1": 0.05,
+        "vitaminB2": 0.06,
+        "vitaminC": 1,
+        "veg": 0
+      }
+    },
+    {
+      "id": 28,
+      "name": "きんぴらごぼう Fried burdock in soy sauce and sugar",
+      "price": 77,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 52,
+      "nutrition": {
+        "protein": 1.1,
+        "fat": 1.1,
+        "carbs": 9.6,
+        "salt": 0.9,
+        "calcium": 22,
+        "iron": 0.4,
+        "vitaminA": 41,
+        "vitaminB1": 0.02,
+        "vitaminB2": 0.02,
+        "vitaminC": 1,
+        "veg": 39
+      }
+    },
+    {
+      "id": 29,
+      "name": "かき揚げそば Hot buckwheat noodles with Tempurafried vegetables in Japanese soup",
+      "price": 374,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 439,
+      "nutrition": {
+        "protein": 14.7,
+        "fat": 10.8,
+        "carbs": 70.6,
+        "salt": 3.9,
+        "calcium": 36,
+        "iron": 2.2,
+        "vitaminA": 146,
+        "vitaminB1": 0.22,
+        "vitaminB2": 0.09,
+        "vitaminC": 4,
+        "veg": 30
+      }
+    },
+    {
+      "id": 30,
+      "name": "小松菜わさび和え Boiled mustard spinach with Japanese horseradish paste",
+      "price": 99,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 31,
+      "nutrition": {
+        "protein": 1.7,
+        "fat": 0.4,
+        "carbs": 5.3,
+        "salt": 0.7,
+        "calcium": 48,
+        "iron": 0.7,
+        "vitaminA": 77,
+        "vitaminB1": 0.02,
+        "vitaminB2": 0.03,
+        "vitaminC": 6,
+        "veg": 40
+      }
+    },
+    {
+      "id": 31,
+      "name": "ローストンカツおろしソース Fried pork cutlet with grated Japanese radishsauce",
+      "price": 297,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 401,
+      "nutrition": {
+        "protein": 15.1,
+        "fat": 26,
+        "carbs": 25.5,
+        "salt": 2.4,
+        "calcium": 15,
+        "iron": 0.5,
+        "vitaminA": 6,
+        "vitaminB1": 0.41,
+        "vitaminB2": 0.09,
+        "vitaminC": 3,
+        "veg": 16
+      }
+    },
+    {
+      "id": 32,
+      "name": "かぼちゃ煮 Simmered pumpkin in Japanese soup",
+      "price": 99,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 71,
+      "nutrition": {
+        "protein": 1.2,
+        "fat": 0.5,
+        "carbs": 15.5,
+        "salt": 0.3,
+        "calcium": 13,
+        "iron": 0.3,
+        "vitaminA": 37,
+        "vitaminB1": 0.05,
+        "vitaminB2": 0.04,
+        "vitaminC": 9,
+        "veg": 54
+      }
+    },
+    {
+      "id": 33,
+      "name": "かつおカツ甘醤油だれ Fried bonito with sweet Japanese soy sauce",
+      "price": 253,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 339,
+      "nutrition": {
+        "protein": 9.5,
+        "fat": 20.9,
+        "carbs": 28.6,
+        "salt": 2.2,
+        "calcium": 18,
+        "iron": 1.0,
+        "vitaminA": 5,
+        "vitaminB1": 0.61,
+        "vitaminB2": 0.06,
+        "vitaminC": 2,
+        "veg": 37
+      }
+    },
+    {
+      "id": 34,
+      "name": "ほうれん草胡麻和え Boiled spinach with sesame paste",
+      "price": 77,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 33,
+      "nutrition": {
+        "protein": 2.3,
+        "fat": 1.3,
+        "carbs": 3.9,
+        "salt": 0.7,
+        "calcium": 78,
+        "iron": 0.9,
+        "vitaminA": 244,
+        "vitaminB1": 0.04,
+        "vitaminB2": 0.07,
+        "vitaminC": 11,
+        "veg": 56
+      }
+    },
+    {
+      "id": 35,
+      "name": "プチガトーショコラ Chocolate cake",
+      "price": 99,
+      "category": "dessert",
+      "categoryName": "デザート",
+      "imageUrl": null,
+      "calories": 97,
+      "nutrition": {
+        "protein": 1.1,
+        "fat": 4.2,
+        "carbs": 14.8,
+        "salt": 0.1,
+        "calcium": 14,
+        "iron": 0.7,
+        "vitaminA": 0,
+        "vitaminB1": 0.01,
+        "vitaminB2": 0.01,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 36,
+      "name": "ミルクティーショート Sponge cake with milk tea flavor",
+      "price": 176,
+      "category": "dessert",
+      "categoryName": "デザート",
+      "imageUrl": null,
+      "calories": 93,
+      "nutrition": {
+        "protein": 1.3,
+        "fat": 5.7,
+        "carbs": 8.9,
+        "salt": 0.0,
+        "calcium": 11,
+        "iron": 0.2,
+        "vitaminA": 11,
+        "vitaminB1": 0.01,
+        "vitaminB2": 0.04,
+        "vitaminC": 0,
+        "veg": 0
+      }
+    },
+    {
+      "id": 37,
+      "name": "ジューシー鶏カツ麻婆ソース Fried chicken cutlet with pork in spicy sauce",
+      "price": 341,
+      "category": "main-dish",
+      "categoryName": "主菜",
+      "imageUrl": null,
+      "calories": 406,
+      "nutrition": {
+        "protein": 15.4,
+        "fat": 28.4,
+        "carbs": 22.7,
+        "salt": 1.9,
+        "calcium": 18,
+        "iron": 0.9,
+        "vitaminA": 32,
+        "vitaminB1": 0.09,
+        "vitaminB2": 0.12,
+        "vitaminC": 2,
+        "veg": 0
+      }
+    },
+    {
+      "id": 38,
+      "name": "ひじき煮 Simmered hijiki a kind of edible seaweed in Japanese soup",
+      "price": 77,
+      "category": "side-dish",
+      "categoryName": "副菜",
+      "imageUrl": null,
+      "calories": 60,
+      "nutrition": {
+        "protein": 2.0,
+        "fat": 3.0,
+        "carbs": 6.2,
+        "salt": 1.0,
+        "calcium": 39,
+        "iron": 0.5,
+        "vitaminA": 48,
+        "vitaminB1": 0.02,
+        "vitaminB2": 0.03,
+        "vitaminC": 0,
+        "veg": 5
+      }
+    },
+    {
+      "id": 39,
+      "name": "フルーツヨーグルト Yogurt with peach pineapple orange",
+      "price": 132,
+      "category": "dessert",
+      "categoryName": "デザート",
+      "imageUrl": null,
+      "calories": 78,
+      "nutrition": {
+        "protein": 2.7,
+        "fat": 2.2,
+        "carbs": 12.9,
+        "salt": 0.1,
+        "calcium": 89,
+        "iron": 0.1,
+        "vitaminA": 29,
+        "vitaminB1": 0.04,
+        "vitaminB2": 0.1,
+        "vitaminC": 20,
+        "veg": 0
+      }
     }
-  },
-  {
-    "id": 2,
-    "name": "チゲ豆腐",
-    "name_en": "Simmered pork tofu and vegetables in chili based soup",
-    "price": 297,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 3,
-    "name": "かつおカツ甘醤油だれ",
-    "name_en": "Fried bonito with sweet Japanese soy sauce",
-    "price": 253,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 4,
-    "name": "鯖生姜煮",
-    "name_en": "Simmered mackerel in soy sauce",
-    "price": 253,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 5,
-    "name": "ジューシー鶏カツ麻婆ソース",
-    "name_en": "Fried chicken cutlet with pork in spicy sauce",
-    "price": 341,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 6,
-    "name": "ローストンカツおろしソース",
-    "name_en": "Fried pork cutlet with grated Japanese radishsauce",
-    "price": 297,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 2,
-      "normal": 1,
-      "bad": 0
-    }
-  },
-  {
-    "id": 7,
-    "name": "フライドチキン",
-    "name_en": "Fried chicken",
-    "price": 209,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 2,
-      "normal": 0,
-      "bad": 6
-    }
-  },
-  {
-    "id": 8,
-    "name": "ハンバーグサルサソース",
-    "name_en": "Hamburg steak with salsa sauce",
-    "price": 253,
-    "category": "主菜",
-    "category_en": "Main dish",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 9,
-    "name": "スパイスチキンサラダ",
-    "name_en": "Steamed chicken and vegetables",
-    "price": 132,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 0,
-      "normal": 1,
-      "bad": 0
-    }
-  },
-  {
-    "id": 10,
-    "name": "肉じゃがコロッケ",
-    "name_en": "Fried beef croquette",
-    "price": 132,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 11,
-    "name": "オクラ巣ごもり玉子",
-    "name_en": "Okra and half boiled egg with soy sauce",
-    "price": 99,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 20,
-      "normal": 2,
-      "bad": 0
-    }
-  },
-  {
-    "id": 12,
-    "name": "かぼちゃ煮",
-    "name_en": "Simmered pumpkin in Japanese soup",
-    "price": 99,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 13,
-    "name": "小松菜わさび和え",
-    "name_en": "Boiled mustard spinach with Japanese horseradish paste",
-    "price": 99,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 14,
-    "name": "やみつきキャベツ",
-    "name_en": "Boiled cabbage and corn mixed with salt based sauce",
-    "price": 99,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 2,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 15,
-    "name": "ほうれん草胡麻和え",
-    "name_en": "Boiled spinach with sesame paste",
-    "price": 77,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 3,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 16,
-    "name": "きんぴらごぼう",
-    "name_en": "Fried burdock in soy sauce and sugar",
-    "price": 77,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 17,
-    "name": "マカロニサラダ",
-    "name_en": "Macaroni salad with mayonnaise based sauce",
-    "price": 77,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 18,
-    "name": "冷奴",
-    "name_en": "Tofu with ginger leek",
-    "price": 55,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 19,
-    "name": "ミニサラダ",
-    "name_en": "Cabbage and potherb mustard salad",
-    "price": 55,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 20,
-    "name": "豚汁",
-    "name_en": "Miso soup with pork vegetables",
-    "price": 132,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 8,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 21,
-    "name": "味噌汁",
-    "name_en": "Miso soup",
-    "price": 44,
-    "category": "副菜",
-    "category_en": "Side dish",
-    "ratings": {
-      "good": 1,
-      "normal": 1,
-      "bad": 0
-    }
-  },
-  {
-    "id": 22,
-    "name": "パイタンうどん",
-    "name_en": "Hot whitewheat noodles with based on pork bone and pork meat",
-    "price": 440,
-    "category": "麺類",
-    "category_en": "Noodles",
-    "ratings": {
-      "good": 2,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 23,
-    "name": "かき揚げうどん",
-    "name_en": "Hot whitewheat noodles with Tempurafried vegetables in Japanese soup",
-    "price": 374,
-    "category": "麺類",
-    "category_en": "Noodles",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 24,
-    "name": "かき揚げそば",
-    "name_en": "Hot buckwheat noodles with Tempurafried vegetables in Japanese soup",
-    "price": 374,
-    "category": "麺類",
-    "category_en": "Noodles",
-    "ratings": {
-      "good": 0,
-      "normal": 2,
-      "bad": 0
-    }
-  },
-  {
-    "id": 25,
-    "name": "かけうどん",
-    "name_en": "Hot whitewheat noodles in Japanese soup",
-    "price": 286,
-    "category": "麺類",
-    "category_en": "Noodles",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 26,
-    "name": "かけそば",
-    "name_en": "Hot buckwheat noodles in Japanese soup",
-    "price": 286,
-    "category": "麺類",
-    "category_en": "Noodles",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 27,
-    "name": "まぐとろキムチ丼 中",
-    "name_en": "Bowl of rice with kimchi grated yam, soy sauce",
-    "price": 539,
-    "category": "丼・カレー",
-    "category_en": "Rice bowl / Curry",
-    "ratings": {
-      "good": 1,
-      "normal": 0,
-      "bad": 0
-    }
-  },
-  {
-    "id": 28,
-    "name": "欧風チーズカレー",
-    "name_en": "European style curry with cheese",
-    "price": 638,
-    "category": "丼・カレー",
-    "category_en": "Rice bowl / Curry",
-    "ratings": {
-      "good": 2,
-      "normal": 1,
-      "bad": 0
-    }
-  },
-  {
-    "id": 29,
-    "name": "欧風カレー",
-    "name_en": "European style curry",
-    "price": 517,
-    "category": "丼・カレー",
-    "category_en": "Rice bowl / Curry",
-    "ratings": {
-      "good": 0,
-      "normal": 0,
-      "bad": 1
-    }
-  },
-  {
-    "id": 30,
-    "name": "ライス中",
-    "name_en": "Boiled rice",
-    "price": 154,
-    "category": "ライス",
-    "category_en": "Rice",
-    "ratings": {
-      "good": 2,
-      "normal": 2,
-      "bad": 1
-    }
-  }
-];
+  ];
 }
 
 module.exports = { scrapeMenuData };
