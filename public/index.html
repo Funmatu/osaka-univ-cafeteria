@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阪大生協カフェテリアかさね - 栄養バランス最適化メニュー提案</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>阪大生協カフェテリアかさね<br>栄養バランス最適化メニュー提案</h1>
+        
+        <div id="error-container"></div>
+        <div id="fallback-notice" class="fallback-notice">
+            実データの取得に失敗したため、サンプルデータを使用しています。
+        </div>
+        
+        <div id="last-updated" class="last-updated">
+            最終更新: 取得中...
+        </div>
+        
+        <div class="form-group">
+            <label for="budget">予算（円）:</label>
+            <input type="number" id="budget" min="300" max="2000" value="800">
+        </div>
+        
+        <div class="menu-options">
+            <span>メニューフィルター: </span>
+            <button class="menu-filter active" data-filter="all">すべて</button>
+            <button class="menu-filter" data-filter="main-dish">主菜</button>
+            <button class="menu-filter" data-filter="side-dish">副菜</button>
+            <button class="menu-filter" data-filter="staple-food">主食</button>
+            <button class="menu-filter" data-filter="soup">汁物</button>
+        </div>
+        
+        <button id="findCombination">最適な組み合わせを探す</button>
+        <button id="refresh-data" class="refresh-button">メニューデータを更新</button>
+        
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>メニューデータを取得中...</p>
+        </div>
+        
+        <div id="result"></div>
+        
+        <div class="data-source">
+            データ出典: <a href="https://west2-univ.jp/sp/menu.php?t=663258" target="_blank">大阪大学生協カフェテリアかさね</a>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
