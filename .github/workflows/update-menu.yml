@@ -1,0 +1,62 @@
+name: Update Menu Data
+
+on:
+  schedule:
+    # UTC 21:00 = JST 06:00 (毎朝早朝)
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-menu
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Install Chromium for Puppeteer
+        run: npx --yes puppeteer browsers install chrome
+
+      - name: Run scraper
+        run: node scripts/scrape.mjs
+        env:
+          TZ: Asia/Tokyo
+
+      - name: Commit updated data if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/menu.json public/data/meta.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(data): refresh menu $(TZ=Asia/Tokyo date +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Upload debug artifact on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-debug
+          path: |
+            debug-*.png
+            public/data/*.json
+          if-no-files-found: ignore
+          retention-days: 7
