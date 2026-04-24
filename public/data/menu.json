@@ -17,10 +17,19 @@
       "iron": 1,
       "vegetable": 73,
       "vitaminA": 195,
-      "vitaminC": 21
+      "vitaminB1": 0.41,
+      "vitaminB2": 0.17,
+      "vitaminC": 21,
+      "fiber": 1.8
     },
     "origin": "豚肉（ブラジル）じゃが芋（中国）玉葱（中国）人参（中国）",
-    "scrapedAt": "2026-04-24T07:46:24.673Z"
+    "scrapedAt": "2026-04-24T08:06:41.671Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18045 ビーフシチュー類 (200g)"
+      }
+    ]
   },
   {
     "code": "611072",
@@ -40,10 +49,19 @@
       "iron": 0.9,
       "vegetable": 53,
       "vitaminA": 220,
-      "vitaminC": 20
+      "vitaminB1": 0.13,
+      "vitaminB2": 0.19,
+      "vitaminC": 20,
+      "fiber": 1.8
     },
     "origin": "じゃが芋（中国）鶏肉（中国）牛乳（国産）玉葱（中国）人参（中国）",
-    "scrapedAt": "2026-04-24T07:46:24.194Z"
+    "scrapedAt": "2026-04-24T08:06:41.145Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18045 ビーフシチュー類 (200g)"
+      }
+    ]
   },
   {
     "code": "611097",
@@ -63,10 +81,19 @@
       "iron": 0.8,
       "vegetable": 0,
       "vitaminA": 31,
-      "vitaminC": 1
+      "vitaminB1": 0.1,
+      "vitaminB2": 0.27,
+      "vitaminC": 1,
+      "fiber": 0.1
     },
     "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-04-24T07:46:25.593Z"
+    "scrapedAt": "2026-04-24T08:06:41.679Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 10154 さば 生 (80g切身)"
+      }
+    ]
   },
   {
     "code": "612001",
@@ -86,10 +113,19 @@
       "iron": 1.2,
       "vegetable": 33,
       "vitaminA": 96,
-      "vitaminC": 2
+      "vitaminB1": 0.06,
+      "vitaminB2": 0.22,
+      "vitaminC": 2,
+      "fiber": 2.5
     },
     "origin": "オクラ（インドネシア）鶏卵（国産）",
-    "scrapedAt": "2026-04-24T07:46:26.123Z"
+    "scrapedAt": "2026-04-24T08:06:42.210Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 06032 オクラ ゆで (50g)"
+      }
+    ]
   },
   {
     "code": "612002",
@@ -109,10 +145,19 @@
       "iron": 2.8,
       "vegetable": 0,
       "vitaminA": 5476,
-      "vitaminC": 7
+      "vitaminB1": 0.14,
+      "vitaminB2": 0.63,
+      "vitaminC": 7,
+      "fiber": 0
     },
     "origin": "鶏きも（国産）",
-    "scrapedAt": "2026-04-24T07:46:26.607Z"
+    "scrapedAt": "2026-04-24T08:06:42.738Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11232 鶏肝臓 生 (50g、B2特に豊富)"
+      }
+    ]
   },
   {
     "code": "612005",
@@ -132,10 +177,19 @@
       "iron": 0.4,
       "vegetable": 1,
       "vitaminA": 0,
-      "vitaminC": 6
+      "vitaminB1": 0.05,
+      "vitaminB2": 0.02,
+      "vitaminC": 6,
+      "fiber": 1.3
     },
     "origin": "じゃが芋（国産）牛肉（オーストラリア",
-    "scrapedAt": "2026-04-24T07:46:26.071Z"
+    "scrapedAt": "2026-04-24T08:06:42.205Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18006 コロッケ (じゃが芋主体、70g)"
+      }
+    ]
   },
   {
     "code": "612021",
@@ -155,10 +209,19 @@
       "iron": 0.2,
       "vegetable": 40,
       "vitaminA": 6,
-      "vitaminC": 16
+      "vitaminB1": 0.02,
+      "vitaminB2": 0.06,
+      "vitaminC": 16,
+      "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-04-24T07:46:26.124Z"
+    "scrapedAt": "2026-04-24T08:06:42.210Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 生野菜サラダ (80g)"
+      }
+    ]
   },
   {
     "code": "612046",
@@ -178,10 +241,19 @@
       "iron": 0.4,
       "vegetable": 92,
       "vitaminA": 1,
-      "vitaminC": 4
+      "vitaminB1": 0.05,
+      "vitaminB2": 0.03,
+      "vitaminC": 4,
+      "fiber": 1.8
     },
     "origin": "茄子（中国）大根（国産）",
-    "scrapedAt": "2026-04-24T07:46:26.657Z"
+    "scrapedAt": "2026-04-24T08:06:42.742Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 06192 なす ゆで (70g)"
+      }
+    ]
   },
   {
     "code": "612068",
@@ -201,10 +273,19 @@
       "iron": 0.7,
       "vegetable": 63,
       "vitaminA": 43,
-      "vitaminC": 34
+      "vitaminB1": 0.05,
+      "vitaminB2": 0.06,
+      "vitaminC": 34,
+      "fiber": 3.1
     },
     "origin": "ブロッコリー（中国）ピーナッツ（アメリカ",
-    "scrapedAt": "2026-04-24T07:46:26.656Z"
+    "scrapedAt": "2026-04-24T08:06:42.745Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 06264 ブロッコリー ゆで (70g)"
+      }
+    ]
   },
   {
     "code": "612093",
@@ -224,10 +305,19 @@
       "iron": 0.5,
       "vegetable": 56,
       "vitaminA": 250,
-      "vitaminC": 11
+      "vitaminB1": 0.03,
+      "vitaminB2": 0.06,
+      "vitaminC": 11,
+      "fiber": 2.5
     },
     "origin": "ほうれん草（国産）",
-    "scrapedAt": "2026-04-24T07:46:27.140Z"
+    "scrapedAt": "2026-04-24T08:06:43.272Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 06268 ほうれんそう ゆで (70g)"
+      }
+    ]
   },
   {
     "code": "612102",
@@ -247,10 +337,19 @@
       "iron": 0.2,
       "vegetable": 32,
       "vitaminA": 78,
-      "vitaminC": 1
+      "vitaminB1": 0.02,
+      "vitaminB2": 0.02,
+      "vitaminC": 1,
+      "fiber": 2.5
     },
     "origin": "ごぼう（中国",
-    "scrapedAt": "2026-04-24T07:46:27.191Z"
+    "scrapedAt": "2026-04-24T08:06:43.274Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 06085 ごぼう きんぴら相当 (60g)"
+      }
+    ]
   },
   {
     "code": "612108",
@@ -270,10 +369,19 @@
       "iron": 1.4,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminC": 1
+      "vitaminB1": 0.05,
+      "vitaminB2": 0.13,
+      "vitaminC": 1,
+      "fiber": 3.4
     },
     "origin": "大豆（アメリカ）",
-    "scrapedAt": "2026-04-24T07:46:26.658Z"
+    "scrapedAt": "2026-04-24T08:06:42.743Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 04046 糸引き納豆 (50g)"
+      }
+    ]
   },
   {
     "code": "612113",
@@ -293,10 +401,19 @@
       "iron": 0.1,
       "vegetable": 3,
       "vitaminA": 9,
-      "vitaminC": 6
+      "vitaminB1": 0.03,
+      "vitaminB2": 0.01,
+      "vitaminC": 6,
+      "fiber": 1.8
     },
     "origin": "じゃが芋（国産）玉葱（国産",
-    "scrapedAt": "2026-04-24T07:46:27.190Z"
+    "scrapedAt": "2026-04-24T08:06:43.275Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 生野菜サラダ (80g)"
+      }
+    ]
   },
   {
     "code": "612120",
@@ -316,10 +433,19 @@
       "iron": 0.1,
       "vegetable": 40,
       "vitaminA": 7,
-      "vitaminC": 10
+      "vitaminB1": 0.01,
+      "vitaminB2": 0.01,
+      "vitaminC": 10,
+      "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-04-24T07:46:27.192Z"
+    "scrapedAt": "2026-04-24T08:06:43.278Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 生野菜サラダ (80g)"
+      }
+    ]
   },
   {
     "code": "614001",
@@ -339,10 +465,19 @@
       "iron": 0.5,
       "vegetable": 40,
       "vitaminA": 64,
-      "vitaminC": 3
+      "vitaminB1": 0.13,
+      "vitaminB2": 0.09,
+      "vitaminC": 3,
+      "fiber": 2.2
     },
     "origin": "豚肉（メキシコ）大根（中国）里芋（中国）玉葱（中国）人参（中国）ごぼう（中国）",
-    "scrapedAt": "2026-04-24T07:46:27.671Z"
+    "scrapedAt": "2026-04-24T08:06:43.804Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 豚汁 (200mL)"
+      }
+    ]
   },
   {
     "code": "614010",
@@ -362,10 +497,19 @@
       "iron": 0.2,
       "vegetable": 0,
       "vitaminA": 1,
-      "vitaminC": 0
+      "vitaminB1": 0.01,
+      "vitaminB2": 0.04,
+      "vitaminC": 0,
+      "fiber": 1
     },
     "origin": "若布（中国）豆腐（国内製造）葱（中国）",
-    "scrapedAt": "2026-04-24T07:46:27.722Z"
+    "scrapedAt": "2026-04-24T08:06:43.806Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 わかめ豆腐みそ汁 (200mL)"
+      }
+    ]
   },
   {
     "code": "615004",
@@ -385,10 +529,19 @@
       "iron": 0.3,
       "vegetable": 0,
       "vitaminA": 32,
-      "vitaminC": 0
+      "vitaminB1": 0.02,
+      "vitaminB2": 0.05,
+      "vitaminC": 0,
+      "fiber": 0.4
     },
     "origin": "液卵（国産",
-    "scrapedAt": "2026-04-24T07:46:29.275Z"
+    "scrapedAt": "2026-04-24T08:06:45.400Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 15073 洋菓子類平均 (60g)"
+      }
+    ]
   },
   {
     "code": "615005",
@@ -408,10 +561,19 @@
       "iron": 0.2,
       "vegetable": 0,
       "vitaminA": 68,
-      "vitaminC": 0
+      "vitaminB1": 0.02,
+      "vitaminB2": 0.04,
+      "vitaminC": 0,
+      "fiber": 0.5
     },
     "origin": "ホイップクリーム（国内製造）栗あん（国内製造）",
-    "scrapedAt": "2026-04-24T07:46:29.324Z"
+    "scrapedAt": "2026-04-24T08:06:45.404Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "category-fallback:dessert"
+      }
+    ]
   },
   {
     "code": "615015",
@@ -431,10 +593,19 @@
       "iron": 0.4,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminC": 6
+      "vitaminB1": 0.06,
+      "vitaminB2": 0.03,
+      "vitaminC": 6,
+      "fiber": 2.3
     },
     "origin": "さつま芋（国産）",
-    "scrapedAt": "2026-04-24T07:46:29.325Z"
+    "scrapedAt": "2026-04-24T08:06:45.405Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 02006 さつまいも 皮むき蒸し (80g)"
+      }
+    ]
   },
   {
     "code": "615020",
@@ -454,10 +625,19 @@
       "iron": 0,
       "vegetable": 0,
       "vitaminA": 17,
-      "vitaminC": 10
+      "vitaminB1": 0.03,
+      "vitaminB2": 0.07,
+      "vitaminC": 10,
+      "fiber": 0.3
     },
     "origin": "生乳（国産）パインアップル（フィリピン）パパイヤ（フィリピン）ナタデココ（フィリピン）",
-    "scrapedAt": "2026-04-24T07:46:29.326Z"
+    "scrapedAt": "2026-04-24T08:06:45.408Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 13025 ヨーグルト全脂無糖 + フルーツ (100g)"
+      }
+    ]
   },
   {
     "code": "615028",
@@ -477,10 +657,19 @@
       "iron": 0.1,
       "vegetable": 0,
       "vitaminA": 1,
-      "vitaminC": 0
+      "vitaminB1": 0.01,
+      "vitaminB2": 0.46,
+      "vitaminC": 0,
+      "fiber": 0.4
     },
     "origin": "小麦粉（国内製造）チョコレート（国内製造）",
-    "scrapedAt": "2026-04-24T07:46:29.807Z"
+    "scrapedAt": "2026-04-24T08:06:45.932Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 15073 洋菓子類平均 (60g)"
+      }
+    ]
   },
   {
     "code": "615033",
@@ -500,10 +689,19 @@
       "iron": 4.6,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminC": 36
+      "vitaminB1": 0,
+      "vitaminB2": 0,
+      "vitaminC": 36,
+      "fiber": 0.4
     },
     "origin": "米粉（国産）豆乳（国産）ブルーベリー（国産）",
-    "scrapedAt": "2026-04-24T07:46:29.858Z"
+    "scrapedAt": "2026-04-24T08:06:45.938Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 15073 洋菓子類平均 (60g)"
+      }
+    ]
   },
   {
     "code": "616017",
@@ -523,10 +721,19 @@
       "iron": 1.2,
       "vegetable": 40,
       "vitaminA": 225,
-      "vitaminC": 12
+      "vitaminB1": 0.13,
+      "vitaminB2": 0.17,
+      "vitaminC": 12,
+      "fiber": 3
     },
     "origin": "精白米（国産）鶏肉（中国）ほうれん草（国産）",
-    "scrapedAt": "2026-04-24T07:46:28.257Z"
+    "scrapedAt": "2026-04-24T08:06:44.343Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "category-fallback:bowl"
+      }
+    ]
   },
   {
     "code": "616080",
@@ -546,10 +753,19 @@
       "iron": 1.1,
       "vegetable": 20,
       "vitaminA": 14,
-      "vitaminC": 9
+      "vitaminB1": 0.15,
+      "vitaminB2": 0.12,
+      "vitaminC": 9,
+      "fiber": 0.5
     },
     "origin": "精白米（国産）鶏肉（国産）キャベツ（国産",
-    "scrapedAt": "2026-04-24T07:46:28.740Z"
+    "scrapedAt": "2026-04-24T08:06:44.869Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11276 ぶたロース とんかつ (100g、B1は豚肉由来)"
+      }
+    ]
   },
   {
     "code": "616122",
@@ -569,10 +785,19 @@
       "iron": 1.5,
       "vegetable": 5,
       "vitaminA": 49,
-      "vitaminC": 0
+      "vitaminB1": 0.38,
+      "vitaminB2": 0.11,
+      "vitaminC": 0,
+      "fiber": 3.5
     },
     "origin": "精白米（国産）豚肉（チリ",
-    "scrapedAt": "2026-04-24T07:46:28.790Z"
+    "scrapedAt": "2026-04-24T08:06:44.872Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18040 ビーフカレー (ルー+ライス、400g)"
+      }
+    ]
   },
   {
     "code": "616149",
@@ -592,10 +817,19 @@
       "iron": 1.2,
       "vegetable": 5,
       "vitaminA": 46,
-      "vitaminC": 0
+      "vitaminB1": 0.07,
+      "vitaminB2": 0.05,
+      "vitaminC": 0,
+      "fiber": 3.5
     },
     "origin": "精白米（国産）じゃが芋（国産）人参（国産）",
-    "scrapedAt": "2026-04-24T07:46:28.791Z"
+    "scrapedAt": "2026-04-24T08:06:44.874Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18040 ビーフカレー (ルー+ライス、400g)"
+      }
+    ]
   },
   {
     "code": "617065",
@@ -615,10 +849,19 @@
       "iron": 0.7,
       "vegetable": 5,
       "vitaminA": 6,
-      "vitaminC": 2
+      "vitaminB1": 0.1,
+      "vitaminB2": 0.05,
+      "vitaminC": 2,
+      "fiber": 2.5
     },
     "origin": "うどん（国内製造）",
-    "scrapedAt": "2026-04-24T07:46:28.206Z"
+    "scrapedAt": "2026-04-24T08:06:44.336Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01039 うどん ゆで (250g) + 具材"
+      }
+    ]
   },
   {
     "code": "617066",
@@ -638,10 +881,19 @@
       "iron": 2,
       "vegetable": 5,
       "vitaminA": 6,
-      "vitaminC": 2
+      "vitaminB1": 0.2,
+      "vitaminB2": 0.08,
+      "vitaminC": 2,
+      "fiber": 2.8
     },
     "origin": "そば（国内製造）",
-    "scrapedAt": "2026-04-24T07:46:28.258Z"
+    "scrapedAt": "2026-04-24T08:06:44.340Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01127 そば ゆで (250g) + 具材"
+      }
+    ]
   },
   {
     "code": "617077",
@@ -661,10 +913,19 @@
       "iron": 1.4,
       "vegetable": 5,
       "vitaminA": 6,
-      "vitaminC": 2
+      "vitaminB1": 0.11,
+      "vitaminB2": 0.06,
+      "vitaminC": 2,
+      "fiber": 2.5
     },
     "origin": "うどん（国内製造）味付きつね（国内製造）",
-    "scrapedAt": "2026-04-24T07:46:27.723Z"
+    "scrapedAt": "2026-04-24T08:06:43.807Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01039 うどん ゆで (250g) + 具材"
+      }
+    ]
   },
   {
     "code": "617078",
@@ -684,10 +945,19 @@
       "iron": 2.7,
       "vegetable": 5,
       "vitaminA": 6,
-      "vitaminC": 2
+      "vitaminB1": 0.21,
+      "vitaminB2": 0.09,
+      "vitaminC": 2,
+      "fiber": 2.8
     },
     "origin": "そば（国内製造）味付きつね（国内製造）",
-    "scrapedAt": "2026-04-24T07:46:27.723Z"
+    "scrapedAt": "2026-04-24T08:06:43.809Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01127 そば ゆで (250g) + 具材"
+      }
+    ]
   },
   {
     "code": "617131",
@@ -707,10 +977,19 @@
       "iron": 3.1,
       "vegetable": 5,
       "vitaminA": 17,
-      "vitaminC": 2
+      "vitaminB1": 0.27,
+      "vitaminB2": 0.2,
+      "vitaminC": 2,
+      "fiber": 3
     },
     "origin": "中華麺（国内製造）鶏肉（国産）担々麵スープ（国内製造）",
-    "scrapedAt": "2026-04-24T07:46:28.259Z"
+    "scrapedAt": "2026-04-24T08:06:44.341Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 中華麺+具材 (400g)"
+      }
+    ]
   },
   {
     "code": "621001",
@@ -730,10 +1009,19 @@
       "iron": 0.9,
       "vegetable": 0,
       "vitaminA": 46,
-      "vitaminC": 3
+      "vitaminB1": 0.12,
+      "vitaminB2": 0.18,
+      "vitaminC": 3,
+      "fiber": 0.3
     },
     "origin": "鶏肉（タイ）",
-    "scrapedAt": "2026-04-24T07:46:24.139Z"
+    "scrapedAt": "2026-04-24T08:06:41.140Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11289 鶏もも皮つき から揚げ (80g)"
+      }
+    ]
   },
   {
     "code": "621007",
@@ -753,10 +1041,19 @@
       "iron": 0.8,
       "vegetable": 0,
       "vitaminA": 40,
-      "vitaminC": 2
+      "vitaminB1": 0.1,
+      "vitaminB2": 0.16,
+      "vitaminC": 2,
+      "fiber": 0.3
     },
     "origin": "鶏肉（中国）",
-    "scrapedAt": "2026-04-24T07:46:24.196Z"
+    "scrapedAt": "2026-04-24T08:06:41.142Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11225 若鶏もも 皮つき (100g)"
+      }
+    ]
   },
   {
     "code": "621024",
@@ -776,10 +1073,19 @@
       "iron": 1.1,
       "vegetable": 50,
       "vitaminA": 7,
-      "vitaminC": 6
+      "vitaminB1": 0.69,
+      "vitaminB2": 0.26,
+      "vitaminC": 6,
+      "fiber": 1.5
     },
     "origin": "豚肉（ブラジル）玉葱（中国）",
-    "scrapedAt": "2026-04-24T07:46:24.195Z"
+    "scrapedAt": "2026-04-24T08:06:41.146Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 豚肉野菜炒め (120g)"
+      }
+    ]
   },
   {
     "code": "621040",
@@ -799,10 +1105,19 @@
       "iron": 0.8,
       "vegetable": 0,
       "vitaminA": 13,
-      "vitaminC": 1
+      "vitaminB1": 0.11,
+      "vitaminB2": 0.07,
+      "vitaminC": 1,
+      "fiber": 0.5
     },
     "origin": "鶏肉（国産）",
-    "scrapedAt": "2026-04-24T07:46:25.590Z"
+    "scrapedAt": "2026-04-24T08:06:41.677Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11276 ぶたロース とんかつ (100g、B1は豚肉由来)"
+      }
+    ]
   },
   {
     "code": "663252",
@@ -812,9 +1127,27 @@
     "category": "bowl",
     "categoryJa": "丼・カレー",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/663252_355267.png",
-    "nutrition": {},
+    "nutrition": {
+      "fiber": 1.2,
+      "vitaminB1": 0.3,
+      "vitaminB2": 0.12
+    },
     "origin": null,
-    "scrapedAt": "2026-04-24T07:46:28.789Z"
+    "scrapedAt": "2026-04-24T08:06:44.874Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18042 麻婆豆腐 (150g)"
+      },
+      {
+        "key": "vitaminB1",
+        "source": "食品成分表 八訂 18042 麻婆豆腐 (150g)"
+      },
+      {
+        "key": "vitaminB2",
+        "source": "食品成分表 八訂 18042 麻婆豆腐 (150g)"
+      }
+    ]
   },
   {
     "code": "698035",
@@ -834,10 +1167,19 @@
       "iron": 0.9,
       "vegetable": 50,
       "vitaminA": 6,
-      "vitaminC": 13
+      "vitaminB1": 0.44,
+      "vitaminB2": 0.15,
+      "vitaminC": 13,
+      "fiber": 0.5
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T07:46:29.859Z"
+    "scrapedAt": "2026-04-24T08:06:45.940Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11276 ぶたロース とんかつ (100g、B1は豚肉由来)"
+      }
+    ]
   },
   {
     "code": "698053",
@@ -857,10 +1199,19 @@
       "iron": 1.8,
       "vegetable": 68,
       "vitaminA": 24,
-      "vitaminC": 15
+      "vitaminB1": 0.17,
+      "vitaminB2": 0.19,
+      "vitaminC": 15,
+      "fiber": 1.2
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T07:46:30.341Z"
+    "scrapedAt": "2026-04-24T08:06:46.465Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18050 ハンバーグ (120g)"
+      }
+    ]
   },
   {
     "code": "698057",
@@ -880,10 +1231,19 @@
       "iron": 1.7,
       "vegetable": 53,
       "vitaminA": 38,
-      "vitaminC": 21
+      "vitaminB1": 0.18,
+      "vitaminB2": 0.19,
+      "vitaminC": 21,
+      "fiber": 1.2
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T07:46:29.860Z"
+    "scrapedAt": "2026-04-24T08:06:45.936Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18050 ハンバーグ (120g)"
+      }
+    ]
   },
   {
     "code": "698059",
@@ -903,10 +1263,19 @@
       "iron": 1.6,
       "vegetable": 53,
       "vitaminA": 62,
-      "vitaminC": 14
+      "vitaminB1": 0.17,
+      "vitaminB2": 0.25,
+      "vitaminC": 14,
+      "fiber": 1.2
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T07:46:30.393Z"
+    "scrapedAt": "2026-04-24T08:06:46.470Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18050 ハンバーグ (120g)"
+      }
+    ]
   },
   {
     "code": "698085",
@@ -926,10 +1295,19 @@
       "iron": 0.7,
       "vegetable": 30,
       "vitaminA": 8,
-      "vitaminC": 12
+      "vitaminB1": 0.12,
+      "vitaminB2": 0.13,
+      "vitaminC": 12,
+      "fiber": 0.4
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T07:46:30.391Z"
+    "scrapedAt": "2026-04-24T08:06:46.469Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 (白身魚フライ / メンチ平均)"
+      }
+    ]
   },
   {
     "code": "814174",
@@ -949,10 +1327,19 @@
       "iron": 0.4,
       "vegetable": 0,
       "vitaminA": 21,
-      "vitaminC": 1
+      "vitaminB1": 0.05,
+      "vitaminB2": 0.06,
+      "vitaminC": 1,
+      "fiber": 0.4
     },
     "origin": "鶏肉（タイ）",
-    "scrapedAt": "2026-04-24T07:46:25.592Z"
+    "scrapedAt": "2026-04-24T08:06:41.678Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 (白身魚フライ / メンチ平均)"
+      }
+    ]
   },
   {
     "code": "814701",
@@ -972,10 +1359,19 @@
       "iron": 0.3,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminC": 0
+      "vitaminB1": 0.06,
+      "vitaminB2": 0.03,
+      "vitaminC": 0,
+      "fiber": 4.7
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T07:46:30.392Z"
+    "scrapedAt": "2026-04-24T08:06:46.471Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01088 水稲めし 精白米"
+      }
+    ]
   },
   {
     "code": "814702",
@@ -995,10 +1391,19 @@
       "iron": 0.2,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminC": 0
+      "vitaminB1": 0.05,
+      "vitaminB2": 0.02,
+      "vitaminC": 0,
+      "fiber": 3.6
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T07:46:30.874Z"
+    "scrapedAt": "2026-04-24T08:06:46.997Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01088 水稲めし 精白米"
+      }
+    ]
   },
   {
     "code": "814703",
@@ -1018,10 +1423,19 @@
       "iron": 0.2,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminC": 0
+      "vitaminB1": 0.03,
+      "vitaminB2": 0.02,
+      "vitaminC": 0,
+      "fiber": 2.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T07:46:30.925Z"
+    "scrapedAt": "2026-04-24T08:06:47.001Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01088 水稲めし 精白米"
+      }
+    ]
   },
   {
     "code": "814704",
@@ -1041,10 +1455,19 @@
       "iron": 0.1,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminC": 0
+      "vitaminB1": 0.02,
+      "vitaminB2": 0.01,
+      "vitaminC": 0,
+      "fiber": 1.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T07:46:30.924Z"
+    "scrapedAt": "2026-04-24T08:06:47.002Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 01088 水稲めし 精白米"
+      }
+    ]
   },
   {
     "code": "825509",
@@ -1064,9 +1487,18 @@
       "iron": 0.6,
       "vegetable": 0,
       "vitaminA": 25,
-      "vitaminC": 4
+      "vitaminB1": 0.12,
+      "vitaminB2": 0.13,
+      "vitaminC": 4,
+      "fiber": 0.3
     },
     "origin": "鶏肉（中国）",
-    "scrapedAt": "2026-04-24T07:46:26.122Z"
+    "scrapedAt": "2026-04-24T08:06:42.209Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11225 若鶏もも 皮つき (100g)"
+      }
+    ]
   }
 ]

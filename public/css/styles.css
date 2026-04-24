@@ -241,6 +241,21 @@ input[type=range] {
 }
 .nut-value { font-weight: 700; text-align: right; }
 .nut-daily { color: var(--muted); text-align: right; font-size: 0.72rem; }
+.est-mark {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.65rem;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 700;
+  vertical-align: top;
+  cursor: help;
+}
+.nut-row.estimated .nut-fill {
+  background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,255,255,0.35) 3px, rgba(255,255,255,0.35) 6px);
+}
 
 /* Menu browser */
 .menu-browser {

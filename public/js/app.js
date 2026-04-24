@@ -149,22 +149,28 @@ function renderResults(picks) {
   picks.forEach((combo, idx) => container.appendChild(renderCombo(combo, idx)));
 }
 
-function nutritionBar(label, value, target, daily, color, unit = '') {
+function nutritionBar(label, value, target, daily, color, unit = '', estimated = false) {
   const ratioOfMeal = target > 0 ? Math.min(1.2, value / target) : 0;
   const ratioOfDaily = daily > 0 ? Math.min(1, value / daily) : 0;
   const v = typeof value === 'number' ? value : 0;
   const pctMeal = Math.round(ratioOfMeal * 100);
   const pctDaily = Math.round(ratioOfDaily * 100);
   const display = unit === 'kcal' ? `${Math.round(v)} ${unit}` : `${v.toFixed(1)} ${unit}`.trim();
+  const estMark = estimated ? '<span class="est-mark" title="食品成分表八訂ベースの推定値">推</span>' : '';
   return `
-    <div class="nut-row">
-      <span class="nut-label">${label}</span>
-      <span class="nut-bar" aria-label="${label} ${display}, 1日の${pctDaily}%">
+    <div class="nut-row${estimated ? ' estimated' : ''}">
+      <span class="nut-label">${label}${estMark}</span>
+      <span class="nut-bar" aria-label="${label} ${display}${estimated ? ' (推定)' : ''}, 1日の${pctDaily}%">
         <span class="nut-fill" style="width:${Math.min(100, pctMeal)}%;background:${color}"></span>
       </span>
       <span class="nut-value">${display}</span>
       <span class="nut-daily">1日の${pctDaily}%</span>
     </div>`;
+}
+
+// combo の中で key がどれか1アイテムでも推定補完された場合、その成分は「推定混じり」
+function hasEstimatedField(combo, key) {
+  return combo.items.some((it) => (it._estimated || []).some((e) => e.key === key));
 }
 
 function renderCombo(combo, idx) {
@@ -214,7 +220,7 @@ function renderCombo(combo, idx) {
       ${nutritionBar('脂質', n.fat || 0, MEAL_TARGET.energy * 0.25 / 9, DAILY_RDI.energy * 0.25 / 9, '#f1c40f', 'g')}
       ${nutritionBar('炭水化物', n.carbs || 0, MEAL_TARGET.energy * 0.60 / 4, DAILY_RDI.energy * 0.60 / 4, '#3498db', 'g')}
       ${nutritionBar('野菜量', n.vegetable || 0, MEAL_TARGET.vegetable, DAILY_RDI.vegetable, '#27ae60', 'g')}
-      ${nutritionBar('食物繊維', n.fiber || 0, MEAL_TARGET.fiber, DAILY_RDI.fiber, '#16a085', 'g')}
+      ${nutritionBar('食物繊維', n.fiber || 0, MEAL_TARGET.fiber, DAILY_RDI.fiber, '#16a085', 'g', hasEstimatedField(combo, 'fiber'))}
       ${nutritionBar('カルシウム', n.calcium || 0, MEAL_TARGET.calcium, DAILY_RDI.calcium, '#8e44ad', 'mg')}
       ${nutritionBar('鉄', n.iron || 0, MEAL_TARGET.iron, DAILY_RDI.iron, '#c0392b', 'mg')}
     </div>`;

@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import * as cheerio from 'cheerio';
 import { fetchWithRetry, mapWithConcurrency, sleep } from './lib/fetch-with-retry.mjs';
 import { parseDetailHtml } from './parser.mjs';
+import { augmentAll } from './augment.mjs';
+import { REFERENCE_DB_META } from './reference-db.mjs';
 
 const CAFETERIA_ID = '663252';
 const MENU_URL = `https://west2-univ.jp/sp/menu.php?t=${CAFETERIA_ID}`;
@@ -135,7 +137,10 @@ async function main() {
   }
   console.log(`\nDeduped ${listing.length} unique items across all categories.`);
 
-  const items = await enrichWithDetail(listing);
+  const rawItems = await enrichWithDetail(listing);
+  const items = augmentAll(rawItems);
+  const augmentedCount = items.filter((i) => i._estimated?.length > 0).length;
+  console.log(`\nAugmented ${augmentedCount}/${items.length} items with reference DB (fiber/B1/B2).`);
 
   const issues = validate(items);
   if (issues.length) {
@@ -156,7 +161,9 @@ async function main() {
     lastUpdated: startedAt.toISOString(),
     itemCount: sorted.length,
     withNutrition: sorted.filter((i) => i.nutrition?.energy != null).length,
+    augmented: sorted.filter((i) => i._estimated?.length > 0).length,
     issues: issues.length,
+    referenceDb: REFERENCE_DB_META,
   };
   await fs.writeFile(metaPath, JSON.stringify(meta, null, 2) + '\n', 'utf-8');
 

@@ -12,9 +12,12 @@ const NUMERIC_PATTERNS = [
   ['iron', /鉄[^\d-]*([\d.]+)\s*mg/],
   ['vegetable', /野菜量[^\d-]*([\d.]+)\s*g/],
   ['fiber', /食物繊維[^\d-]*([\d.]+)\s*g/],
+  // ビタミン A: 英訳 "Vitamin A" に数字がないので単純パターンで可
   ['vitaminA', /ビタミン\s*A[^\d-]*([\d.]+)\s*μ?g/],
-  ['vitaminB1', /ビタミン\s*B\s*1[^\d-]*([\d.]+)\s*mg/],
-  ['vitaminB2', /ビタミン\s*B\s*2[^\d-]*([\d.]+)\s*mg/],
+  // ビタミン B1/B2: 英訳 "Vitamin B1" に数字が入るため、英訳フレーズを明示的に読み飛ばす
+  // "ビタミン B1 Vitamin B1 0.12mg" のような並びに対応
+  ['vitaminB1', /ビタミン\s*B\s*1(?:\s*Vitamin\s*B\s*1)?[^\d-]*([\d.]+)\s*mg/],
+  ['vitaminB2', /ビタミン\s*B\s*2(?:\s*Vitamin\s*B\s*2)?[^\d-]*([\d.]+)\s*mg/],
   ['vitaminC', /ビタミン\s*C[^\d-]*([\d.]+)\s*mg/],
 ];
 
