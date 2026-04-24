@@ -1,138 +1,125 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import puppeteer from 'puppeteer';
+import * as cheerio from 'cheerio';
 import { fetchWithRetry, mapWithConcurrency, sleep } from './lib/fetch-with-retry.mjs';
-import { parseDetailHtml, inferCategoryFromName } from './parser.mjs';
+import { parseDetailHtml } from './parser.mjs';
 
 const CAFETERIA_ID = '663252';
 const MENU_URL = `https://west2-univ.jp/sp/menu.php?t=${CAFETERIA_ID}`;
+const LOAD_URL = (a) => `https://west2-univ.jp/sp/menu_load.php?t=${CAFETERIA_ID}&a=${a}`;
 const DETAIL_URL = (code) => `https://west2-univ.jp/sp/detail.php?t=${CAFETERIA_ID}&c=${code}`;
+
+// menu_load.php 各エンドポイントとカテゴリの対応 (menu.php の見出し順から確定)
+const ENDPOINT_CATEGORIES = [
+  { key: 'on_a',       category: 'main',    categoryJa: '主菜' },
+  { key: 'on_b',       category: 'side',    categoryJa: '副菜' },
+  { key: 'on_c',       category: 'noodle',  categoryJa: '麺類' },
+  { key: 'on_d',       category: 'bowl',    categoryJa: '丼・カレー' },
+  { key: 'on_e',       category: 'dessert', categoryJa: 'デザート' },
+  { key: 'on_f',       category: 'set',     categoryJa: 'セット' },
+  { key: 'on_g',       category: 'other',   categoryJa: 'その他' },
+  { key: 'on_bunrui1', category: 'staple',  categoryJa: 'ライス' },
+];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, '..', 'public', 'data');
 
-async function extractItemCodesWithBrowser() {
-  console.log(`Launching headless browser to render ${MENU_URL}`);
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+function extractItemsFromCategoryHtml(html, endpoint) {
+  const $ = cheerio.load(html);
+  const items = [];
+  $('a[href*="detail.php"]').each((_, el) => {
+    const href = $(el).attr('href') || '';
+    const m = href.match(/[?&]c=(\d+)/);
+    if (!m) return;
+    const code = m[1];
+
+    const h3 = $(el).find('h3').first();
+    const priceSpan = h3.find('.price').first();
+    const enSpan = h3.find('span').filter((_, s) => !$(s).hasClass('price')).first();
+
+    let name = h3.clone().children().remove().end().text().trim();
+    if (!name) name = h3.text().replace(/[¥￥].*$/, '').trim();
+    name = name.replace(/\s+/g, ' ');
+
+    const nameEn = enSpan.text().trim() || null;
+
+    let price = null;
+    const priceText = priceSpan.text();
+    const pm = priceText.match(/(\d{2,4})/);
+    if (pm) price = parseInt(pm[1], 10);
+
+    const img = $(el).find('img').first().attr('src') || null;
+
+    items.push({
+      code,
+      name,
+      nameEn,
+      price,
+      category: endpoint.category,
+      categoryJa: endpoint.categoryJa,
+      imageUrl: img || `https://west2-univ.jp/menu_img/png_sp/${code}.png`,
+    });
   });
-  try {
-    const page = await browser.newPage();
-    await page.setUserAgent(
-      'Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36'
-    );
-
-    const xhrLog = [];
-    page.on('response', async (res) => {
-      const url = res.url();
-      const type = res.request().resourceType();
-      if ((type === 'xhr' || type === 'fetch') && url.includes('west2-univ.jp')) {
-        xhrLog.push({ url, status: res.status(), type });
-      }
-    });
-
-    await page.goto(MENU_URL, { waitUntil: 'networkidle2', timeout: 60000 });
-    await page.waitForSelector('a[href*="detail.php"]', { timeout: 20000 }).catch(() => {});
-
-    const items = await page.evaluate(() => {
-      const results = [];
-      const anchors = document.querySelectorAll('a[href*="detail.php"]');
-      for (const a of anchors) {
-        const href = a.getAttribute('href') || '';
-        const m = href.match(/[?&]c=(\d+)/);
-        if (!m) continue;
-        const code = m[1];
-
-        let categoryJa = null;
-        let cursor = a.parentElement;
-        for (let hops = 0; hops < 6 && cursor; hops++, cursor = cursor.parentElement) {
-          const heading = cursor.querySelector(':scope > h1, :scope > h2, :scope > h3, :scope > .title, :scope > header');
-          if (heading) {
-            categoryJa = heading.textContent.trim();
-            break;
-          }
-        }
-        if (!categoryJa) {
-          let prev = a.closest('section, div, li');
-          while (prev) {
-            const sibling = prev.previousElementSibling;
-            if (sibling && /^(H[1-4]|HEADER)$/.test(sibling.tagName)) {
-              categoryJa = sibling.textContent.trim();
-              break;
-            }
-            prev = prev.parentElement;
-            if (!prev || prev === document.body) break;
-          }
-        }
-
-        const nameEl = a.querySelector('.name, .menu-name, p, span') || a;
-        const name = (nameEl.textContent || '').trim().replace(/\s+/g, ' ');
-
-        const priceEl = a.querySelector('.price, .menu-price');
-        let price = null;
-        if (priceEl) {
-          const m2 = priceEl.textContent.match(/(\d{2,4})/);
-          if (m2) price = parseInt(m2[1], 10);
-        }
-        if (price === null) {
-          const m3 = a.textContent.match(/(\d{2,4})\s*円/);
-          if (m3) price = parseInt(m3[1], 10);
-        }
-
-        results.push({ code, name, price, categoryJa });
-      }
-      const seen = new Set();
-      return results.filter((r) => (seen.has(r.code) ? false : (seen.add(r.code), true)));
-    });
-
-    console.log(`menu.php rendered: extracted ${items.length} items`);
-    if (xhrLog.length) {
-      console.log(`Observed ${xhrLog.length} XHR/fetch requests (candidates for future direct API):`);
-      for (const x of xhrLog.slice(0, 10)) console.log(`  [${x.status}] ${x.url}`);
-    } else {
-      console.log('No XHR/fetch observed — menu.php likely renders server-side via inline data.');
-    }
-    return items;
-  } finally {
-    await browser.close();
-  }
+  return items;
 }
 
-async function fetchDetail(item) {
-  const url = DETAIL_URL(item.code);
-  const html = await fetchWithRetry(url);
-  await sleep(500);
-  const parsed = parseDetailHtml(html, { code: item.code });
+async function fetchAllCategories() {
+  console.log(`Fetching ${ENDPOINT_CATEGORIES.length} category endpoints in parallel…`);
+  const results = await Promise.all(
+    ENDPOINT_CATEGORIES.map(async (ep) => {
+      try {
+        const html = await fetchWithRetry(LOAD_URL(ep.key));
+        const items = extractItemsFromCategoryHtml(html, ep);
+        console.log(`  ${ep.key} (${ep.categoryJa}): ${items.length} items`);
+        return items;
+      } catch (err) {
+        console.warn(`  ${ep.key} (${ep.categoryJa}) FAILED: ${err.message}`);
+        return [];
+      }
+    })
+  );
+  // Dedupe by code (一部アイテムは複数カテゴリに出る可能性)
+  const map = new Map();
+  for (const arr of results) for (const it of arr) if (!map.has(it.code)) map.set(it.code, it);
+  return [...map.values()];
+}
 
-  return {
-    code: item.code,
-    name: parsed.name || item.name || `#${item.code}`,
-    nameEn: parsed.nameEn,
-    price: parsed.price ?? item.price ?? null,
-    category:
-      parsed.category && parsed.category !== 'other'
-        ? parsed.category
-        : inferCategoryFromName(parsed.name || item.name || '', 'other'),
-    categoryJa: parsed.categoryJa || item.categoryJa || null,
-    imageUrl: parsed.imageUrl,
-    nutrition: parsed.nutrition,
-    origin: parsed.origin,
-    scrapedAt: new Date().toISOString(),
-  };
+async function enrichWithDetail(listing) {
+  console.log(`\nFetching ${listing.length} detail pages (concurrency=4, 500ms inter-request delay)…`);
+  const items = await mapWithConcurrency(listing, 4, async (item) => {
+    try {
+      const html = await fetchWithRetry(DETAIL_URL(item.code));
+      await sleep(500);
+      const parsed = parseDetailHtml(html, { code: item.code });
+      return {
+        ...item,
+        // menu_load.php から取れた値を優先、detail 側は栄養とフォールバック名のみ
+        name: item.name || parsed.name,
+        nameEn: item.nameEn || parsed.nameEn,
+        price: item.price ?? parsed.price,
+        nutrition: parsed.nutrition,
+        origin: parsed.origin,
+        scrapedAt: new Date().toISOString(),
+      };
+    } catch (err) {
+      console.warn(`  ! ${item.code} detail fetch failed: ${err.message}`);
+      return { ...item, nutrition: {}, origin: null, scrapedAt: new Date().toISOString(), _error: err.message };
+    }
+  });
+  return items;
 }
 
 function validate(items) {
   const issues = [];
-  for (const item of items) {
-    if (!item.code) issues.push(`missing code: ${JSON.stringify(item)}`);
-    if (!item.name) issues.push(`${item.code}: missing name`);
-    if (item.price == null || item.price <= 0 || item.price > 3000) {
-      issues.push(`${item.code} "${item.name}": price out of range (${item.price})`);
+  for (const it of items) {
+    if (!it.code) issues.push(`missing code: ${JSON.stringify(it)}`);
+    if (!it.name || it.name.length < 2) issues.push(`${it.code}: short or missing name ("${it.name}")`);
+    if (it.price == null || it.price <= 0 || it.price > 3000) {
+      issues.push(`${it.code} "${it.name}": price out of range (${it.price})`);
     }
-    if (item.nutrition?.energy == null) {
-      issues.push(`${item.code} "${item.name}": missing energy`);
+    if (it.nutrition?.energy == null) {
+      issues.push(`${it.code} "${it.name}": missing energy`);
     }
   }
   return issues;
@@ -142,35 +129,17 @@ async function main() {
   const startedAt = new Date();
   await fs.mkdir(OUT_DIR, { recursive: true });
 
-  const listing = await extractItemCodesWithBrowser();
+  const listing = await fetchAllCategories();
   if (listing.length === 0) {
-    throw new Error('No items extracted from menu.php — site structure may have changed.');
+    throw new Error('No items extracted — menu_load.php endpoints returned nothing. Site structure may have changed.');
   }
+  console.log(`\nDeduped ${listing.length} unique items across all categories.`);
 
-  console.log(`Fetching detail pages for ${listing.length} items (concurrency=4, 500ms delay)…`);
-  const items = await mapWithConcurrency(listing, 4, async (item) => {
-    try {
-      return await fetchDetail(item);
-    } catch (err) {
-      console.warn(`  ! ${item.code} failed: ${err.message}`);
-      return {
-        code: item.code,
-        name: item.name || `#${item.code}`,
-        price: item.price ?? null,
-        category: inferCategoryFromName(item.name || '', 'other'),
-        categoryJa: item.categoryJa || null,
-        imageUrl: `https://west2-univ.jp/menu_img/png_sp/${item.code}.png`,
-        nutrition: {},
-        origin: null,
-        scrapedAt: new Date().toISOString(),
-        _error: err.message,
-      };
-    }
-  });
+  const items = await enrichWithDetail(listing);
 
   const issues = validate(items);
   if (issues.length) {
-    console.warn(`Validation warnings (${issues.length}):`);
+    console.warn(`\nValidation warnings (${issues.length}):`);
     for (const i of issues.slice(0, 20)) console.warn(`  - ${i}`);
   }
 

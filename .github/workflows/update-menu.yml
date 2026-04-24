@@ -29,9 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Install Chromium for Puppeteer
-        run: npx --yes puppeteer browsers install chrome
-
       - name: Run scraper
         run: node scripts/scrape.mjs
         env:
