@@ -183,10 +183,11 @@ async function setActiveTab(tabId) {
 
   try {
     if (tabId === ALL_TAB_ID) {
+      // 一覧タブ: 3 食堂を個別にロード。各食堂は別々の場所にあり横断注文は不可なので、
+      // items は食堂別に保持したまま (メニュー全件表示用にのみマージしたビューを使う)。
       await Promise.all(state.cafeterias.map((c) => loadCafeteria(c.id)));
-      const merged = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id].items);
-      state.items = merged;
-      document.getElementById('app-title').textContent = '🍱 阪大豊中キャンパス 3食堂横断';
+      state.items = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id].items);
+      document.getElementById('app-title').textContent = '🍱 阪大豊中キャンパス 3食堂おすすめ (各2案)';
     } else {
       const { items } = await loadCafeteria(tabId);
       state.items = items;
@@ -202,8 +203,10 @@ async function setActiveTab(tabId) {
   renderCafeteriaMeta();
   updateMenuCount();
   renderMenuList(state.currentCat);
-  const all = tabId === ALL_TAB_ID ? '3食堂横断' : state.cafeterias.find((c) => c.id === tabId)?.name;
-  setStatus(`${all}: ${state.items.length} 品読込済。条件を設定して「組合せを探す」を押してください。`);
+  const label = tabId === ALL_TAB_ID
+    ? `3食堂合計 ${state.items.length} 品 (各2案ずつ計6案を提示)`
+    : `${state.cafeterias.find((c) => c.id === tabId)?.name}: ${state.items.length} 品読込済`;
+  setStatus(`${label}。条件を設定して「組合せを探す」を押してください。`);
   // タブ切替時は結果をクリア (前食堂の結果が残ると混乱するため)
   document.getElementById('results').innerHTML = '';
 }
@@ -267,6 +270,14 @@ function run() {
     return;
   }
 
+  if (state.activeTab === ALL_TAB_ID) {
+    runAllCafeterias(opts);
+  } else {
+    runSingleCafeteria(opts);
+  }
+}
+
+function runSingleCafeteria(opts) {
   const start = performance.now();
   setStatus('組合せを検索中…');
   const { top, enumerated, kept, truncated } = rankCombinations(state.items, {
@@ -297,10 +308,99 @@ function run() {
   renderResults(picks);
 }
 
+// 3 食堂はそれぞれ別の場所にあり、食堂をまたいだ注文は不可能。
+// よって各食堂ごとに独立に最適化し、上位 2 案ずつ (計 6 案) を並べて提示する。
+function runAllCafeterias(opts) {
+  const start = performance.now();
+  setStatus('各食堂の組合せを検索中…');
+
+  const groups = [];
+  const summaryParts = [];
+  let totalEnumerated = 0;
+  let totalKept = 0;
+
+  for (const cafeteria of state.cafeterias) {
+    const items = state.itemsByCafeteria[cafeteria.id]?.items ?? [];
+    if (items.length === 0) {
+      groups.push({ cafeteria, picks: [], reason: 'メニューデータなし' });
+      continue;
+    }
+    const { top, enumerated, kept } = rankCombinations(items, {
+      budget: opts.budget,
+      patterns: opts.patterns,
+      allowDessert: opts.allowDessert,
+      requireSoup: opts.requireSoup,
+      filters: opts.filters,
+      keepTop: 200,
+    });
+    totalEnumerated += enumerated;
+    totalKept += kept;
+
+    let picks;
+    if (top.length === 0) {
+      picks = [];
+    } else {
+      picks = opts.mode === 'random'
+        ? boltzmannSample(top, { temperature: 10, k: 2 })
+        : selectDiverseTopK(top, 2, 0.7);
+    }
+    groups.push({ cafeteria, picks, reason: picks.length === 0 ? '条件に合う組合せなし' : null });
+    summaryParts.push(`${cafeteria.name} ${picks.length}/${top.length === 0 ? 0 : 2}案`);
+  }
+
+  const elapsed = (performance.now() - start).toFixed(0);
+  const totalPicks = groups.reduce((sum, g) => sum + g.picks.length, 0);
+
+  if (totalPicks === 0) {
+    const filterHint = opts.filters.length > 0
+      ? ` (栄養条件 ${opts.filters.map((k) => NUTRITION_FILTERS[k]?.label ?? k).join('・')} を外すと見つかるかも)`
+      : '';
+    setStatus(`どの食堂でも予算 ${opts.budget}円 に合う組合せが見つかりませんでした${filterHint}`, 'warn');
+    renderResultsGrouped(groups);
+    return;
+  }
+
+  const filterLabel = opts.filters.length > 0 ? ` / 条件通過 ${totalKept.toLocaleString()} 件` : '';
+  setStatus(`3食堂 合計 ${totalEnumerated.toLocaleString()} 通り${filterLabel} から ${totalPicks} 案を ${elapsed}ms で選定 (${summaryParts.join(' / ')})`, 'info');
+  renderResultsGrouped(groups);
+}
+
 function renderResults(picks) {
   const container = document.getElementById('results');
   container.innerHTML = '';
   picks.forEach((combo, idx) => container.appendChild(renderCombo(combo, idx)));
+}
+
+// 食堂ごとにセクション見出し + 2 案ずつ表示
+function renderResultsGrouped(groups) {
+  const container = document.getElementById('results');
+  container.innerHTML = '';
+  for (const { cafeteria, picks, reason } of groups) {
+    const section = document.createElement('section');
+    section.className = 'cafeteria-group';
+    section.style.setProperty('--group-accent', CAFETERIA_COLORS[cafeteria.id] ?? '#2563eb');
+
+    const header = document.createElement('header');
+    header.className = 'cafeteria-group-header';
+    header.innerHTML = `
+      <span class="cafeteria-badge" style="background:${CAFETERIA_COLORS[cafeteria.id] ?? '#7f8c8d'}">${escapeHtml(cafeteria.name)}</span>
+      <span class="cafeteria-group-sub">${escapeHtml(cafeteria.hours)}</span>`;
+    section.appendChild(header);
+
+    if (picks.length === 0) {
+      const empty = document.createElement('p');
+      empty.className = 'cafeteria-group-empty';
+      empty.textContent = reason ?? '組合せが見つかりませんでした';
+      section.appendChild(empty);
+    } else {
+      picks.forEach((combo, idx) => {
+        // グループ表示ではセクション見出しに食堂名があるので、カード内の食堂バッジは省略する
+        section.appendChild(renderCombo(combo, idx, { showCafeteriaBadge: false }));
+      });
+    }
+
+    container.appendChild(section);
+  }
 }
 
 function nutritionBar(label, value, target, daily, color, unit = '', estimated = false) {
@@ -353,13 +453,13 @@ function renderScoreBreakdown(combo) {
     </details>`;
 }
 
-function renderCombo(combo, idx) {
+function renderCombo(combo, idx, renderOpts = {}) {
   const label = LABEL_ORDER[idx] || String(idx + 1);
   const card = document.createElement('article');
   card.className = 'combo-card';
   const n = combo.nutrition;
   const patternLabel = combo.pattern === 'teishoku' ? '定食' : '一品';
-  const showCafeteriaBadge = state.activeTab === ALL_TAB_ID;
+  const showCafeteriaBadge = renderOpts.showCafeteriaBadge ?? (state.activeTab === ALL_TAB_ID);
 
   const itemsHtml = combo.items
     .map((it) => {

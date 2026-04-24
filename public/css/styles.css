@@ -212,6 +212,44 @@ input[type=range] {
 /* Results */
 .results { display: grid; gap: 16px; }
 
+/* Cafeteria group (一覧タブ: 食堂ごと 2 案ずつのグループ表示) */
+.cafeteria-group {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border-left: 5px solid var(--group-accent, var(--primary));
+  box-shadow: var(--shadow);
+}
+.cafeteria-group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--border);
+}
+.cafeteria-group-header .cafeteria-badge {
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  font-weight: 700;
+}
+.cafeteria-group-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.cafeteria-group-empty {
+  margin: 0;
+  padding: 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+.cafeteria-group .combo-card {
+  box-shadow: none;
+  border-left-color: var(--group-accent, var(--primary));
+}
+
 .combo-card {
   background: var(--surface);
   border-radius: var(--radius);
