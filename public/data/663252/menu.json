@@ -7,6 +7,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611071.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 275,
       "protein": 12.8,
@@ -23,7 +24,7 @@
       "fiber": 1.8
     },
     "origin": "豚肉（ブラジル）じゃが芋（中国）玉葱（中国）人参（中国）",
-    "scrapedAt": "2026-04-24T08:06:41.671Z",
+    "scrapedAt": "2026-04-24T13:12:44.183Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -39,6 +40,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611072.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 293,
       "protein": 12.6,
@@ -55,7 +57,7 @@
       "fiber": 1.8
     },
     "origin": "じゃが芋（中国）鶏肉（中国）牛乳（国産）玉葱（中国）人参（中国）",
-    "scrapedAt": "2026-04-24T08:06:41.145Z",
+    "scrapedAt": "2026-04-24T13:12:43.638Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -71,6 +73,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611097.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 265,
       "protein": 12.8,
@@ -87,7 +90,7 @@
       "fiber": 0.1
     },
     "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-04-24T08:06:41.679Z",
+    "scrapedAt": "2026-04-24T13:12:44.193Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -103,6 +106,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612001.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 81,
       "protein": 6.7,
@@ -119,7 +123,7 @@
       "fiber": 2.5
     },
     "origin": "オクラ（インドネシア）鶏卵（国産）",
-    "scrapedAt": "2026-04-24T08:06:42.210Z",
+    "scrapedAt": "2026-04-24T13:12:44.733Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -135,6 +139,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612002.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 73,
       "protein": 7.8,
@@ -151,7 +156,7 @@
       "fiber": 0
     },
     "origin": "鶏きも（国産）",
-    "scrapedAt": "2026-04-24T08:06:42.738Z",
+    "scrapedAt": "2026-04-24T13:12:45.268Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -167,6 +172,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612005.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 226,
       "protein": 3,
@@ -183,7 +189,7 @@
       "fiber": 1.3
     },
     "origin": "じゃが芋（国産）牛肉（オーストラリア",
-    "scrapedAt": "2026-04-24T08:06:42.205Z",
+    "scrapedAt": "2026-04-24T13:12:44.725Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -199,6 +205,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612021.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 60,
       "protein": 2.4,
@@ -215,7 +222,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-04-24T08:06:42.210Z",
+    "scrapedAt": "2026-04-24T13:12:44.732Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -231,6 +238,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612046.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 136,
       "protein": 1.2,
@@ -247,7 +255,7 @@
       "fiber": 1.8
     },
     "origin": "茄子（中国）大根（国産）",
-    "scrapedAt": "2026-04-24T08:06:42.742Z",
+    "scrapedAt": "2026-04-24T13:12:45.273Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -263,6 +271,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612068.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 50,
       "protein": 3.7,
@@ -279,7 +288,7 @@
       "fiber": 3.1
     },
     "origin": "ブロッコリー（中国）ピーナッツ（アメリカ",
-    "scrapedAt": "2026-04-24T08:06:42.745Z",
+    "scrapedAt": "2026-04-24T13:12:45.272Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -295,6 +304,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612093.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 13,
       "protein": 1.4,
@@ -311,7 +321,7 @@
       "fiber": 2.5
     },
     "origin": "ほうれん草（国産）",
-    "scrapedAt": "2026-04-24T08:06:43.272Z",
+    "scrapedAt": "2026-04-24T13:12:45.812Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -327,6 +337,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612102.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 39,
       "protein": 0.8,
@@ -343,7 +354,7 @@
       "fiber": 2.5
     },
     "origin": "ごぼう（中国",
-    "scrapedAt": "2026-04-24T08:06:43.274Z",
+    "scrapedAt": "2026-04-24T13:12:45.813Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -359,6 +370,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612108.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 83,
       "protein": 6.4,
@@ -375,7 +387,7 @@
       "fiber": 3.4
     },
     "origin": "大豆（アメリカ）",
-    "scrapedAt": "2026-04-24T08:06:42.743Z",
+    "scrapedAt": "2026-04-24T13:12:45.270Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -391,6 +403,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612113.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 98,
       "protein": 0.9,
@@ -407,7 +420,7 @@
       "fiber": 1.8
     },
     "origin": "じゃが芋（国産）玉葱（国産",
-    "scrapedAt": "2026-04-24T08:06:43.275Z",
+    "scrapedAt": "2026-04-24T13:12:45.814Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -423,6 +436,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612120.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 8,
       "protein": 0.3,
@@ -439,7 +453,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-04-24T08:06:43.278Z",
+    "scrapedAt": "2026-04-24T13:12:45.818Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -455,6 +469,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/614001.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 71,
       "protein": 4.8,
@@ -471,7 +486,7 @@
       "fiber": 2.2
     },
     "origin": "豚肉（メキシコ）大根（中国）里芋（中国）玉葱（中国）人参（中国）ごぼう（中国）",
-    "scrapedAt": "2026-04-24T08:06:43.804Z",
+    "scrapedAt": "2026-04-24T13:12:46.357Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -487,6 +502,7 @@
     "category": "side",
     "categoryJa": "副菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/614010.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 24,
       "protein": 1.6,
@@ -503,7 +519,7 @@
       "fiber": 1
     },
     "origin": "若布（中国）豆腐（国内製造）葱（中国）",
-    "scrapedAt": "2026-04-24T08:06:43.806Z",
+    "scrapedAt": "2026-04-24T13:12:46.356Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -519,6 +535,7 @@
     "category": "dessert",
     "categoryJa": "デザート",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615004.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 98,
       "protein": 1.5,
@@ -535,7 +552,7 @@
       "fiber": 0.4
     },
     "origin": "液卵（国産",
-    "scrapedAt": "2026-04-24T08:06:45.400Z",
+    "scrapedAt": "2026-04-24T13:12:47.981Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -551,6 +568,7 @@
     "category": "dessert",
     "categoryJa": "デザート",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615005.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 138,
       "protein": 1.7,
@@ -567,7 +585,7 @@
       "fiber": 0.5
     },
     "origin": "ホイップクリーム（国内製造）栗あん（国内製造）",
-    "scrapedAt": "2026-04-24T08:06:45.404Z",
+    "scrapedAt": "2026-04-24T13:12:47.987Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -583,6 +601,7 @@
     "category": "dessert",
     "categoryJa": "デザート",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615015.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 157,
       "protein": 0.6,
@@ -599,7 +618,7 @@
       "fiber": 2.3
     },
     "origin": "さつま芋（国産）",
-    "scrapedAt": "2026-04-24T08:06:45.405Z",
+    "scrapedAt": "2026-04-24T13:12:47.991Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -615,6 +634,7 @@
     "category": "dessert",
     "categoryJa": "デザート",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615020.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 51,
       "protein": 1.5,
@@ -631,7 +651,7 @@
       "fiber": 0.3
     },
     "origin": "生乳（国産）パインアップル（フィリピン）パパイヤ（フィリピン）ナタデココ（フィリピン）",
-    "scrapedAt": "2026-04-24T08:06:45.408Z",
+    "scrapedAt": "2026-04-24T13:12:47.989Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -647,6 +667,7 @@
     "category": "dessert",
     "categoryJa": "デザート",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615028.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 94,
       "protein": 2.2,
@@ -663,7 +684,7 @@
       "fiber": 0.4
     },
     "origin": "小麦粉（国内製造）チョコレート（国内製造）",
-    "scrapedAt": "2026-04-24T08:06:45.932Z",
+    "scrapedAt": "2026-04-24T13:12:48.523Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -679,6 +700,7 @@
     "category": "dessert",
     "categoryJa": "デザート",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615033.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 81,
       "protein": 0.5,
@@ -695,7 +717,7 @@
       "fiber": 0.4
     },
     "origin": "米粉（国産）豆乳（国産）ブルーベリー（国産）",
-    "scrapedAt": "2026-04-24T08:06:45.938Z",
+    "scrapedAt": "2026-04-24T13:12:48.527Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -711,6 +733,7 @@
     "category": "bowl",
     "categoryJa": "丼・カレー",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616017.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 622,
       "protein": 16.8,
@@ -727,7 +750,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）鶏肉（中国）ほうれん草（国産）",
-    "scrapedAt": "2026-04-24T08:06:44.343Z",
+    "scrapedAt": "2026-04-24T13:12:46.899Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -743,6 +766,7 @@
     "category": "bowl",
     "categoryJa": "丼・カレー",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616080.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 722,
       "protein": 22.1,
@@ -759,7 +783,7 @@
       "fiber": 0.5
     },
     "origin": "精白米（国産）鶏肉（国産）キャベツ（国産",
-    "scrapedAt": "2026-04-24T08:06:44.869Z",
+    "scrapedAt": "2026-04-24T13:12:47.443Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -775,6 +799,7 @@
     "category": "bowl",
     "categoryJa": "丼・カレー",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616122.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 787,
       "protein": 20.5,
@@ -791,7 +816,7 @@
       "fiber": 3.5
     },
     "origin": "精白米（国産）豚肉（チリ",
-    "scrapedAt": "2026-04-24T08:06:44.872Z",
+    "scrapedAt": "2026-04-24T13:12:47.441Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -807,6 +832,7 @@
     "category": "bowl",
     "categoryJa": "丼・カレー",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616149.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 506,
       "protein": 9.3,
@@ -823,7 +849,7 @@
       "fiber": 3.5
     },
     "origin": "精白米（国産）じゃが芋（国産）人参（国産）",
-    "scrapedAt": "2026-04-24T08:06:44.874Z",
+    "scrapedAt": "2026-04-24T13:12:47.445Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -839,6 +865,7 @@
     "category": "noodle",
     "categoryJa": "麺類",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617065.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 346,
       "protein": 8.8,
@@ -855,7 +882,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）",
-    "scrapedAt": "2026-04-24T08:06:44.336Z",
+    "scrapedAt": "2026-04-24T13:12:46.903Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -871,6 +898,7 @@
     "category": "noodle",
     "categoryJa": "麺類",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617066.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 321,
       "protein": 14,
@@ -887,7 +915,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）",
-    "scrapedAt": "2026-04-24T08:06:44.340Z",
+    "scrapedAt": "2026-04-24T13:12:46.900Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -903,6 +931,7 @@
     "category": "noodle",
     "categoryJa": "麺類",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617077.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 446,
       "protein": 14.6,
@@ -919,7 +948,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）味付きつね（国内製造）",
-    "scrapedAt": "2026-04-24T08:06:43.807Z",
+    "scrapedAt": "2026-04-24T13:12:46.355Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -935,6 +964,7 @@
     "category": "noodle",
     "categoryJa": "麺類",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617078.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 421,
       "protein": 19.8,
@@ -951,7 +981,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）味付きつね（国内製造）",
-    "scrapedAt": "2026-04-24T08:06:43.809Z",
+    "scrapedAt": "2026-04-24T13:12:46.359Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -967,6 +997,7 @@
     "category": "noodle",
     "categoryJa": "麺類",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617131.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 702,
       "protein": 28.1,
@@ -983,7 +1014,7 @@
       "fiber": 3
     },
     "origin": "中華麺（国内製造）鶏肉（国産）担々麵スープ（国内製造）",
-    "scrapedAt": "2026-04-24T08:06:44.341Z",
+    "scrapedAt": "2026-04-24T13:12:46.901Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -999,6 +1030,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621001.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 267,
       "protein": 21.1,
@@ -1015,7 +1047,7 @@
       "fiber": 0.3
     },
     "origin": "鶏肉（タイ）",
-    "scrapedAt": "2026-04-24T08:06:41.140Z",
+    "scrapedAt": "2026-04-24T13:12:43.651Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1031,6 +1063,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621007.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 243,
       "protein": 17.1,
@@ -1047,7 +1080,7 @@
       "fiber": 0.3
     },
     "origin": "鶏肉（中国）",
-    "scrapedAt": "2026-04-24T08:06:41.142Z",
+    "scrapedAt": "2026-04-24T13:12:43.648Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1063,6 +1096,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621024.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 281,
       "protein": 20.5,
@@ -1079,7 +1113,7 @@
       "fiber": 1.5
     },
     "origin": "豚肉（ブラジル）玉葱（中国）",
-    "scrapedAt": "2026-04-24T08:06:41.146Z",
+    "scrapedAt": "2026-04-24T13:12:43.642Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1095,6 +1129,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621040.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 366,
       "protein": 15.4,
@@ -1111,7 +1146,7 @@
       "fiber": 0.5
     },
     "origin": "鶏肉（国産）",
-    "scrapedAt": "2026-04-24T08:06:41.677Z",
+    "scrapedAt": "2026-04-24T13:12:44.186Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1127,13 +1162,14 @@
     "category": "bowl",
     "categoryJa": "丼・カレー",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/663252_355267.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "fiber": 1.2,
       "vitaminB1": 0.3,
       "vitaminB2": 0.12
     },
     "origin": null,
-    "scrapedAt": "2026-04-24T08:06:44.874Z",
+    "scrapedAt": "2026-04-24T13:12:47.453Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1157,6 +1193,7 @@
     "category": "set",
     "categoryJa": "セット",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/698035.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 573,
       "protein": 19.7,
@@ -1173,7 +1210,7 @@
       "fiber": 0.5
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T08:06:45.940Z",
+    "scrapedAt": "2026-04-24T13:12:48.528Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1189,6 +1226,7 @@
     "category": "set",
     "categoryJa": "セット",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/698053.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 420,
       "protein": 19.6,
@@ -1205,7 +1243,7 @@
       "fiber": 1.2
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T08:06:46.465Z",
+    "scrapedAt": "2026-04-24T13:12:49.064Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1221,6 +1259,7 @@
     "category": "set",
     "categoryJa": "セット",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/698057.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 409,
       "protein": 19.4,
@@ -1237,7 +1276,7 @@
       "fiber": 1.2
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T08:06:45.936Z",
+    "scrapedAt": "2026-04-24T13:12:48.529Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1253,6 +1292,7 @@
     "category": "set",
     "categoryJa": "セット",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/698059.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 442,
       "protein": 22.1,
@@ -1269,7 +1309,7 @@
       "fiber": 1.2
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T08:06:46.470Z",
+    "scrapedAt": "2026-04-24T13:12:49.065Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1285,6 +1325,7 @@
     "category": "set",
     "categoryJa": "セット",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/698085.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 621,
       "protein": 15.9,
@@ -1301,7 +1342,7 @@
       "fiber": 0.4
     },
     "origin": "-",
-    "scrapedAt": "2026-04-24T08:06:46.469Z",
+    "scrapedAt": "2026-04-24T13:12:49.066Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1317,6 +1358,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/814174.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 229,
       "protein": 6.6,
@@ -1333,7 +1375,7 @@
       "fiber": 0.4
     },
     "origin": "鶏肉（タイ）",
-    "scrapedAt": "2026-04-24T08:06:41.678Z",
+    "scrapedAt": "2026-04-24T13:12:44.188Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1349,6 +1391,7 @@
     "category": "staple",
     "categoryJa": "ライス",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/814701.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 484,
       "protein": 7.8,
@@ -1365,7 +1408,7 @@
       "fiber": 4.7
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T08:06:46.471Z",
+    "scrapedAt": "2026-04-24T13:12:49.067Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1381,6 +1424,7 @@
     "category": "staple",
     "categoryJa": "ライス",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/814702.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 374,
       "protein": 6,
@@ -1397,7 +1441,7 @@
       "fiber": 3.6
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T08:06:46.997Z",
+    "scrapedAt": "2026-04-24T13:12:49.605Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1413,6 +1457,7 @@
     "category": "staple",
     "categoryJa": "ライス",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/814703.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 265,
       "protein": 4.3,
@@ -1429,7 +1474,7 @@
       "fiber": 2.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T08:06:47.001Z",
+    "scrapedAt": "2026-04-24T13:12:49.612Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1445,6 +1490,7 @@
     "category": "staple",
     "categoryJa": "ライス",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/814704.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 156,
       "protein": 2.5,
@@ -1461,7 +1507,7 @@
       "fiber": 1.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-04-24T08:06:47.002Z",
+    "scrapedAt": "2026-04-24T13:12:49.610Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1477,6 +1523,7 @@
     "category": "main",
     "categoryJa": "主菜",
     "imageUrl": "https://west2-univ.jp/menu_img/png_sp/825509.png",
+    "cafeteriaId": "663252",
     "nutrition": {
       "energy": 470,
       "protein": 28.5,
@@ -1493,7 +1540,7 @@
       "fiber": 0.3
     },
     "origin": "鶏肉（中国）",
-    "scrapedAt": "2026-04-24T08:06:42.209Z",
+    "scrapedAt": "2026-04-24T13:12:44.730Z",
     "_estimated": [
       {
         "key": "fiber",

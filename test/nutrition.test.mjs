@@ -8,6 +8,8 @@ import {
   scoreCombination,
   MEAL_TARGET,
   DAILY_RDI,
+  NUTRITION_FILTERS,
+  passesFilters,
 } from '../public/js/nutrition.js';
 
 test('aimScore: 0 yields 0', () => {
@@ -96,4 +98,81 @@ test('DAILY_RDI and MEAL_TARGET are consistent (1/3 ratio)', () => {
   for (const k of Object.keys(DAILY_RDI)) {
     assert.ok(Math.abs(MEAL_TARGET[k] * 3 - DAILY_RDI[k]) < 1e-6);
   }
+});
+
+// ---- Nutrition filter tests ----
+
+test('low-salt filter: 2.0g passes, 2.01g fails', () => {
+  const pred = NUTRITION_FILTERS['low-salt'].predicate;
+  assert.equal(pred({ salt: 2.0 }), true);
+  assert.equal(pred({ salt: 1.9 }), true);
+  assert.equal(pred({ salt: 2.01 }), false);
+});
+
+test('high-protein filter: at/above meal target passes', () => {
+  const pred = NUTRITION_FILTERS['high-protein'].predicate;
+  assert.equal(pred({ protein: MEAL_TARGET.protein }), true);
+  assert.equal(pred({ protein: MEAL_TARGET.protein + 5 }), true);
+  assert.equal(pred({ protein: MEAL_TARGET.protein - 0.01 }), false);
+});
+
+test('high-fiber filter: at/above meal target passes', () => {
+  const pred = NUTRITION_FILTERS['high-fiber'].predicate;
+  assert.equal(pred({ fiber: MEAL_TARGET.fiber }), true);
+  assert.equal(pred({ fiber: 0 }), false);
+});
+
+test('high-mineral filter: requires both Ca and Fe at target', () => {
+  const pred = NUTRITION_FILTERS['high-mineral'].predicate;
+  assert.equal(pred({ calcium: MEAL_TARGET.calcium, iron: MEAL_TARGET.iron }), true);
+  assert.equal(pred({ calcium: MEAL_TARGET.calcium, iron: MEAL_TARGET.iron - 0.1 }), false);
+  assert.equal(pred({ calcium: 0, iron: MEAL_TARGET.iron }), false);
+});
+
+test('high-vitamin filter: needs at least 3 of 4 vitamins at target', () => {
+  const pred = NUTRITION_FILTERS['high-vitamin'].predicate;
+  // 4/4
+  assert.equal(pred({
+    vitaminA: MEAL_TARGET.vitaminA,
+    vitaminB1: MEAL_TARGET.vitaminB1,
+    vitaminB2: MEAL_TARGET.vitaminB2,
+    vitaminC: MEAL_TARGET.vitaminC,
+  }), true);
+  // 3/4
+  assert.equal(pred({
+    vitaminA: MEAL_TARGET.vitaminA,
+    vitaminB1: MEAL_TARGET.vitaminB1,
+    vitaminB2: MEAL_TARGET.vitaminB2,
+    vitaminC: 0,
+  }), true);
+  // 2/4
+  assert.equal(pred({
+    vitaminA: MEAL_TARGET.vitaminA,
+    vitaminB1: MEAL_TARGET.vitaminB1,
+  }), false);
+});
+
+test('low-carb filter: ≤ 0.45 × energy / 4 passes', () => {
+  const pred = NUTRITION_FILTERS['low-carb'].predicate;
+  const threshold = MEAL_TARGET.energy * 0.45 / 4;
+  assert.equal(pred({ carbs: threshold }), true);
+  assert.equal(pred({ carbs: threshold + 0.01 }), false);
+  assert.equal(pred({ carbs: 0 }), true);
+});
+
+test('passesFilters: empty activeKeys always passes', () => {
+  assert.equal(passesFilters({ salt: 999 }, []), true);
+  assert.equal(passesFilters({ salt: 999 }, undefined), true);
+});
+
+test('passesFilters: multiple filters are AND-combined', () => {
+  const n = { salt: 1.5, protein: MEAL_TARGET.protein + 1 };
+  assert.equal(passesFilters(n, ['low-salt', 'high-protein']), true);
+  // Fails when one condition is violated
+  assert.equal(passesFilters({ ...n, salt: 3 }, ['low-salt', 'high-protein']), false);
+  assert.equal(passesFilters({ ...n, protein: 0 }, ['low-salt', 'high-protein']), false);
+});
+
+test('passesFilters: unknown filter key is ignored', () => {
+  assert.equal(passesFilters({ salt: 5 }, ['no-such-filter']), true);
 });

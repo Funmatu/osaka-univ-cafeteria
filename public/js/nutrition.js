@@ -116,3 +116,51 @@ export function scoreCombination(items) {
 }
 
 export { BONUS_KEYS };
+
+// 栄養トグル: UI で選択された条件を満たす組合せだけ通すハードフィルタ。
+// 値は 1食分 (MEAL_TARGET) を基準。「食塩控えめ」のみユーザー指定の 2g ハード上限。
+export const NUTRITION_FILTERS = Object.freeze({
+  'high-protein': {
+    label: 'タンパク質多め',
+    predicate: (n) => (n.protein ?? 0) >= MEAL_TARGET.protein,
+    hint: `たんぱく質 ≥ ${Math.round(MEAL_TARGET.protein)} g`,
+  },
+  'low-carb': {
+    label: '糖質控えめ',
+    // 1食の糖質目安 (energy×60%/4) の 75% を上限に設定 (≈99g)
+    predicate: (n) => (n.carbs ?? 0) <= MEAL_TARGET.energy * 0.45 / 4,
+    hint: `炭水化物 ≤ ${Math.round(MEAL_TARGET.energy * 0.45 / 4)} g`,
+  },
+  'low-salt': {
+    label: '食塩控えめ (≤2g)',
+    predicate: (n) => (n.salt ?? 0) <= 2.0,
+    hint: '食塩 ≤ 2.0 g',
+  },
+  'high-fiber': {
+    label: '食物繊維多め',
+    predicate: (n) => (n.fiber ?? 0) >= MEAL_TARGET.fiber,
+    hint: `食物繊維 ≥ ${MEAL_TARGET.fiber.toFixed(1)} g`,
+  },
+  'high-mineral': {
+    label: 'ミネラル多め',
+    predicate: (n) => (n.calcium ?? 0) >= MEAL_TARGET.calcium && (n.iron ?? 0) >= MEAL_TARGET.iron,
+    hint: `Ca ≥ ${Math.round(MEAL_TARGET.calcium)}mg かつ Fe ≥ ${MEAL_TARGET.iron.toFixed(1)}mg`,
+  },
+  'high-vitamin': {
+    label: 'ビタミン多め',
+    predicate: (n) => {
+      const keys = ['vitaminA', 'vitaminB1', 'vitaminB2', 'vitaminC'];
+      return keys.filter((k) => (n[k] ?? 0) >= MEAL_TARGET[k]).length >= 3;
+    },
+    hint: 'A/B1/B2/C のうち 3 種以上が 1食分目標に到達',
+  },
+});
+
+export function passesFilters(nutrition, activeKeys) {
+  if (!activeKeys || activeKeys.length === 0) return true;
+  for (const key of activeKeys) {
+    const f = NUTRITION_FILTERS[key];
+    if (f && !f.predicate(nutrition)) return false;
+  }
+  return true;
+}

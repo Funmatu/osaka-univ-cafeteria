@@ -38,7 +38,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/menu.json public/data/meta.json
+          git add public/data/
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
@@ -53,6 +53,7 @@ jobs:
           name: scrape-debug
           path: |
             debug-*.png
-            public/data/*.json
+            public/data/**/*.json
+            public/data/index.json
           if-no-files-found: ignore
           retention-days: 7

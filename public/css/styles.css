@@ -41,6 +41,69 @@ html, body {
   position: relative;
 }
 
+/* Cafeteria tabs */
+.cafeteria-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 6px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.cafeteria-tab {
+  flex: 1 0 auto;
+  min-width: max-content;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  --tab-accent: var(--primary);
+}
+.cafeteria-tab:hover { background: #f3f4f6; color: var(--text); }
+.cafeteria-tab.active {
+  background: var(--tab-accent);
+  color: white;
+}
+.cafeteria-tab-all { font-weight: 700; }
+.cafeteria-tab-all.active {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+}
+
+/* Cafeteria meta card(s) */
+.cafeteria-meta {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.cafeteria-meta-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--meta-accent, var(--primary));
+  display: grid;
+  gap: 2px;
+  font-size: 0.85rem;
+}
+.cafeteria-meta-card strong { font-size: 0.95rem; }
+.cafeteria-meta-card .meta-line { color: var(--muted); }
+.cafeteria-meta-card .meta-source {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+.cafeteria-meta-card .meta-source:hover { text-decoration: underline; }
+
 .controls {
   background: var(--surface);
   border-radius: var(--radius);
@@ -99,6 +162,26 @@ input[type=range] {
 }
 .segmented input,
 .checkbox input { accent-color: var(--primary); }
+
+/* Nutrition toggles (ハードフィルタ・複数選択可) */
+.nutrition-toggles { align-items: flex-start; }
+.nutrition-toggles .toggle {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.nutrition-toggles .toggle:hover { background: #eef2ff; }
+.nutrition-toggles .toggle.active {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+}
 
 .primary-button {
   display: block;
@@ -208,6 +291,17 @@ input[type=range] {
   vertical-align: middle;
 }
 
+.cafeteria-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: white;
+  margin-right: 6px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+
 .combo-summary {
   display: flex;
   justify-content: space-between;
@@ -256,6 +350,61 @@ input[type=range] {
 .nut-row.estimated .nut-fill {
   background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(255,255,255,0.35) 3px, rgba(255,255,255,0.35) 6px);
 }
+
+/* Score breakdown */
+.score-breakdown {
+  margin-top: 12px;
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+}
+.score-breakdown summary {
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+  padding: 4px 0;
+}
+.score-breakdown summary:hover { color: var(--text); }
+.breakdown-body {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 0.78rem;
+}
+.breakdown-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 130px;
+  gap: 8px;
+  align-items: center;
+}
+.breakdown-label { color: var(--muted); }
+.breakdown-bar {
+  position: relative;
+  height: 8px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.breakdown-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+  border-radius: 999px;
+}
+.breakdown-values {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+.breakdown-total {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--border);
+  text-align: right;
+  font-size: 0.82rem;
+}
+.breakdown-total strong { color: var(--primary); font-size: 0.95rem; }
 
 /* Menu browser */
 .menu-browser {
@@ -328,4 +477,6 @@ input[type=range] {
   .nut-daily { display: none; }
   .combo-item { grid-template-columns: 40px 1fr auto; }
   .combo-item .kcal { display: none; }
+  .breakdown-row { grid-template-columns: 64px 1fr 108px; }
+  .cafeteria-tab { padding: 8px 10px; font-size: 0.82rem; }
 }

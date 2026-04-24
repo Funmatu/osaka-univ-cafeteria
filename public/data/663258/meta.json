@@ -1,0 +1,20 @@
+{
+  "cafeteriaId": "663258",
+  "cafeteriaName": "大阪大学生協カフェテリアかさね",
+  "slug": "kasane",
+  "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663258",
+  "hours": "平日 11:00-19:30",
+  "holidays": "土日祝",
+  "lastUpdated": "2026-04-24T13:12:42.720Z",
+  "itemCount": 37,
+  "withNutrition": 36,
+  "augmented": 37,
+  "issues": 1,
+  "referenceDb": {
+    "version": "1.0.0",
+    "basedOn": "日本食品標準成分表 2020年版 (八訂) / 文部科学省",
+    "url": "https://fooddb.mext.go.jp/",
+    "license": "数値データ自体は測定値のため著作物性なし (日本著作権法10条2項)。出典明示で再利用可能。",
+    "entryCount": 55
+  }
+}

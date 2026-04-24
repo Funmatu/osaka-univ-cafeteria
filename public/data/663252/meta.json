@@ -1,8 +1,11 @@
 {
   "cafeteriaId": "663252",
-  "cafeteriaName": "大阪大学生協 豊中図書館下食堂",
+  "cafeteriaName": "大阪大学生協豊中図書館下食堂",
+  "slug": "toyonaka-library",
   "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663252",
-  "lastUpdated": "2026-04-24T08:06:40.439Z",
+  "hours": "平日 11:00-19:30 / 土 11:00-13:30",
+  "holidays": "日祝",
+  "lastUpdated": "2026-04-24T13:12:42.720Z",
   "itemCount": 47,
   "withNutrition": 46,
   "augmented": 47,

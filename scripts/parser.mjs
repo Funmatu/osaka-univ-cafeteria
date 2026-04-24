@@ -23,6 +23,8 @@ const NUMERIC_PATTERNS = [
 
 const SITE_HEADER_NAMES = [
   '大阪大学生協豊中図書館下食堂',
+  '大阪大学生協カフェテリアかさね',
+  '大阪大学生協福利会館3階食堂',
   '大阪大学生協',
 ];
 

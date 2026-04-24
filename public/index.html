@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>阪大生協 豊中図書館下食堂 ｜ 栄養バランス最適化メニュー提案</title>
-  <meta name="description" content="大阪大学生協 豊中図書館下食堂の日替わりメニューから、予算内で栄養バランスの良い組合せ (A/B/C定食) を自動提案します。" />
+  <title>阪大豊中キャンパス食堂 ｜ 栄養バランス最適化メニュー提案</title>
+  <meta name="description" content="大阪大学生協 豊中キャンパス3食堂 (豊中図書館下食堂・カフェテリアかさね・福利会館3階食堂) の日替わりメニューから、予算内で栄養バランスの良い組合せ (A/B/C) を自動提案します。" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍱%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="app-header">
-    <h1>🍱 阪大生協 豊中図書館下食堂</h1>
+    <h1 id="app-title">🍱 阪大豊中キャンパス食堂</h1>
     <p class="subtitle">栄養バランス最適化メニュー提案</p>
   </header>
 
   <main class="app-main">
+    <nav class="cafeteria-tabs" role="tablist" aria-label="食堂切替">
+      <!-- タブは app.js から index.json を元に動的生成 -->
+    </nav>
+
+    <section class="cafeteria-meta" aria-live="polite"></section>
+
     <section class="controls" aria-label="検索条件">
       <div class="control-row">
         <label for="budget">💴 予算</label>
@@ -42,6 +48,11 @@
         <label class="checkbox"><input type="checkbox" id="require-soup" /> 汁物必須</label>
       </div>
 
+      <div class="control-row nutrition-toggles" aria-label="栄養条件">
+        <span class="control-label">🥗 栄養重視</span>
+        <!-- トグルボタンは app.js で生成 (複数選択可・ハードフィルタ) -->
+      </div>
+
       <button id="find" class="primary-button" type="button">🔄 組合せを探す</button>
       <p id="status" class="status" aria-live="polite"></p>
     </section>
@@ -67,10 +78,6 @@
 
   <footer class="app-footer">
     <p>データ最終更新: <span id="last-updated">—</span></p>
-    <p>
-      出典:
-      <a href="https://west2-univ.jp/sp/menu.php?t=663252" target="_blank" rel="noopener">west2-univ.jp (大阪大学生協 豊中図書館下食堂)</a>
-    </p>
     <p class="small">
       栄養目標は「日本人の食事摂取基準2020」成人男性 18-29歳・身体活動レベル II 相当の 1/3 (1食分)。
       野菜・食物繊維・カルシウム・鉄・たんぱく質は 1日分に近づくほど加点。
