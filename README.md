@@ -50,7 +50,7 @@
 - **MMR (Maximal Marginal Relevance)** で A/B/C 3 案を多様化 (λ = 0.7)。毎回酷似した組合せにならない。
 - **Boltzmann サンプリング** (温度 T = 10) による「気分でランダム」モード。質を担保しつつ日々違う提案。
 - 全最適化はブラウザ内 JavaScript で完結。**サーバー不要 / GitHub Pages のみで動作**。
-- 毎朝 06:00 JST に GitHub Actions が west2-univ.jp から最新メニューと**本物の栄養成分**を取得、データが変化していれば自動 commit & 再デプロイ。**3 食堂を順次スクレイプ** (食堂間 1 秒 sleep)。
+- 毎朝 10:00 JST に GitHub Actions が west2-univ.jp から最新メニューと**本物の栄養成分**を取得、データが変化していれば自動 commit & 再デプロイ。**3 食堂を順次スクレイプ** (食堂間 1 秒 sleep)。
 - **食品成分表 八訂ベースの補完レイヤー**により、サイトが公開していない食物繊維・B1・B2 を 55 パターンの料理テンプレートで推定補填。推定値は UI で識別表示。
 
 ---
@@ -108,7 +108,7 @@
 ```
 ┌────────────────────────────────────────────────────────┐
 │  GitHub Actions: update-menu.yml                       │
-│  cron '0 21 * * *' (UTC)  =  毎朝 06:00 JST            │
+│  cron '0 1 * * *' (UTC)  =  毎朝 10:00 JST             │
 │                                                        │
 │    ① fetchAllCategories()                              │
 │       menu_load.php?a=on_{a,b,c,d,e,f,g,bunrui1} を    │
@@ -156,7 +156,7 @@
 ```
 .
 ├── .github/workflows/
-│   ├── update-menu.yml          # 毎朝 06:00 JST の自動スクレイピング
+│   ├── update-menu.yml          # 毎朝 10:00 JST の自動スクレイピング
 │   └── pages.yml                # GitHub Pages 自動デプロイ
 │
 ├── scripts/                     # Node.js 側 (GitHub Actions 専用)
@@ -787,7 +787,7 @@ npm test
 
 | 項目 | 値 |
 |---|---|
-| トリガ | `schedule: '0 21 * * *'` (UTC 21:00 = **JST 06:00**) + `workflow_dispatch` |
+| トリガ | `schedule: '0 1 * * *'` (UTC 01:00 = **JST 10:00**) + `workflow_dispatch` |
 | ランナー | `ubuntu-latest` |
 | タイムアウト | 15 分 |
 | 権限 | `contents: write` |

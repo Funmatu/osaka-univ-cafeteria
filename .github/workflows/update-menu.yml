@@ -2,8 +2,8 @@ name: Update Menu Data
 
 on:
   schedule:
-    # UTC 21:00 = JST 06:00 (毎朝早朝)
-    - cron: '0 21 * * *'
+    # UTC 01:00 = JST 10:00 (サーバー更新後を狙う)
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 permissions:
