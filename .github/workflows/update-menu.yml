@@ -2,12 +2,12 @@ name: Update Menu Data
 
 on:
   schedule:
-    # UTC 01:47 = JST 10:47 schedule (食堂開店 11:00 直前を狙う)。
+    # UTC 21:47 = JST 6:47 + 4 hours delay schedule (食堂開店 11:00 直前を狙う)。
     # 食堂サーバー側のメニュー更新は JST 10:45 までに完了する想定 (@handai_fs の
     # Twitter 投稿時刻より推定)。top-of-hour (:00) は GitHub Actions schedule
     # event が世界的に混雑して数時間遅延する既知挙動があるため、off-minute (:47)
     # で混雑回避しつつ食堂開店前ギリギリを狙う。
-    - cron: '47 1 * * *'
+    - cron: '47 21 * * *'
   workflow_dispatch:
 
 permissions:
