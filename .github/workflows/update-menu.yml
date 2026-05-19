@@ -2,12 +2,14 @@ name: Update Menu Data
 
 on:
   schedule:
-    # UTC 23:27 = JST 8:27 + 2 hours delay schedule (食堂開店 11:00 直前を狙う)。
+    # UTC 23:33 = JST 08:33 + 約 2h15m 遅延 (GitHub Actions schedule event の global
+    # 混雑で UTC 21:00 帯 +43m → UTC 01:00 帯 +3h43m と線形に伸びる実測パターン
+    # から線形補間で予測。実 fire JST 10:51 想定で食堂開店 11:00 直前を狙う)。
     # 食堂サーバー側のメニュー更新は JST 10:45 までに完了する想定 (@handai_fs の
     # Twitter 投稿時刻より推定)。top-of-hour (:00) は GitHub Actions schedule
-    # event が世界的に混雑して数時間遅延する既知挙動があるため、off-minute (:47)
+    # event が世界的に混雑して数時間遅延する既知挙動があるため、off-minute (:33)
     # で混雑回避しつつ食堂開店前ギリギリを狙う。
-    - cron: '27 23 * * *'
+    - cron: '33 23 * * *'
   workflow_dispatch:
 
 permissions:
@@ -33,10 +35,22 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Log schedule delay
+        run: |
+          echo "cron_expression=${{ github.event.schedule }}"
+          echo "actual_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "actual_jst=$(TZ=Asia/Tokyo date +%Y-%m-%dT%H:%M:%S%z)"
+          echo "trigger_event=${{ github.event_name }}"
+
       - name: Run scraper
         run: node scripts/scrape.mjs
         env:
           TZ: Asia/Tokyo
+
+      - name: Log scraped JSON timestamp
+        run: |
+          echo "json_last_updated=$(jq -r '.lastUpdated' public/data/index.json)"
+          echo "scrape_completed_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
       - name: Commit updated data if changed
         run: |
