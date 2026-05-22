@@ -24,7 +24,7 @@
       "fiber": 0.8
     },
     "origin": "豆腐（国内製造）キャベツ（中国）豚肉（ブラジル）玉葱（中国）",
-    "scrapedAt": "2026-05-21T01:31:22.564Z",
+    "scrapedAt": "2026-05-22T01:29:11.752Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -57,11 +57,44 @@
       "fiber": 0.1
     },
     "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-05-21T01:31:23.192Z",
+    "scrapedAt": "2026-05-22T01:29:12.415Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "食品成分表 八訂 10154 さば 生 (80g切身)"
+      }
+    ]
+  },
+  {
+    "code": "611100",
+    "name": "ぶり照り煮",
+    "nameEn": "Simmered yellowtail in soy sauce",
+    "price": 253,
+    "category": "main",
+    "categoryJa": "主菜",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611100.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 156,
+      "protein": 13,
+      "fat": 10.6,
+      "carbs": 5.6,
+      "salt": 1,
+      "calcium": 4,
+      "iron": 0.8,
+      "vegetable": 0,
+      "vitaminA": 30,
+      "vitaminB1": 0.14,
+      "vitaminB2": 0.22,
+      "vitaminC": 2,
+      "fiber": 0
+    },
+    "origin": "ブリ（国産）",
+    "scrapedAt": "2026-05-22T01:29:13.085Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 10241 ぶり 生 (80g切身)"
       }
     ]
   },
@@ -90,7 +123,7 @@
       "fiber": 2.5
     },
     "origin": "オクラ（インドネシア）鶏卵（国産）",
-    "scrapedAt": "2026-05-21T01:31:24.464Z",
+    "scrapedAt": "2026-05-22T01:29:13.754Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -123,7 +156,7 @@
       "fiber": 0
     },
     "origin": "鶏きも（国産）",
-    "scrapedAt": "2026-05-21T01:31:24.474Z",
+    "scrapedAt": "2026-05-22T01:29:13.761Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -132,31 +165,64 @@
     ]
   },
   {
-    "code": "612008",
-    "name": "ハッシュポテト",
-    "nameEn": "Petit hashed browns",
+    "code": "612006",
+    "name": "すき焼きコロッケ",
+    "nameEn": "Fried sukiyaki style croquette",
     "price": 132,
     "category": "main",
     "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612008.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612006.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 130,
-      "protein": 1.4,
-      "fat": 6.9,
-      "carbs": 14.7,
-      "salt": 0.8,
-      "calcium": 4,
+      "energy": 202,
+      "protein": 3.2,
+      "fat": 13.4,
+      "carbs": 17.7,
+      "salt": 0.7,
+      "calcium": 8,
       "iron": 0.4,
-      "vegetable": 0,
-      "vitaminA": 0,
-      "vitaminB1": 0.05,
+      "vegetable": 5,
+      "vitaminA": 1,
+      "vitaminB1": 0.04,
       "vitaminB2": 0.02,
-      "vitaminC": 7,
+      "vitaminC": 5,
+      "fiber": 1.3
+    },
+    "origin": "じゃが芋（国産）玉葱（国産）牛肉（オーストラリア）",
+    "scrapedAt": "2026-05-22T01:29:13.753Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 18006 コロッケ (じゃが芋主体、70g)"
+      }
+    ]
+  },
+  {
+    "code": "612007",
+    "name": "春巻き",
+    "nameEn": "Spring rolls",
+    "price": 132,
+    "category": "main",
+    "categoryJa": "主菜",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612007.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 305,
+      "protein": 3.9,
+      "fat": 23.1,
+      "carbs": 20.7,
+      "salt": 1,
+      "calcium": 16,
+      "iron": 0.4,
+      "vegetable": 13,
+      "vitaminA": 11,
+      "vitaminB1": 0.04,
+      "vitaminB2": 0.03,
+      "vitaminC": 2,
       "fiber": 0.8
     },
-    "origin": "じゃが芋（ベルギー",
-    "scrapedAt": "2026-05-21T01:31:23.820Z",
+    "origin": "竹の子（中国",
+    "scrapedAt": "2026-05-22T01:29:13.092Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -189,7 +255,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-05-21T01:31:23.825Z",
+    "scrapedAt": "2026-05-22T01:29:13.756Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -222,7 +288,7 @@
       "fiber": 2
     },
     "origin": "キャベツ（国産）玉葱（国産",
-    "scrapedAt": "2026-05-21T01:31:24.479Z",
+    "scrapedAt": "2026-05-22T01:29:14.421Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -255,7 +321,7 @@
       "fiber": 2.5
     },
     "origin": "ほうれん草（国産）",
-    "scrapedAt": "2026-05-21T01:31:25.107Z",
+    "scrapedAt": "2026-05-22T01:29:14.419Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -288,7 +354,7 @@
       "fiber": 2.5
     },
     "origin": "ごぼう（中国",
-    "scrapedAt": "2026-05-21T01:31:25.120Z",
+    "scrapedAt": "2026-05-22T01:29:14.432Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -321,7 +387,7 @@
       "fiber": 1.8
     },
     "origin": "じゃが芋（国産）玉葱（国産",
-    "scrapedAt": "2026-05-21T01:31:25.126Z",
+    "scrapedAt": "2026-05-22T01:29:15.108Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -354,7 +420,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-05-21T01:31:25.130Z",
+    "scrapedAt": "2026-05-22T01:29:15.116Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -387,7 +453,7 @@
       "fiber": 0.4
     },
     "origin": "玉葱（国産）豚肉（国産：宮崎県）",
-    "scrapedAt": "2026-05-21T01:31:23.195Z",
+    "scrapedAt": "2026-05-22T01:29:12.423Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -420,7 +486,7 @@
       "fiber": 2
     },
     "origin": "もずく（国産：沖縄県）オクラ（インドネシア）",
-    "scrapedAt": "2026-05-21T01:31:24.483Z",
+    "scrapedAt": "2026-05-22T01:29:14.426Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -453,7 +519,7 @@
       "fiber": 2.2
     },
     "origin": "豚肉（メキシコ）大根（中国）里芋（中国）玉葱（中国）人参（中国）ごぼう（中国）",
-    "scrapedAt": "2026-05-21T01:31:25.739Z",
+    "scrapedAt": "2026-05-22T01:29:15.098Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -486,7 +552,7 @@
       "fiber": 1
     },
     "origin": "若布（中国）豆腐（国内製造）葱（中国）",
-    "scrapedAt": "2026-05-21T01:31:25.752Z",
+    "scrapedAt": "2026-05-22T01:29:15.120Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -519,7 +585,7 @@
       "fiber": 0.5
     },
     "origin": "ホイップクリーム（国内製造）栗あん（国内製造）",
-    "scrapedAt": "2026-05-21T01:31:27.642Z",
+    "scrapedAt": "2026-05-22T01:29:17.786Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -552,7 +618,7 @@
       "fiber": 2.3
     },
     "origin": "さつま芋（国産）",
-    "scrapedAt": "2026-05-21T01:31:27.640Z",
+    "scrapedAt": "2026-05-22T01:29:17.138Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -585,7 +651,7 @@
       "fiber": 1.5
     },
     "origin": "クリーム（国内製造）小麦粉（国産",
-    "scrapedAt": "2026-05-21T01:31:27.669Z",
+    "scrapedAt": "2026-05-22T01:29:17.795Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -618,7 +684,7 @@
       "fiber": 0.5
     },
     "origin": "小麦粉（アメリカ",
-    "scrapedAt": "2026-05-21T01:31:28.261Z",
+    "scrapedAt": "2026-05-22T01:29:17.803Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -651,7 +717,7 @@
       "fiber": 1.5
     },
     "origin": "マンゴー（インド）パイナップル（インドネシア）",
-    "scrapedAt": "2026-05-21T01:31:27.631Z",
+    "scrapedAt": "2026-05-22T01:29:17.121Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -684,7 +750,7 @@
       "fiber": 0.3
     },
     "origin": "精白米（国産）鶏肉（中国）",
-    "scrapedAt": "2026-05-21T01:31:27.010Z",
+    "scrapedAt": "2026-05-22T01:29:16.466Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -717,7 +783,7 @@
       "fiber": 0.3
     },
     "origin": "精白米（国産）鶏肉（中国）",
-    "scrapedAt": "2026-05-21T01:31:27.013Z",
+    "scrapedAt": "2026-05-22T01:29:17.115Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -750,7 +816,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）鶏肉（国産",
-    "scrapedAt": "2026-05-21T01:31:26.393Z",
+    "scrapedAt": "2026-05-22T01:29:16.458Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -783,7 +849,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）鶏肉（国産",
-    "scrapedAt": "2026-05-21T01:31:27.000Z",
+    "scrapedAt": "2026-05-22T01:29:16.455Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -816,7 +882,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）",
-    "scrapedAt": "2026-05-21T01:31:26.384Z",
+    "scrapedAt": "2026-05-22T01:29:16.446Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -849,7 +915,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）",
-    "scrapedAt": "2026-05-21T01:31:26.380Z",
+    "scrapedAt": "2026-05-22T01:29:15.795Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -882,7 +948,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）味付きつね（国内製造）",
-    "scrapedAt": "2026-05-21T01:31:26.368Z",
+    "scrapedAt": "2026-05-22T01:29:15.786Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -915,7 +981,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）味付きつね（国内製造）",
-    "scrapedAt": "2026-05-21T01:31:25.761Z",
+    "scrapedAt": "2026-05-22T01:29:15.790Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -948,7 +1014,7 @@
       "fiber": 2.8
     },
     "origin": "中華麺（国内製造）鶏肉（中国）鶏卵（国産）",
-    "scrapedAt": "2026-05-21T01:31:25.755Z",
+    "scrapedAt": "2026-05-22T01:29:15.776Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -981,11 +1047,44 @@
       "fiber": 0.3
     },
     "origin": "鶏肉（中国",
-    "scrapedAt": "2026-05-21T01:31:23.822Z",
+    "scrapedAt": "2026-05-22T01:29:13.091Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "食品成分表 八訂 11225 若鶏もも 皮つき (100g)"
+      }
+    ]
+  },
+  {
+    "code": "621009",
+    "name": "ジューシー鶏カツオーロラソース",
+    "nameEn": "Fried chicken cutlet with aurora sauce",
+    "price": 341,
+    "category": "main",
+    "categoryJa": "主菜",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621009.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 508,
+      "protein": 14.8,
+      "fat": 40.9,
+      "carbs": 21.3,
+      "salt": 1.4,
+      "calcium": 19,
+      "iron": 1,
+      "vegetable": 15,
+      "vitaminA": 45,
+      "vitaminB1": 0.11,
+      "vitaminB2": 0.14,
+      "vitaminC": 5,
+      "fiber": 0.8
+    },
+    "origin": "鶏肉（タイ",
+    "scrapedAt": "2026-05-22T01:29:13.084Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "category-fallback:main"
       }
     ]
   },
@@ -1014,44 +1113,11 @@
       "fiber": 1.5
     },
     "origin": "豚肉（ブラジル）キャベツ（国産",
-    "scrapedAt": "2026-05-21T01:31:22.561Z",
+    "scrapedAt": "2026-05-22T01:29:11.754Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "食品成分表 八訂 複合 豚肉野菜炒め (120g)"
-      }
-    ]
-  },
-  {
-    "code": "621036",
-    "name": "ロースカツ味噌だれ",
-    "nameEn": "Fried pork cutlet with miso based sauce",
-    "price": 297,
-    "category": "main",
-    "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621036.png",
-    "cafeteriaId": "663258",
-    "nutrition": {
-      "energy": 464,
-      "protein": 16.8,
-      "fat": 27.3,
-      "carbs": 36.9,
-      "salt": 2.2,
-      "calcium": 29,
-      "iron": 1.2,
-      "vegetable": 0,
-      "vitaminA": 4,
-      "vitaminB1": 0.41,
-      "vitaminB2": 0.1,
-      "vitaminC": 0,
-      "fiber": 0.5
-    },
-    "origin": "豚肉（チリ",
-    "scrapedAt": "2026-05-21T01:31:23.823Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "食品成分表 八訂 11276 ぶたロース とんかつ (100g、B1は豚肉由来)"
       }
     ]
   },
@@ -1080,7 +1146,7 @@
       "fiber": 0.5
     },
     "origin": "鶏肉（国産）",
-    "scrapedAt": "2026-05-21T01:31:22.559Z",
+    "scrapedAt": "2026-05-22T01:29:11.746Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1113,7 +1179,7 @@
       "fiber": 1.2
     },
     "origin": "鶏肉（国産）玉葱（中国）",
-    "scrapedAt": "2026-05-21T01:31:23.189Z",
+    "scrapedAt": "2026-05-22T01:29:12.416Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1146,7 +1212,7 @@
       "fiber": 0.4
     },
     "origin": "サケ（国産）プロセスチーズ（国内製造）",
-    "scrapedAt": "2026-05-21T01:31:23.191Z",
+    "scrapedAt": "2026-05-22T01:29:12.421Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1179,7 +1245,7 @@
       "fiber": 0.8
     },
     "origin": "鶏肉（タイ",
-    "scrapedAt": "2026-05-21T01:31:22.563Z",
+    "scrapedAt": "2026-05-22T01:29:11.749Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1202,7 +1268,7 @@
       "vitaminB2": 0.15
     },
     "origin": null,
-    "scrapedAt": "2026-05-21T01:31:27.038Z",
+    "scrapedAt": "2026-05-22T01:29:17.145Z",
     "_estimated": [
       {
         "key": "fiber",
