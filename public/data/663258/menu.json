@@ -24,44 +24,11 @@
       "fiber": 0.8
     },
     "origin": "じゃが芋（中国）鶏肉（中国）キャベツ（中国）トマト（アメリカ",
-    "scrapedAt": "2026-05-26T01:25:41.741Z",
+    "scrapedAt": "2026-05-27T01:34:37.051Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "category-fallback:main"
-      }
-    ]
-  },
-  {
-    "code": "611096",
-    "name": "さば味噌煮",
-    "nameEn": "Mackerel simmered in miso",
-    "price": 253,
-    "category": "main",
-    "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611096.png",
-    "cafeteriaId": "663258",
-    "nutrition": {
-      "energy": 272,
-      "protein": 13,
-      "fat": 19.5,
-      "carbs": 8.8,
-      "salt": 1,
-      "calcium": 10,
-      "iron": 0.8,
-      "vegetable": 0,
-      "vitaminA": 32,
-      "vitaminB1": 0.1,
-      "vitaminB2": 0.25,
-      "vitaminC": 1,
-      "fiber": 0.1
-    },
-    "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-05-26T01:25:43.003Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "食品成分表 八訂 10154 さば 生 (80g切身)"
       }
     ]
   },
@@ -90,7 +57,7 @@
       "fiber": 0.1
     },
     "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-05-26T01:25:42.374Z",
+    "scrapedAt": "2026-05-27T01:34:37.737Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -123,7 +90,7 @@
       "fiber": 2.5
     },
     "origin": "オクラ（インドネシア）鶏卵（国産）",
-    "scrapedAt": "2026-05-26T01:25:43.002Z",
+    "scrapedAt": "2026-05-27T01:34:38.435Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -156,7 +123,7 @@
       "fiber": 0
     },
     "origin": "鶏きも（国産）",
-    "scrapedAt": "2026-05-26T01:25:43.637Z",
+    "scrapedAt": "2026-05-27T01:34:38.445Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -189,7 +156,7 @@
       "fiber": 0.8
     },
     "origin": "タイ製造",
-    "scrapedAt": "2026-05-26T01:25:42.999Z",
+    "scrapedAt": "2026-05-27T01:34:38.424Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -222,7 +189,7 @@
       "fiber": 1.3
     },
     "origin": "牛乳（国産）",
-    "scrapedAt": "2026-05-26T01:25:42.372Z",
+    "scrapedAt": "2026-05-27T01:34:37.738Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -255,7 +222,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-05-26T01:25:43.004Z",
+    "scrapedAt": "2026-05-27T01:34:38.442Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -288,7 +255,7 @@
       "fiber": 2.5
     },
     "origin": "ごぼう（中国",
-    "scrapedAt": "2026-05-26T01:25:43.653Z",
+    "scrapedAt": "2026-05-27T01:34:39.120Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -321,7 +288,7 @@
       "fiber": 3.1
     },
     "origin": "ブロッコリー（中国）",
-    "scrapedAt": "2026-05-26T01:25:43.644Z",
+    "scrapedAt": "2026-05-27T01:34:39.132Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -354,7 +321,7 @@
       "fiber": 2
     },
     "origin": "豆腐（国内製造）葱（国産",
-    "scrapedAt": "2026-05-26T01:25:43.649Z",
+    "scrapedAt": "2026-05-27T01:34:39.137Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -387,7 +354,7 @@
       "fiber": 2.5
     },
     "origin": "ほうれん草（国産）ごま（中南米）",
-    "scrapedAt": "2026-05-26T01:25:44.273Z",
+    "scrapedAt": "2026-05-27T01:34:39.141Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -420,7 +387,7 @@
       "fiber": 3.8
     },
     "origin": "ひじき（中国",
-    "scrapedAt": "2026-05-26T01:25:44.282Z",
+    "scrapedAt": "2026-05-27T01:34:39.810Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -453,7 +420,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-05-26T01:25:44.286Z",
+    "scrapedAt": "2026-05-27T01:34:39.820Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -486,7 +453,7 @@
       "fiber": 2.2
     },
     "origin": "豚肉（メキシコ）大根（中国）里芋（中国）玉葱（中国）人参（中国）ごぼう（中国）",
-    "scrapedAt": "2026-05-26T01:25:44.288Z",
+    "scrapedAt": "2026-05-27T01:34:39.823Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -519,7 +486,7 @@
       "fiber": 1
     },
     "origin": "若布（中国）豆腐（国内製造）葱（中国）",
-    "scrapedAt": "2026-05-26T01:25:44.903Z",
+    "scrapedAt": "2026-05-27T01:34:39.828Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -552,7 +519,7 @@
       "fiber": 0.5
     },
     "origin": "ホイップクリーム（国内製造）栗あん（国内製造）",
-    "scrapedAt": "2026-05-26T01:25:46.800Z",
+    "scrapedAt": "2026-05-27T01:34:42.568Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -585,7 +552,7 @@
       "fiber": 2.3
     },
     "origin": "さつま芋（国産）",
-    "scrapedAt": "2026-05-26T01:25:46.807Z",
+    "scrapedAt": "2026-05-27T01:34:42.570Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -618,7 +585,7 @@
       "fiber": 0.3
     },
     "origin": "生乳（国産）パインアップル（フィリピン）パパイヤ（フィリピン）ナタデココ（フィリピン）",
-    "scrapedAt": "2026-05-26T01:25:47.422Z",
+    "scrapedAt": "2026-05-27T01:34:42.576Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -651,7 +618,7 @@
       "fiber": 1.5
     },
     "origin": "りんご（国産）米粉（国産）豆乳（国内製造）",
-    "scrapedAt": "2026-05-26T01:25:47.429Z",
+    "scrapedAt": "2026-05-27T01:34:43.241Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -684,7 +651,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）豚肉（スペイン",
-    "scrapedAt": "2026-05-26T01:25:46.793Z",
+    "scrapedAt": "2026-05-27T01:34:41.887Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -717,7 +684,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）豚肉（スペイン",
-    "scrapedAt": "2026-05-26T01:25:46.799Z",
+    "scrapedAt": "2026-05-27T01:34:42.555Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -750,7 +717,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）鶏肉（国産）ぜんまい（中国）小松菜（中国）大根（中国）大豆もやし（中国）鶏卵（国産",
-    "scrapedAt": "2026-05-26T01:25:45.541Z",
+    "scrapedAt": "2026-05-27T01:34:41.191Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -783,7 +750,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）鶏肉（国産）ぜんまい（中国）小松菜（中国）大根（中国）大豆もやし（中国）鶏卵（国産",
-    "scrapedAt": "2026-05-26T01:25:46.163Z",
+    "scrapedAt": "2026-05-27T01:34:41.202Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -816,7 +783,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）豚肉（チリ",
-    "scrapedAt": "2026-05-26T01:25:46.170Z",
+    "scrapedAt": "2026-05-27T01:34:41.868Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -849,7 +816,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）豚肉（チリ",
-    "scrapedAt": "2026-05-26T01:25:46.172Z",
+    "scrapedAt": "2026-05-27T01:34:41.878Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -882,7 +849,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）鶏卵（国産）揚げ玉（国内製造）干のり（国産）",
-    "scrapedAt": "2026-05-26T01:25:44.911Z",
+    "scrapedAt": "2026-05-27T01:34:40.497Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -915,7 +882,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）鶏卵（国産）揚げ玉（国内製造）干のり（国産）",
-    "scrapedAt": "2026-05-26T01:25:44.913Z",
+    "scrapedAt": "2026-05-27T01:34:40.508Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -948,7 +915,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）玉葱（国産）人参（国産）じゃが芋（国産）",
-    "scrapedAt": "2026-05-26T01:25:45.532Z",
+    "scrapedAt": "2026-05-27T01:34:40.515Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -981,7 +948,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）玉葱（国産）人参（国産）じゃが芋（国産）",
-    "scrapedAt": "2026-05-26T01:25:44.914Z",
+    "scrapedAt": "2026-05-27T01:34:40.506Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1014,7 +981,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）",
-    "scrapedAt": "2026-05-26T01:25:45.542Z",
+    "scrapedAt": "2026-05-27T01:34:41.192Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1047,7 +1014,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）",
-    "scrapedAt": "2026-05-26T01:25:45.543Z",
+    "scrapedAt": "2026-05-27T01:34:41.182Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1080,7 +1047,7 @@
       "fiber": 1.2
     },
     "origin": "鶏肉（タイ",
-    "scrapedAt": "2026-05-26T01:25:41.743Z",
+    "scrapedAt": "2026-05-27T01:34:37.046Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1113,7 +1080,7 @@
       "fiber": 0.3
     },
     "origin": "鶏肉（中国）玉葱（中国）パプリカ（中国）",
-    "scrapedAt": "2026-05-26T01:25:41.745Z",
+    "scrapedAt": "2026-05-27T01:34:37.052Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1146,7 +1113,7 @@
       "fiber": 0.5
     },
     "origin": "豚肉（チリ",
-    "scrapedAt": "2026-05-26T01:25:41.744Z",
+    "scrapedAt": "2026-05-27T01:34:37.044Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1179,7 +1146,7 @@
       "fiber": 1.2
     },
     "origin": "鶏肉（国産）玉葱（中国）胡麻（国産）",
-    "scrapedAt": "2026-05-26T01:25:42.368Z",
+    "scrapedAt": "2026-05-27T01:34:37.731Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1212,7 +1179,7 @@
       "fiber": 0.8
     },
     "origin": "カツオ（国産）玉葱（国産",
-    "scrapedAt": "2026-05-26T01:25:42.375Z",
+    "scrapedAt": "2026-05-27T01:34:37.733Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1235,7 +1202,7 @@
       "vitaminB2": 0.15
     },
     "origin": null,
-    "scrapedAt": "2026-05-26T01:25:46.181Z",
+    "scrapedAt": "2026-05-27T01:34:41.885Z",
     "_estimated": [
       {
         "key": "fiber",
