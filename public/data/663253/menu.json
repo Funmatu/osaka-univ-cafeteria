@@ -24,7 +24,7 @@
       "fiber": 0.1
     },
     "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-07-14T00:52:55.091Z",
+    "scrapedAt": "2026-07-15T00:49:59.320Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -57,7 +57,7 @@
       "fiber": 2.5
     },
     "origin": "オクラ（インドネシア）鶏卵（国産）",
-    "scrapedAt": "2026-07-14T00:52:55.726Z",
+    "scrapedAt": "2026-07-15T00:49:59.319Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -90,7 +90,7 @@
       "fiber": 0
     },
     "origin": "鶏きも（国産）",
-    "scrapedAt": "2026-07-14T00:52:55.721Z",
+    "scrapedAt": "2026-07-15T00:50:00.014Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -123,7 +123,7 @@
       "fiber": 0.8
     },
     "origin": "竹の子（中国",
-    "scrapedAt": "2026-07-14T00:52:55.095Z",
+    "scrapedAt": "2026-07-15T00:49:59.318Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -156,7 +156,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-07-14T00:52:55.725Z",
+    "scrapedAt": "2026-07-15T00:49:59.316Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -189,7 +189,7 @@
       "fiber": 2
     },
     "origin": "キャベツ（国産）玉葱（国産",
-    "scrapedAt": "2026-07-14T00:52:56.355Z",
+    "scrapedAt": "2026-07-15T00:50:00.007Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -222,7 +222,7 @@
       "fiber": 2
     },
     "origin": "もやし（国産）若布（中国）葱（国産",
-    "scrapedAt": "2026-07-14T00:52:55.727Z",
+    "scrapedAt": "2026-07-15T00:50:00.009Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -255,7 +255,7 @@
       "fiber": 2
     },
     "origin": "豆腐（国内製造）鶏肉（国産）",
-    "scrapedAt": "2026-07-14T00:52:56.358Z",
+    "scrapedAt": "2026-07-15T00:50:00.012Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -288,7 +288,7 @@
       "fiber": 2.5
     },
     "origin": "ほうれん草（国産）",
-    "scrapedAt": "2026-07-14T00:52:56.362Z",
+    "scrapedAt": "2026-07-15T00:50:00.701Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -321,7 +321,7 @@
       "fiber": 3.4
     },
     "origin": "大豆（アメリカ）",
-    "scrapedAt": "2026-07-14T00:52:56.995Z",
+    "scrapedAt": "2026-07-15T00:50:00.704Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -354,7 +354,7 @@
       "fiber": 1.8
     },
     "origin": "国内製造",
-    "scrapedAt": "2026-07-14T00:52:56.363Z",
+    "scrapedAt": "2026-07-15T00:50:00.709Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -387,7 +387,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-07-14T00:52:56.992Z",
+    "scrapedAt": "2026-07-15T00:50:00.707Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -420,7 +420,7 @@
       "fiber": 1
     },
     "origin": "若布（中国）豆腐（国内製造）葱（中国）",
-    "scrapedAt": "2026-07-14T00:52:56.998Z",
+    "scrapedAt": "2026-07-15T00:50:01.394Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -453,7 +453,7 @@
       "fiber": 0.4
     },
     "origin": "液卵（国産",
-    "scrapedAt": "2026-07-14T00:52:57.001Z",
+    "scrapedAt": "2026-07-15T00:50:01.392Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -486,11 +486,44 @@
       "fiber": 2.3
     },
     "origin": "さつま芋（国産）",
-    "scrapedAt": "2026-07-14T00:52:57.625Z",
+    "scrapedAt": "2026-07-15T00:50:01.396Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "食品成分表 八訂 02006 さつまいも 皮むき蒸し (80g)"
+      }
+    ]
+  },
+  {
+    "code": "615020",
+    "name": "フルーツミックスヨーグルト",
+    "nameEn": "Yogurt mixed with pineapple， papaya， nata de coco",
+    "price": 99,
+    "category": "dessert",
+    "categoryJa": "デザート",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615020.png",
+    "cafeteriaId": "663253",
+    "nutrition": {
+      "energy": 51,
+      "protein": 1.5,
+      "fat": 1.2,
+      "carbs": 9.6,
+      "salt": 0,
+      "calcium": 51,
+      "iron": 0,
+      "vegetable": 0,
+      "vitaminA": 17,
+      "vitaminB1": 0.03,
+      "vitaminB2": 0.07,
+      "vitaminC": 10,
+      "fiber": 0.3
+    },
+    "origin": "生乳（国産）パインアップル（フィリピン）パパイヤ（フィリピン）ナタデココ（フィリピン）",
+    "scrapedAt": "2026-07-15T00:50:02.086Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 13025 ヨーグルト全脂無糖 + フルーツ (100g)"
       }
     ]
   },
@@ -519,7 +552,7 @@
       "fiber": 0
     },
     "origin": "小麦粉（国内製造）マーガリン（国内製造）",
-    "scrapedAt": "2026-07-14T00:52:57.627Z",
+    "scrapedAt": "2026-07-15T00:50:01.400Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -552,7 +585,7 @@
       "fiber": 0.3
     },
     "origin": "鶏肉（中国",
-    "scrapedAt": "2026-07-14T00:52:54.457Z",
+    "scrapedAt": "2026-07-15T00:49:58.629Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -585,7 +618,7 @@
       "fiber": 1.5
     },
     "origin": "豚肉（ブラジル）玉葱（中国）キムチ（白菜：国産）",
-    "scrapedAt": "2026-07-14T00:52:55.093Z",
+    "scrapedAt": "2026-07-15T00:49:58.626Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -618,77 +651,11 @@
       "fiber": 0.5
     },
     "origin": "豚肉（チリ",
-    "scrapedAt": "2026-07-14T00:52:54.456Z",
+    "scrapedAt": "2026-07-15T00:49:58.628Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "食品成分表 八訂 11276 ぶたロース とんかつ (100g、B1は豚肉由来)"
-      }
-    ]
-  },
-  {
-    "code": "621042",
-    "name": "桜姫鶏チーズメンチトマトソース",
-    "nameEn": "Minced chicken cutlets filled in cheese with tomato sauce",
-    "price": 297,
-    "category": "main",
-    "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621042.png",
-    "cafeteriaId": "663253",
-    "nutrition": {
-      "energy": 406,
-      "protein": 11.5,
-      "fat": 30.4,
-      "carbs": 23.7,
-      "salt": 2,
-      "calcium": 119,
-      "iron": 2.1,
-      "vegetable": 27,
-      "vitaminA": 51,
-      "vitaminB1": 0.23,
-      "vitaminB2": 0.19,
-      "vitaminC": 4,
-      "fiber": 0.4
-    },
-    "origin": "鶏肉（国産）トマト（アメリカ",
-    "scrapedAt": "2026-07-14T00:52:54.459Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "食品成分表 八訂 複合 (白身魚フライ / メンチ平均)"
-      }
-    ]
-  },
-  {
-    "code": "621087",
-    "name": "アジ大葉フライ梅タルソース",
-    "nameEn": "Fried horse mackerel with plum flavored tartar sauce",
-    "price": 253,
-    "category": "main",
-    "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621087.png",
-    "cafeteriaId": "663253",
-    "nutrition": {
-      "energy": 286,
-      "protein": 9.6,
-      "fat": 18.3,
-      "carbs": 20.4,
-      "salt": 1.5,
-      "calcium": 38,
-      "iron": 0.6,
-      "vegetable": 3,
-      "vitaminA": 31,
-      "vitaminB1": 0.07,
-      "vitaminB2": 0.06,
-      "vitaminC": 1,
-      "fiber": 0.4
-    },
-    "origin": "アジ（中国）",
-    "scrapedAt": "2026-07-14T00:52:55.090Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "食品成分表 八訂 複合 (白身魚フライ / メンチ平均)"
       }
     ]
   },
@@ -717,7 +684,7 @@
       "fiber": 4.7
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-07-14T00:52:57.629Z",
+    "scrapedAt": "2026-07-15T00:50:02.087Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -750,7 +717,7 @@
       "fiber": 3.6
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-07-14T00:52:57.635Z",
+    "scrapedAt": "2026-07-15T00:50:02.088Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -783,7 +750,7 @@
       "fiber": 2.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-07-14T00:52:58.258Z",
+    "scrapedAt": "2026-07-15T00:50:02.090Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -816,7 +783,7 @@
       "fiber": 1.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-07-14T00:52:58.260Z",
+    "scrapedAt": "2026-07-15T00:50:02.780Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -849,7 +816,7 @@
       "fiber": 0.8
     },
     "origin": "鶏肉（国産）玉葱（中国）キャベツ（中国）トマト（イタリア）ナチュラルチーズ（オセアニア",
-    "scrapedAt": "2026-07-14T00:52:54.460Z",
+    "scrapedAt": "2026-07-15T00:49:58.632Z",
     "_estimated": [
       {
         "key": "fiber",
