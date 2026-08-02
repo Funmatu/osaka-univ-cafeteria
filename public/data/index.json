@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-01T01:02:40.203Z",
+  "lastUpdated": "2026-08-02T01:05:59.365Z",
   "cafeterias": [
     {
       "id": "663252",
@@ -11,7 +11,7 @@
       "holidays": "日祝",
       "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663252",
       "itemCount": 44,
-      "lastUpdated": "2026-08-01T01:02:40.203Z",
+      "lastUpdated": "2026-08-02T01:05:59.365Z",
       "skipped": false
     },
     {
@@ -24,7 +24,7 @@
       "holidays": "土日祝",
       "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663258",
       "itemCount": 34,
-      "lastUpdated": "2026-08-01T01:02:40.203Z",
+      "lastUpdated": "2026-08-02T01:05:59.365Z",
       "skipped": false
     },
     {
@@ -37,7 +37,7 @@
       "holidays": "土日祝",
       "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663253",
       "itemCount": 24,
-      "lastUpdated": "2026-08-01T01:02:40.203Z",
+      "lastUpdated": "2026-08-02T01:05:59.365Z",
       "skipped": false
     }
   ]
