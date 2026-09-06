@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-06T03:33:42.141Z",
-  "generatedAt": "2026-09-06T03:33:42.141Z",
+  "lastUpdated": "2026-09-06T03:42:24.731Z",
+  "generatedAt": "2026-09-06T03:42:24.731Z",
   "status": "degraded",
   "cafeterias": [
     {
@@ -15,9 +15,9 @@
       "notice": "営業時間 平日11:00-19:00 土曜11:30-14:00 日祝休業",
       "status": "ok",
       "itemCount": 42,
-      "lastUpdated": "2026-09-06T03:33:42.141Z",
-      "lastAttempt": "2026-09-06T03:33:42.141Z",
-      "lastSuccessfulUpdate": "2026-09-06T03:33:42.141Z",
+      "lastUpdated": "2026-09-06T03:42:24.731Z",
+      "lastAttempt": "2026-09-06T03:42:24.731Z",
+      "lastSuccessfulUpdate": "2026-09-06T03:42:24.731Z",
       "skipped": false
     },
     {
@@ -32,9 +32,9 @@
       "notice": "8/11～9/30 休業 10/1 より営業再開致します",
       "status": "ok",
       "itemCount": 44,
-      "lastUpdated": "2026-09-06T03:33:42.141Z",
-      "lastAttempt": "2026-09-06T03:33:42.141Z",
-      "lastSuccessfulUpdate": "2026-09-06T03:33:42.141Z",
+      "lastUpdated": "2026-09-06T03:42:24.731Z",
+      "lastAttempt": "2026-09-06T03:42:24.731Z",
+      "lastSuccessfulUpdate": "2026-09-06T03:42:24.731Z",
       "skipped": false
     },
     {
@@ -49,8 +49,8 @@
       "notice": "9月30日まで 夏季休業中",
       "status": "no-menu",
       "itemCount": 0,
-      "lastUpdated": "2026-09-06T03:33:42.141Z",
-      "lastAttempt": "2026-09-06T03:33:42.141Z",
+      "lastUpdated": "2026-09-06T03:42:24.731Z",
+      "lastAttempt": "2026-09-06T03:42:24.731Z",
       "lastSuccessfulUpdate": "2026-08-04T00:58:22.815Z",
       "skipped": true
     }
