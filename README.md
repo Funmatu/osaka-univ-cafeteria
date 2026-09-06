@@ -419,7 +419,7 @@ detail.php には `<h1>` が 2 つある:
 }
 ```
 
-トップレベルの `lastUpdated` は**実際にデータが書き換わった最新時刻** (全食堂で取得できなかった run では前回の値のまま)、`generatedAt` はその run の実行時刻。`status` は `ok` (全食堂正常) / `degraded` (一部が休業・失敗) / `failed` (全食堂で取得できず)。各食堂の `skipped` は `status` から導出される後方互換フィールド (`ok` / `partial` 以外で `true`)。
+トップレベルの `lastUpdated` は**実際にデータが書き換わった最新時刻** (全食堂で取得できなかった run では前回の値のまま)、`generatedAt` はその run の実行時刻。`status` は `ok` (全食堂正常) / `degraded` (一部が休業・失敗、**全食堂休業もここ**) / `failed` (`error` の食堂があり、かつ 1 件も取得できなかった) — 終了コードの表と一致する。各食堂の `skipped` は `status` から導出される後方互換フィールド (`ok` / `partial` 以外で `true`)。
 
 `lastUpdated` / `lastAttempt` / `lastSuccessfulUpdate` の使い分け:
 
@@ -958,7 +958,7 @@ export const DAILY_RDI = Object.freeze({
 
 ## テスト
 
-`test/` 配下を `node --test` が全件実行。**現在 83 テスト全 pass** (2026-09-06 実測)。
+`test/` 配下を `node --test` が全件実行。**現在 84 テスト全 pass** (2026-09-06 実測)。
 
 | ファイル | LOC | 対象 | 代表テスト |
 |---|---|---|---|
@@ -966,7 +966,7 @@ export const DAILY_RDI = Object.freeze({
 | `combo-rules.test.mjs` | 108 | groupByCategory / isRice / enumerateAll / totalPrice | 予算遵守、ライス×2 排除、定食必須 1 主食 1 主菜 |
 | `diversity.test.mjs` | 76 | jaccardSimilarity / selectDiverseTopK / boltzmannSample | 同一=1, 互換=0, 近似複製の排除、λ=1.0 純スコア |
 | `augment.test.mjs` | 62 | augmentItem / augmentAll | perKcal スケーリング、測定値保護、パターン優先、カテゴリフォールバック、レバー高 B2 |
-| `scrape-status.test.mjs` | 375 | classifyScrape / extractStoreNotice / buildMeta / buildStaleMeta / buildIndexEntry / publishCafeteria / readCafeteriaState | 休業と取得失敗の区別、本文空/非空による構造変更検知、実 HTML からの告知抽出 (`test/fixtures/`)、`error` 時に `menu.json` を消さない実ファイル検証、破損 JSON を健全と誤報告しない検証、index と disk の件数一致 |
+| `scrape-status.test.mjs` | 389 | classifyScrape / extractStoreNotice / buildMeta / buildStaleMeta / buildIndexEntry / publishCafeteria / readCafeteriaState | 休業と取得失敗の区別、本文空/非空による構造変更検知、実 HTML からの告知抽出 (`test/fixtures/`)、`error` 時に `menu.json` を消さない実ファイル検証、破損 JSON を健全と誤報告しない検証、index と disk の件数一致 |
 
 ローカル実行:
 ```bash

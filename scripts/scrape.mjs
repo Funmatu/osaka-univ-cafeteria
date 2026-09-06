@@ -433,11 +433,16 @@ export function buildIndexEntry(cafeteria, meta, itemCount = null, corrupt = fal
   };
 }
 
+/**
+ * index.json のトップレベル status。`failed` は「取得できなかった」ことを指すので、
+ * 全食堂が休業 (no-menu) の日は failed ではなく degraded とする
+ * (メニューは無いが取得自体は成功しており、job も緑のまま — 終了コード表と一致させる)。
+ */
 export function overallStatus(statuses) {
   if (statuses.some((s) => s === SCRAPE_STATUS.OK || s === SCRAPE_STATUS.PARTIAL)) {
     return statuses.every((s) => s === SCRAPE_STATUS.OK) ? 'ok' : 'degraded';
   }
-  return 'failed';
+  return statuses.some((s) => s === SCRAPE_STATUS.ERROR) ? 'failed' : 'degraded';
 }
 
 /**
@@ -509,13 +514,20 @@ async function main() {
       writeFailures++;
       console.error(`  Write failed for ${result.cafeteria.name}: ${err.message}`);
     }
-    // index は書き出し後の disk の実体から組む (write が落ちても矛盾させない)
-    const { itemCount, meta, corrupt } = await readCafeteriaState(path.join(OUT_DIR, result.cafeteria.id));
-    if (corrupt) {
+    // index は書き出し後の disk の実体から組む (write が落ちても矛盾させない)。
+    // 読み戻しも食堂単位で隔離する — I/O エラーで残りの食堂と index 生成まで
+    // 巻き添えにすると、新しい menu.json と古い index が commit されてしまう。
+    let state = { itemCount: null, meta: null, corrupt: true };
+    try {
+      state = await readCafeteriaState(path.join(OUT_DIR, result.cafeteria.id));
+    } catch (err) {
+      console.error(`  Read-back failed for ${result.cafeteria.name}: ${err.message}`);
+    }
+    if (state.corrupt) {
       writeFailures++;
       console.error(`  Data files for ${result.cafeteria.name} are unreadable after write.`);
     }
-    entries.push(buildIndexEntry(result.cafeteria, meta, itemCount, corrupt));
+    entries.push(buildIndexEntry(result.cafeteria, state.meta, state.itemCount, state.corrupt));
   }
 
   try {

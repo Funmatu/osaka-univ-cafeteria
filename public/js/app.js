@@ -241,7 +241,8 @@ async function setActiveTab(tabId) {
     const notice = cafeteriaNotice(tabId);
     setStatus(`${hint}: 現在掲載されているメニューがありません${notice ? ` (${notice})` : ''}。`, 'warn');
   } else {
-    const closed = state.cafeterias.filter((c) => (state.itemsByCafeteria[c.id]?.items.length ?? 0) === 0);
+    // 読込失敗は「掲載なし」ではない (errorNote 側にだけ出す)
+    const closed = state.cafeterias.filter((c) => state.itemsByCafeteria[c.id]?.items.length === 0);
     const closedNote = tabId === ALL_TAB_ID && closed.length > 0
       ? ` / 掲載なし: ${closed.map((c) => c.name).join('・')}`
       : '';

@@ -176,10 +176,15 @@ test('buildIndexEntry: skipped は status から導出される後方互換フ�
   assert.equal(missing.lastUpdated, null);
 });
 
-test('overallStatus: 1 食堂でも取れていれば degraded、全滅で failed', () => {
+test('overallStatus: 1 食堂でも取れていれば degraded、error があって全滅なら failed', () => {
   assert.equal(overallStatus([SCRAPE_STATUS.OK, SCRAPE_STATUS.OK]), 'ok');
   assert.equal(overallStatus([SCRAPE_STATUS.OK, SCRAPE_STATUS.NO_MENU]), 'degraded');
   assert.equal(overallStatus([SCRAPE_STATUS.ERROR, SCRAPE_STATUS.NO_MENU]), 'failed');
+  // 全食堂休業 (長期休暇) は取得自体は成功しているので failed にしない
+  assert.equal(
+    overallStatus([SCRAPE_STATUS.NO_MENU, SCRAPE_STATUS.NO_MENU, SCRAPE_STATUS.NO_MENU]),
+    'degraded'
+  );
 });
 
 test('latestDataUpdate: index の最終更新は実際にデータが書き換わった最新時刻', () => {
@@ -372,4 +377,13 @@ test('formatSummary: バックスラッシュ + パイプでも表が壊れな�
   // エスケープ列 (\\ と \|) を取り除くと、残る生のパイプは 4 列の区切り 5 本だけ
   const rawPipes = cells.replace(/\\./g, '').split('|').length - 1;
   assert.equal(rawPipes, 5, `列区切り以外の生パイプが残っている: ${cells}`);
+});
+
+test('readCafeteriaState: ENOENT 以外の I/O エラーは再スローする (呼び出し側で食堂単位に隔離)', async () => {
+  await withTempDir(async (outDir) => {
+    // menu.json がディレクトリ = EISDIR。ここで潰すと失敗を握り潰すことになるため throw させる
+    const dir = path.join(outDir, CAFETERIA.id);
+    await fsp.mkdir(path.join(dir, 'menu.json'), { recursive: true });
+    await assert.rejects(() => readCafeteriaState(dir));
+  });
 });
