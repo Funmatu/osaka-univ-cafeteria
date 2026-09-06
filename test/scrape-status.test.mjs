@@ -20,6 +20,7 @@ import {
   readCafeteriaState,
   readJson,
   formatSummary,
+  publishAll,
 } from '../scripts/scrape.mjs';
 
 // Fixtures: 2026-09-06 に west2-univ.jp から実取得した生 HTML。
@@ -352,7 +353,7 @@ test('破損した menu.json を古い meta の件数で健全に見せない', 
     const { itemCount, meta, corrupt } = await readCafeteriaState(dir);
     assert.equal(corrupt, true);
     assert.equal(itemCount, null);
-    const entry = buildIndexEntry(CAFETERIA, meta, itemCount, corrupt);
+    const entry = buildIndexEntry(CAFETERIA, meta, itemCount, { corrupt });
     assert.equal(entry.status, SCRAPE_STATUS.ERROR, '破損時に ok と主張してはならない');
     assert.equal(entry.itemCount, 0, '読めない件数を 26 と偽らない');
   });
@@ -385,5 +386,76 @@ test('readCafeteriaState: ENOENT 以外の I/O エラーは再スローする (�
     const dir = path.join(outDir, CAFETERIA.id);
     await fsp.mkdir(path.join(dir, 'menu.json'), { recursive: true });
     await assert.rejects(() => readCafeteriaState(dir));
+  });
+});
+
+// ---- publishAll: 1 食堂の I/O 失敗が他食堂と index を巻き添えにしないこと ----
+
+const OTHER_CAFETERIA = { ...CAFETERIA, id: '663252', slug: 'toyonaka-library', name: '豊中図書館下食堂' };
+const THIRD_CAFETERIA = { ...CAFETERIA, id: '663258', slug: 'kasane', name: 'カフェテリアかさね' };
+
+const okResult = (cafeteria, items) => ({
+  cafeteria, items, issues: [], notice: null, status: SCRAPE_STATUS.OK, failedEndpoints: [], error: null,
+});
+
+test('publishAll: 読み戻しが I/O エラーでも他食堂の entry が作られる', async () => {
+  await withTempDir(async (outDir) => {
+    // 663253 は status=error なので menu.json を書かない。その menu.json をディレクトリに
+    // しておくと、書き出しは成功したまま読み戻しだけが EISDIR で失敗する。
+    await fsp.mkdir(path.join(outDir, CAFETERIA.id, 'menu.json'), { recursive: true });
+
+    const { entries, writeFailures } = await publishAll(
+      [
+        okResult(OTHER_CAFETERIA, [{ code: '1', nutrition: { energy: 100 } }]),
+        { cafeteria: CAFETERIA, items: [], issues: [], notice: null, status: SCRAPE_STATUS.ERROR, failedEndpoints: [], error: 'HTTP 503' },
+        okResult(THIRD_CAFETERIA, [{ code: '2', nutrition: { energy: 200 } }, { code: '3', nutrition: {} }]),
+      ],
+      AT,
+      outDir
+    );
+
+    assert.equal(entries.length, 3, '読み戻し失敗でループが止まってはならない');
+    assert.equal(entries[0].status, SCRAPE_STATUS.OK);
+    assert.equal(entries[0].itemCount, 1);
+    assert.equal(entries[2].status, SCRAPE_STATUS.OK);
+    assert.equal(entries[2].itemCount, 2, '3 食堂目まで index に載ること');
+    assert.equal(writeFailures, 1, '失敗した食堂は 1 件だけ計上');
+  });
+});
+
+test('publishAll: 読み戻せなくても直前に書いた meta を使い、正常データを捨てない', async () => {
+  await withTempDir(async (outDir) => {
+    // meta.json は書けるが menu.json が読めない状況 (status=error なので menu は書かない)
+    await fsp.mkdir(path.join(outDir, CAFETERIA.id, 'menu.json'), { recursive: true });
+    const { entries } = await publishAll(
+      [{ cafeteria: CAFETERIA, items: [], issues: [], notice: '9月30日まで 夏季休業中', status: SCRAPE_STATUS.ERROR, failedEndpoints: [], error: 'HTTP 503' }],
+      AT,
+      outDir
+    );
+    assert.equal(entries[0].status, SCRAPE_STATUS.ERROR);
+    assert.equal(entries[0].notice, '9月30日まで 夏季休業中', '書いた meta の内容が index に反映される');
+  });
+});
+
+test('publishAll: 書き出しに失敗した食堂は index でも error (終了コードと整合)', async () => {
+  await withTempDir(async (outDir) => {
+    // meta.json をディレクトリにすると writeJsonAtomic の rename が失敗する
+    await fsp.mkdir(path.join(outDir, CAFETERIA.id, 'meta.json'), { recursive: true });
+    const { entries, writeFailures } = await publishAll([okResult(CAFETERIA, [{ code: '1', nutrition: {} }])], AT, outDir);
+    assert.equal(writeFailures, 1);
+    assert.equal(entries[0].status, SCRAPE_STATUS.ERROR, '書き出し失敗を ok と主張してはならない');
+  });
+});
+
+test('publishAll: 正常系では失敗 0 件で全食堂が index に載る', async () => {
+  await withTempDir(async (outDir) => {
+    const { entries, writeFailures } = await publishAll(
+      [okResult(OTHER_CAFETERIA, [{ code: '1', nutrition: {} }]), okResult(THIRD_CAFETERIA, [])],
+      AT,
+      outDir
+    );
+    assert.equal(writeFailures, 0);
+    assert.deepEqual(entries.map((e) => e.status), [SCRAPE_STATUS.OK, SCRAPE_STATUS.OK]);
+    assert.deepEqual(entries.map((e) => e.itemCount), [1, 0]);
   });
 });

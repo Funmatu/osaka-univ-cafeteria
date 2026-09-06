@@ -174,7 +174,8 @@
 │   │   ├── optimizer.js         # 組合せ列挙 + スコアリング + フィルタ
 │   │   ├── nutrition.js         # RDI 目標 + スコア関数 + NUTRITION_FILTERS
 │   │   ├── combo-rules.js       # カテゴリ制約 (定食/一品)
-│   │   └── diversity.js         # MMR 多様化 + Boltzmann サンプラ
+│   │   ├── diversity.js         # MMR 多様化 + Boltzmann サンプラ
+│   │   └── cafeteria-status.js  # 休業/取得失敗の表示ロジック (DOM 非依存・テスト対象)
 │   ├── css/styles.css
 │   └── data/                    # スクレイパ出力 (自動更新・commit 対象)
 │       ├── index.json           # 食堂一覧 (UI の最初に fetch)
@@ -193,7 +194,10 @@
 │   ├── optimizer.test.mjs       # rankCombinations のフィルタ統合テスト
 │   ├── combo-rules.test.mjs     # カテゴリ制約の遵守テスト
 │   ├── diversity.test.mjs       # MMR / Boltzmann 正当性
-│   └── augment.test.mjs         # 補完ロジックのパターンマッチ
+│   ├── augment.test.mjs         # 補完ロジックのパターンマッチ
+│   ├── cafeteria-status.test.mjs # 休業/読込失敗の表示分岐
+│   ├── scrape-status.test.mjs   # 休業/取得失敗の分類と書き出し保護
+│   └── fixtures/                # 実サイトから取得した HTML (告知抽出の ground truth)
 │
 ├── package.json                 # dependencies: cheerio のみ
 ├── package-lock.json
@@ -282,7 +286,13 @@
 
 さらに `no-menu` と判定する前に **`menu.php` が正常に取得できたこと**を裏取りする。経路障害や CDN が HTTP 200 + 空応答を返すケースを「休業」と誤認して `menu.json` を空にしないための条件。
 
-**書き出しの安全性**: `menu.json` / `meta.json` / `index.json` はいずれも一時ファイルへ書いてから `rename` する (`writeJsonAtomic()`)。書き込み途中でプロセスが落ちても切り詰められた JSON が commit されない。読み戻し時は「ファイル欠落」と「JSON 破損」を `readJson()` が区別し、破損していれば古い `meta` の件数を流用せず `status: error` / `itemCount: 0` として index に載せる。
+**書き出しの安全性** (`publishAll()`): `menu.json` / `meta.json` / `index.json` はいずれも一時ファイルへ書いてから `rename` する (`writeJsonAtomic()`)。書き込み途中でプロセスが落ちても切り詰められた JSON が commit されない。
+
+- 書き出しも読み戻しも**食堂単位で try/catch**。1 件の I/O エラーで残りの食堂・`index.json`・step summary を巻き添えにしない
+- 読み戻し時は「ファイル欠落」と「JSON 破損」を `readJson()` が区別。破損時は古い `meta` の件数を流用せず `status: error` / `itemCount: 0` として index に載せる
+- 読み戻し自体が失敗した場合は**直前に書き出した meta** を index に使う (一時的な read エラーで正常なデータを捨てない)
+- 書き出しに失敗した食堂は、disk 上の古い `meta` が `ok` でも index では `error` に倒す (`menu.json` と `meta.json` の対応が崩れている可能性があるため。終了コード 1 と index の `status` が食い違わない)
+- 失敗は 1 食堂あたり最大 1 件として計上する
 
 終了コード:
 
@@ -742,12 +752,17 @@ fetch('./data/index.json', { cache: 'no-cache' })
 fetch(`./data/${id}/menu.json`, { cache: 'no-cache' })
 fetch(`./data/${id}/meta.json`, { cache: 'no-cache' })
 
-// 3) 「豊中キャンパス内一覧」タブ: 3 食堂を並列ロードしてマージ
-await Promise.all(state.cafeterias.map((c) => loadCafeteria(c.id)));
-const merged = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id].items);
+// 3) 「豊中キャンパス内一覧」タブ: 3 食堂を並列ロードしてマージ。
+//    1 食堂が失敗しても他食堂を巻き添えにしないため allSettled を使う
+const loads = await Promise.allSettled(state.cafeterias.map((c) => loadCafeteria(c.id)));
+state.loadErrors = state.cafeterias.filter((_, i) => loads[i].status === 'rejected').map((c) => c.name);
+const merged = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id]?.items ?? []);
 ```
 
-読み込み済み食堂は `state.itemsByCafeteria` にキャッシュ。エラーは `#status` に表示。
+読み込み済み食堂は `state.itemsByCafeteria` にキャッシュ。ステータス行の文言は
+[`public/js/cafeteria-status.js`](public/js/cafeteria-status.js) の純粋関数
+(`buildTabStatus()` / `groupEmptyReason()`) が組み立てる — **休業 (掲載 0 件) と
+読み込み失敗を必ず別々に表示**し、合計 0 件のときも読込失敗の食堂名を落とさない。
 
 ### カテゴリ表示マッピング
 
@@ -958,15 +973,16 @@ export const DAILY_RDI = Object.freeze({
 
 ## テスト
 
-`test/` 配下を `node --test` が全件実行。**現在 84 テスト全 pass** (2026-09-06 実測)。
+`test/` 配下を `node --test` が全件実行。**現在 97 テスト全 pass** (2026-09-06 実測)。
 
 | ファイル | LOC | 対象 | 代表テスト |
 |---|---|---|---|
 | `nutrition.test.mjs` | 178 | aimScore / dailyBonus / boundPenalty / pfcScore / scoreCombination | 境界値 (0, target, 1.3×target), 理想 PFC, 過剰塩ペナルティ |
 | `combo-rules.test.mjs` | 108 | groupByCategory / isRice / enumerateAll / totalPrice | 予算遵守、ライス×2 排除、定食必須 1 主食 1 主菜 |
 | `diversity.test.mjs` | 76 | jaccardSimilarity / selectDiverseTopK / boltzmannSample | 同一=1, 互換=0, 近似複製の排除、λ=1.0 純スコア |
+| `cafeteria-status.test.mjs` | 120 | findNotice / closedCafeterias / buildTabStatus / groupEmptyReason ([`public/js/cafeteria-status.js`](public/js/cafeteria-status.js)) | 休業と読込失敗の区別、合計 0 件でも読込失敗を落とさない、一覧タブ/単独タブの文言 |
 | `augment.test.mjs` | 62 | augmentItem / augmentAll | perKcal スケーリング、測定値保護、パターン優先、カテゴリフォールバック、レバー高 B2 |
-| `scrape-status.test.mjs` | 389 | classifyScrape / extractStoreNotice / buildMeta / buildStaleMeta / buildIndexEntry / publishCafeteria / readCafeteriaState | 休業と取得失敗の区別、本文空/非空による構造変更検知、実 HTML からの告知抽出 (`test/fixtures/`)、`error` 時に `menu.json` を消さない実ファイル検証、破損 JSON を健全と誤報告しない検証、index と disk の件数一致 |
+| `scrape-status.test.mjs` | 389 | classifyScrape / extractStoreNotice / buildMeta / buildStaleMeta / buildIndexEntry / publishCafeteria / publishAll / readCafeteriaState | 休業と取得失敗の区別、本文空/非空による構造変更検知、実 HTML からの告知抽出 (`test/fixtures/`)、`error` 時に `menu.json` を消さない実ファイル検証、破損 JSON を健全と誤報告しない検証、1 食堂の I/O 失敗で他食堂の index が欠けない検証、index と disk の件数一致 |
 
 ローカル実行:
 ```bash

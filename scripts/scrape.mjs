@@ -410,9 +410,11 @@ export async function readCafeteriaState(dir) {
  * itemCount は **disk 上の menu.json の実件数**を優先する。書き出しが途中で失敗しても
  * index.json が実ファイルと矛盾しないようにするため (meta の値は fallback)。
  */
-export function buildIndexEntry(cafeteria, meta, itemCount = null, corrupt = false) {
-  // 壊れたファイルを「正常」と主張しない
-  const status = corrupt ? SCRAPE_STATUS.ERROR : meta?.status ?? SCRAPE_STATUS.ERROR;
+export function buildIndexEntry(cafeteria, meta, itemCount = null, { corrupt = false, writeFailed = false } = {}) {
+  // 壊れたファイル / 書き出しに失敗した食堂を「正常」と主張しない。
+  // writeFailed のときは menu.json と meta.json の対応が崩れている可能性があるため、
+  // disk 上の meta が ok と言っていても error に倒す (終了コードとの整合)。
+  const status = corrupt || writeFailed ? SCRAPE_STATUS.ERROR : meta?.status ?? SCRAPE_STATUS.ERROR;
   return {
     id: cafeteria.id,
     slug: cafeteria.slug,
@@ -452,6 +454,50 @@ export function overallStatus(statuses) {
 export function latestDataUpdate(entries) {
   const times = entries.map((e) => e.lastUpdated).filter(Boolean).sort();
   return times.length ? times[times.length - 1] : null;
+}
+
+/**
+ * 全食堂を書き出し、index 用の entry を組み立てる。
+ *
+ * 書き出しも読み戻しも**食堂単位で隔離**する。1 件の I/O エラーで残りの食堂・
+ * index.json・step summary を巻き添えにすると、新しい menu.json と古い index.json が
+ * そのまま commit されてしまう (commit step は `if: !cancelled()` で走るため)。
+ * 読み戻せなかった場合は、たった今書いた meta を採用する — disk 上の実体はそれなので、
+ * 一時的な read エラーで正常なデータを error として捨てない。
+ */
+export async function publishAll(results, attemptedAt, outDir = OUT_DIR) {
+  const entries = [];
+  let writeFailures = 0;
+
+  for (const result of results) {
+    const { cafeteria } = result;
+    let written = null;
+    let writeFailed = false;
+    try {
+      written = await publishCafeteria(result, attemptedAt, outDir);
+    } catch (err) {
+      writeFailed = true;
+      console.error(`  Write failed for ${cafeteria.name}: ${err.message}`);
+    }
+
+    let state = null;
+    try {
+      state = await readCafeteriaState(path.join(outDir, cafeteria.id));
+    } catch (err) {
+      console.error(`  Read-back failed for ${cafeteria.name}: ${err.message}`);
+    }
+
+    const meta = state?.meta ?? written;
+    const itemCount = state ? state.itemCount : written?.itemCount ?? null;
+    const corrupt = state ? state.corrupt : written === null;
+    if (corrupt) console.error(`  Data files for ${cafeteria.name} are unreadable after write.`);
+    // 1 食堂 = 最大 1 件の失敗として数える (write と read の二重計上をしない)
+    if (writeFailed || corrupt || state === null) writeFailures++;
+
+    entries.push(buildIndexEntry(cafeteria, meta, itemCount, { corrupt, writeFailed }));
+  }
+
+  return { entries, writeFailures };
 }
 
 async function writeIndex(entries, startedAt) {
@@ -503,32 +549,8 @@ async function main() {
     if (i < CAFETERIAS.length - 1) await sleep(1000);
   }
 
-  // 書き出しは食堂ごとに隔離する。1 件の write 失敗で残りを巻き込むと、
-  // menu.json は新しいのに index.json が古い、という不整合のまま commit されてしまう。
-  let writeFailures = 0;
-  const entries = [];
-  for (const result of results) {
-    try {
-      await publishCafeteria(result, startedAt, OUT_DIR);
-    } catch (err) {
-      writeFailures++;
-      console.error(`  Write failed for ${result.cafeteria.name}: ${err.message}`);
-    }
-    // index は書き出し後の disk の実体から組む (write が落ちても矛盾させない)。
-    // 読み戻しも食堂単位で隔離する — I/O エラーで残りの食堂と index 生成まで
-    // 巻き添えにすると、新しい menu.json と古い index が commit されてしまう。
-    let state = { itemCount: null, meta: null, corrupt: true };
-    try {
-      state = await readCafeteriaState(path.join(OUT_DIR, result.cafeteria.id));
-    } catch (err) {
-      console.error(`  Read-back failed for ${result.cafeteria.name}: ${err.message}`);
-    }
-    if (state.corrupt) {
-      writeFailures++;
-      console.error(`  Data files for ${result.cafeteria.name} are unreadable after write.`);
-    }
-    entries.push(buildIndexEntry(result.cafeteria, state.meta, state.itemCount, state.corrupt));
-  }
+  const { entries, writeFailures: publishFailures } = await publishAll(results, startedAt, OUT_DIR);
+  let writeFailures = publishFailures;
 
   try {
     await writeIndex(entries, startedAt);

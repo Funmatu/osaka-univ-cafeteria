@@ -1,6 +1,12 @@
 import { rankCombinations } from './optimizer.js';
 import { selectDiverseTopK, boltzmannSample } from './diversity.js';
 import { DAILY_RDI, MEAL_TARGET, WEIGHTS, NUTRITION_FILTERS } from './nutrition.js';
+import {
+  CAFETERIA_STATUS_LABEL,
+  findNotice,
+  buildTabStatus,
+  groupEmptyReason,
+} from './cafeteria-status.js';
 
 const CATEGORY_LABELS = {
   main: '主菜',
@@ -31,14 +37,6 @@ const CAFETERIA_COLORS = {
   '663252': '#2563eb', // 豊中図書館下
   '663258': '#db2777', // かさね
   '663253': '#059669', // 福利会館3階
-};
-
-// index.json / meta.json の status (scripts/scrape.mjs SCRAPE_STATUS) の表示。
-// ok は通常状態なのでバッジを出さない。
-const CAFETERIA_STATUS_LABEL = {
-  'no-menu': { text: 'メニュー掲載なし', kind: 'warn' },
-  partial: { text: '一部カテゴリ取得失敗', kind: 'warn' },
-  error: { text: '取得失敗 (前回データを表示)', kind: 'error' },
 };
 
 const LABEL_ORDER = ['A', 'B', 'C'];
@@ -158,13 +156,9 @@ function renderNutritionToggles() {
   }
 }
 
-// 生協が menu.php に掲示している告知 (「9月30日まで 夏季休業中」等)。
-// meta.json を読み込み済みならそちらを優先し、未ロードなら index.json の値を使う。
+// 一覧タブ (ALL) は特定の食堂を指さないので告知も持たない
 function cafeteriaNotice(id) {
-  if (id === ALL_TAB_ID) return null;
-  return state.itemsByCafeteria[id]?.meta?.notice
-    ?? state.cafeterias.find((c) => c.id === id)?.notice
-    ?? null;
+  return id === ALL_TAB_ID ? null : findNotice(state, id);
 }
 
 function renderCafeteriaMeta() {
@@ -234,24 +228,16 @@ async function setActiveTab(tabId) {
   renderCafeteriaMeta();
   updateMenuCount();
   renderMenuList(state.currentCat);
-  if (state.items.length === 0) {
-    // 休業中などで掲載 0 件。エラーではないので警告表示に留める。
-    const info = state.cafeterias.find((c) => c.id === tabId);
-    const hint = tabId === ALL_TAB_ID ? '全食堂' : info?.name ?? '';
-    const notice = cafeteriaNotice(tabId);
-    setStatus(`${hint}: 現在掲載されているメニューがありません${notice ? ` (${notice})` : ''}。`, 'warn');
-  } else {
-    // 読込失敗は「掲載なし」ではない (errorNote 側にだけ出す)
-    const closed = state.cafeterias.filter((c) => state.itemsByCafeteria[c.id]?.items.length === 0);
-    const closedNote = tabId === ALL_TAB_ID && closed.length > 0
-      ? ` / 掲載なし: ${closed.map((c) => c.name).join('・')}`
-      : '';
-    const errorNote = state.loadErrors.length > 0 ? ` / 読込失敗: ${state.loadErrors.join('・')}` : '';
-    const label = tabId === ALL_TAB_ID
-      ? `${state.cafeterias.length}食堂合計 ${state.items.length} 品 (各2案ずつ提示)${closedNote}${errorNote}`
-      : `${state.cafeterias.find((c) => c.id === tabId)?.name}: ${state.items.length} 品読込済`;
-    setStatus(`${label}。条件を設定して「組合せを探す」を押してください。`, state.loadErrors.length > 0 ? 'warn' : 'info');
-  }
+  const tabStatus = buildTabStatus({
+    isAllTab: tabId === ALL_TAB_ID,
+    tabName: state.cafeterias.find((c) => c.id === tabId)?.name ?? '',
+    cafeterias: state.cafeterias,
+    itemsByCafeteria: state.itemsByCafeteria,
+    loadErrors: state.loadErrors,
+    totalItems: state.items.length,
+    notice: cafeteriaNotice(tabId),
+  });
+  setStatus(tabStatus.text, tabStatus.kind);
   // タブ切替時は結果をクリア (前食堂の結果が残ると混乱するため)
   document.getElementById('results').innerHTML = '';
 }
@@ -374,11 +360,10 @@ function runAllCafeterias(opts) {
   for (const cafeteria of state.cafeterias) {
     const items = state.itemsByCafeteria[cafeteria.id]?.items ?? [];
     if (items.length === 0) {
-      const failedLoad = state.loadErrors.includes(cafeteria.name);
-      const notice = cafeteriaNotice(cafeteria.id);
-      const reason = failedLoad
-        ? 'データの読み込みに失敗しました'
-        : notice ? `メニュー掲載なし (${notice})` : 'メニュー掲載なし';
+      const reason = groupEmptyReason({
+        failedLoad: state.loadErrors.includes(cafeteria.name),
+        notice: cafeteriaNotice(cafeteria.id),
+      });
       groups.push({ cafeteria, picks: [], reason });
       continue;
     }
