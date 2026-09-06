@@ -50,9 +50,15 @@ jobs:
       - name: Log scraped JSON timestamp
         run: |
           echo "json_last_updated=$(jq -r '.lastUpdated' public/data/index.json)"
+          echo "json_overall_status=$(jq -r '.status // "unknown"' public/data/index.json)"
+          echo "cafeteria_status=$(jq -rc '[.cafeterias[] | {id, status}]' public/data/index.json)"
           echo "scrape_completed_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
+      # scraper は「1 食堂でも取得できれば成功」で終了する (夏季休業などで一部食堂が
+      # 0 件でも job は緑)。全滅して exit 1 になった場合でも、他ステップで書き換わった
+      # meta/index を取りこぼさないよう !cancelled() で commit まで到達させる。
       - name: Commit updated data if changed
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
