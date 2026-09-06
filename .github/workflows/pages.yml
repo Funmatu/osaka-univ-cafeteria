@@ -6,6 +6,14 @@ on:
     paths:
       - 'public/**'
       - '.github/workflows/pages.yml'
+  # Update Menu Data のデータ commit は GITHUB_TOKEN による push なので、
+  # GitHub の仕様で上の push トリガーを発火させない (再帰実行防止のため)。
+  # そのため 2026-04-28 以降、日次のメニュー更新がサイトに反映されていなかった。
+  # workflow_run は GITHUB_TOKEN 起点の run でも発火するのでこれを配信の起点にする。
+  workflow_run:
+    workflows: ['Update Menu Data']
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -19,12 +27,18 @@ concurrency:
 
 jobs:
   deploy:
+    # scraper が一部食堂で失敗しても部分更新は commit されるため、cancelled 以外は配信する
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'cancelled' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # workflow_run の github.sha は「トリガー元 run が開始した時点」の SHA で、
+      # その run が作ったデータ commit を含まない。main の最新を明示的に取る。
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
