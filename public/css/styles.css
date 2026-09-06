@@ -104,6 +104,19 @@ html, body {
 }
 .cafeteria-meta-card .meta-source:hover { text-decoration: underline; }
 
+/* 休業・取得失敗など通常でない状態のバッジ (app.js CAFETERIA_STATUS_LABEL) */
+.cafeteria-meta-card .meta-status {
+  justify-self: start;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 2px 0;
+}
+.cafeteria-meta-card .meta-status[data-kind="warn"] { background: #fef3c7; color: #92400e; }
+.cafeteria-meta-card .meta-status[data-kind="error"] { background: #fee2e2; color: #991b1b; }
+.cafeteria-meta-card .meta-notice { color: var(--text); font-weight: 500; }
+
 .controls {
   background: var(--surface);
   border-radius: var(--radius);

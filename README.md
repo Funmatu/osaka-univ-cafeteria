@@ -174,7 +174,8 @@
 │   │   ├── optimizer.js         # 組合せ列挙 + スコアリング + フィルタ
 │   │   ├── nutrition.js         # RDI 目標 + スコア関数 + NUTRITION_FILTERS
 │   │   ├── combo-rules.js       # カテゴリ制約 (定食/一品)
-│   │   └── diversity.js         # MMR 多様化 + Boltzmann サンプラ
+│   │   ├── diversity.js         # MMR 多様化 + Boltzmann サンプラ
+│   │   └── cafeteria-status.js  # 休業/取得失敗の表示ロジック (DOM 非依存・テスト対象)
 │   ├── css/styles.css
 │   └── data/                    # スクレイパ出力 (自動更新・commit 対象)
 │       ├── index.json           # 食堂一覧 (UI の最初に fetch)
@@ -193,7 +194,10 @@
 │   ├── optimizer.test.mjs       # rankCombinations のフィルタ統合テスト
 │   ├── combo-rules.test.mjs     # カテゴリ制約の遵守テスト
 │   ├── diversity.test.mjs       # MMR / Boltzmann 正当性
-│   └── augment.test.mjs         # 補完ロジックのパターンマッチ
+│   ├── augment.test.mjs         # 補完ロジックのパターンマッチ
+│   ├── cafeteria-status.test.mjs # 休業/読込失敗の表示分岐
+│   ├── scrape-status.test.mjs   # 休業/取得失敗の分類と書き出し保護
+│   └── fixtures/                # 実サイトから取得した HTML (告知抽出の ground truth)
 │
 ├── package.json                 # dependencies: cheerio のみ
 ├── package-lock.json
@@ -252,18 +256,56 @@
 
 ### 実行フロー ([`scripts/scrape.mjs`](scripts/scrape.mjs))
 
-[`scripts/cafeterias.mjs`](scripts/cafeterias.mjs) の `CAFETERIAS` を順に処理 (各食堂ごとに 1-5 を実行、食堂間 1 秒スリープ):
+[`scripts/cafeterias.mjs`](scripts/cafeterias.mjs) の `CAFETERIAS` を順に処理 (各食堂ごとに 1-5 を実行、食堂間 1 秒スリープ)。**取得フェーズと書き出しフェーズは分離**されており、1 食堂の失敗が他の食堂を巻き添えにしない:
 
-1. `fetchAllCategories()`: 8 エンドポイントを **並列** fetch、`<a href="detail.php?c=XXXX">` を Cheerio で抽出、code で重複排除
-2. `enrichWithDetail()`: 全件の `detail.php` を **並列度 4 / 各 500ms スリープ** で取得、[`scripts/parser.mjs`](scripts/parser.mjs) `parseDetailHtml()` で栄養成分抽出
-3. `augmentAll()`: [`scripts/augment.mjs`](scripts/augment.mjs) で欠落した fiber / B1 / B2 を参照 DB から補完
-4. `validate()`: code / 名称 / 価格 (1-3000 円範囲) / energy 有無を検証
-5. code 順でソート、`public/data/{id}/menu.json` と `meta.json` に書き出し
+1. `fetchStoreNotice()`: `menu.php` の `#storeInfo` から生協の店舗告知 (「9月30日まで 夏季休業中」等) を取得
+2. `fetchAllCategories()`: 8 エンドポイントを **並列** fetch、`<a href="detail.php?c=XXXX">` を Cheerio で抽出、code で重複排除。失敗したエンドポイントは `failedEndpoints` に記録
+3. `enrichWithDetail()`: 全件の `detail.php` を **並列度 4 / 各 500ms スリープ** で取得、[`scripts/parser.mjs`](scripts/parser.mjs) `parseDetailHtml()` で栄養成分抽出
+4. `augmentAll()`: [`scripts/augment.mjs`](scripts/augment.mjs) で欠落した fiber / B1 / B2 を参照 DB から補完
+5. `validate()`: code / 名称 / 価格 (1-3000 円範囲) / energy 有無を検証 → `classifyScrape()` で status を確定
 
-全食堂処理後:
+全食堂の取得後 (書き出しフェーズ):
 
-6. `writeIndex()`: 各食堂の meta を集約して `public/data/index.json` に書き出し
-7. GitHub Actions 側で `git add public/data/` → `git diff --staged --quiet` を判定、差分があれば auto-commit
+6. `publishCafeteria()`: status が `ok` / `partial` / `no-menu` の食堂だけ `menu.json` を書き換え、`error` の食堂は既存 `menu.json` を保持して `meta.json` にのみ失敗を記録。書き出しは食堂ごとに try/catch で隔離
+7. `writeIndex()`: 書き出し**後の disk の実体** (`readCafeteriaState()` で読み直した `menu.json` の件数) から `public/data/index.json` を組む — 途中で write が失敗しても index と実ファイルが矛盾しない
+9. `GITHUB_STEP_SUMMARY` があれば食堂別 status のサマリ表を出力
+10. GitHub Actions 側で `git add public/data/` → `git diff --staged --quiet` を判定、差分があれば auto-commit
+
+### スクレイプ status ([`scripts/scrape.mjs`](scripts/scrape.mjs) `SCRAPE_STATUS`)
+
+**休業 (情報として 0 件) と取得失敗 (情報が無い) を必ず区別する**。夏季休業中の食堂があっても job は落とさず、取得できた食堂のデータは commit される。
+
+| status | 条件 | 書き出し | 意味 |
+|---|---|---|---|
+| `ok` | 1 件以上取得、全エンドポイント成功 | 上書き | 正常 |
+| `partial` | 1 件以上取得、一部エンドポイント失敗 | 上書き | 一部カテゴリ欠落の可能性 |
+| `no-menu` | 0 件、かつ全エンドポイントの応答**本文が空**、かつ `menu.php` は正常取得できた | 空配列で上書き | 休業等でメニュー掲載なし |
+| `error` | fetch 失敗 / `menu.php` が取れない / 本文はあるのに 0 件 / 詳細ページ全滅 / 例外 | **既存データを保持** | 取得できず判断材料なし |
+
+**休業と構造変更の見分け方** (2026-09-06 実測): 休業中の食堂は `menu_load.php` が**本文 0 バイト**を返す。営業中の食堂の空カテゴリ (`on_g` 等) は `<div class="Loaded"></div><ul></ul>` の 81 バイトを返す。したがって「本文はあるがメニューリンクが 1 つも取れない」= パーサ側の取りこぼしとして `error` に倒し、既存データを保護する。全食堂が同時に休業しても (年末年始等) 本文が空なら `no-menu` として正しく扱われる。
+
+さらに `no-menu` と判定する前に **`menu.php` が正常に取得できたこと**を裏取りする。経路障害や CDN が HTTP 200 + 空応答を返すケースを「休業」と誤認して `menu.json` を空にしないための条件。
+
+**書き出しの安全性** (`publishAll()`): `menu.json` / `meta.json` / `index.json` はいずれも一時ファイルへ書いてから `rename` する (`writeJsonAtomic()`)。書き込み途中でプロセスが落ちても切り詰められた JSON が commit されない。
+
+- 書き出しも読み戻しも**食堂単位で try/catch**。1 件の I/O エラーで残りの食堂・`index.json`・step summary を巻き添えにしない
+- 読み戻し時は「ファイル欠落」と「JSON 破損」を `readJson()` が区別。破損時は古い `meta` の件数を流用せず `status: error` / `itemCount: 0` として index に載せる
+- 読み戻し自体が失敗した場合は**直前に書き出した meta** を index に使う (一時的な read エラーで正常なデータを捨てない)
+- 書き出しに失敗した食堂は、disk 上の古い `meta` が `ok` でも index では `error` に倒す (`menu.json` と `meta.json` の対応が崩れている可能性があるため。終了コード 1 と index の `status` が食い違わない)
+- 失敗は 1 食堂あたり最大 1 件として計上する
+
+終了コード:
+
+| 状況 | 終了コード |
+|---|---|
+| 1 食堂でもメニューを取得できた (他が休業・失敗でも) | 0 |
+| 全食堂が `no-menu` (長期休暇等、fetch は成功) | 0 |
+| 1 件も更新できず、かつ `error` の食堂がある | 1 |
+| ファイル書き出しに失敗した (破損検知を含む) | 1 |
+
+書き出し失敗の判定が最優先される — 1 食堂が正常取得できていても、書き出しか `index.json` の生成に失敗すれば 1 になる。
+
+`update-menu.yml` の commit ステップは `if: ${{ !cancelled() }}` で、scraper が落ちても書き換わったデータを取りこぼさない。
 
 ### 抽出される栄養成分 (detail.php より)
 
@@ -337,11 +379,16 @@ detail.php には `<h1>` が 2 つある:
   "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663252",
   "hours": "平日 11:00-19:30 / 土 11:00-13:30",
   "holidays": "日祝",
+  "notice": "営業時間 平日11:00-19:00 土曜11:30-14:00 日祝休業",
+  "status": "ok",
   "lastUpdated": "2026-04-24T13:12:42.720Z",
+  "lastAttempt": "2026-04-24T13:12:42.720Z",
+  "lastSuccessfulUpdate": "2026-04-24T13:12:42.720Z",
   "itemCount": 47,
   "withNutrition": 46,
   "augmented": 47,
   "issues": 1,
+  "failedEndpoints": [],
   "referenceDb": {
     "version": "1.0.0",
     "basedOn": "日本食品標準成分表 2020年版 (八訂) / 文部科学省",
@@ -357,6 +404,8 @@ detail.php には `<h1>` が 2 つある:
 ```json
 {
   "lastUpdated": "2026-04-24T13:12:42.720Z",
+  "generatedAt": "2026-04-24T13:12:42.720Z",
+  "status": "degraded",
   "cafeterias": [
     {
       "id": "663252",
@@ -367,14 +416,28 @@ detail.php には `<h1>` が 2 つある:
       "hours": "平日 11:00-19:30 / 土 11:00-13:30",
       "holidays": "日祝",
       "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663252",
+      "notice": "営業時間 平日11:00-19:00 土曜11:30-14:00 日祝休業",
+      "status": "ok",
       "itemCount": 47,
       "lastUpdated": "2026-04-24T13:12:42.720Z",
+      "lastAttempt": "2026-04-24T13:12:42.720Z",
+      "lastSuccessfulUpdate": "2026-04-24T13:12:42.720Z",
       "skipped": false
     }
     // …カフェテリアかさね (663258)・福利会館3階食堂 (663253)
   ]
 }
 ```
+
+トップレベルの `lastUpdated` は**実際にデータが書き換わった最新時刻** (全食堂で取得できなかった run では前回の値のまま)、`generatedAt` はその run の実行時刻。`status` は `ok` (全食堂正常) / `degraded` (一部が休業・失敗、**全食堂休業もここ**) / `failed` (`error` の食堂があり、かつ 1 件も取得できなかった) — 終了コードの表と一致する。各食堂の `skipped` は `status` から導出される後方互換フィールド (`ok` / `partial` 以外で `true`)。
+
+`lastUpdated` / `lastAttempt` / `lastSuccessfulUpdate` の使い分け:
+
+| フィールド | 意味 |
+|---|---|
+| `lastUpdated` | `menu.json` を書き換えた時刻。取得失敗時は据え置き (表示中データの日付と一致させるため) |
+| `lastAttempt` | 最後にスクレイプを試みた時刻。常に更新 |
+| `lastSuccessfulUpdate` | 最後にメニューを 1 件以上取得できた時刻。休業中も保持 |
 
 ### HTTP クライアント ([`scripts/lib/fetch-with-retry.mjs`](scripts/lib/fetch-with-retry.mjs))
 
@@ -689,12 +752,17 @@ fetch('./data/index.json', { cache: 'no-cache' })
 fetch(`./data/${id}/menu.json`, { cache: 'no-cache' })
 fetch(`./data/${id}/meta.json`, { cache: 'no-cache' })
 
-// 3) 「豊中キャンパス内一覧」タブ: 3 食堂を並列ロードしてマージ
-await Promise.all(state.cafeterias.map((c) => loadCafeteria(c.id)));
-const merged = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id].items);
+// 3) 「豊中キャンパス内一覧」タブ: 3 食堂を並列ロードしてマージ。
+//    1 食堂が失敗しても他食堂を巻き添えにしないため allSettled を使う
+const loads = await Promise.allSettled(state.cafeterias.map((c) => loadCafeteria(c.id)));
+state.loadErrors = state.cafeterias.filter((_, i) => loads[i].status === 'rejected').map((c) => c.name);
+const merged = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id]?.items ?? []);
 ```
 
-読み込み済み食堂は `state.itemsByCafeteria` にキャッシュ。エラーは `#status` に表示。
+読み込み済み食堂は `state.itemsByCafeteria` にキャッシュ。ステータス行の文言は
+[`public/js/cafeteria-status.js`](public/js/cafeteria-status.js) の純粋関数
+(`buildTabStatus()` / `groupEmptyReason()`) が組み立てる — **休業 (掲載 0 件) と
+読み込み失敗を必ず別々に表示**し、合計 0 件のときも読込失敗の食堂名を落とさない。
 
 ### カテゴリ表示マッピング
 
@@ -905,14 +973,16 @@ export const DAILY_RDI = Object.freeze({
 
 ## テスト
 
-`test/` 配下を `node --test` が全件実行。**現在 40 テスト全 pass**。
+`test/` 配下を `node --test` が全件実行。**現在 97 テスト全 pass** (2026-09-06 実測)。
 
 | ファイル | LOC | 対象 | 代表テスト |
 |---|---|---|---|
-| `nutrition.test.mjs` | 99 | aimScore / dailyBonus / boundPenalty / pfcScore / scoreCombination | 境界値 (0, target, 1.3×target), 理想 PFC, 過剰塩ペナルティ |
+| `nutrition.test.mjs` | 178 | aimScore / dailyBonus / boundPenalty / pfcScore / scoreCombination | 境界値 (0, target, 1.3×target), 理想 PFC, 過剰塩ペナルティ |
 | `combo-rules.test.mjs` | 108 | groupByCategory / isRice / enumerateAll / totalPrice | 予算遵守、ライス×2 排除、定食必須 1 主食 1 主菜 |
 | `diversity.test.mjs` | 76 | jaccardSimilarity / selectDiverseTopK / boltzmannSample | 同一=1, 互換=0, 近似複製の排除、λ=1.0 純スコア |
+| `cafeteria-status.test.mjs` | 120 | findNotice / closedCafeterias / buildTabStatus / groupEmptyReason ([`public/js/cafeteria-status.js`](public/js/cafeteria-status.js)) | 休業と読込失敗の区別、合計 0 件でも読込失敗を落とさない、一覧タブ/単独タブの文言 |
 | `augment.test.mjs` | 62 | augmentItem / augmentAll | perKcal スケーリング、測定値保護、パターン優先、カテゴリフォールバック、レバー高 B2 |
+| `scrape-status.test.mjs` | 389 | classifyScrape / extractStoreNotice / buildMeta / buildStaleMeta / buildIndexEntry / publishCafeteria / publishAll / readCafeteriaState | 休業と取得失敗の区別、本文空/非空による構造変更検知、実 HTML からの告知抽出 (`test/fixtures/`)、`error` 時に `menu.json` を消さない実ファイル検証、破損 JSON を健全と誤報告しない検証、1 食堂の I/O 失敗で他食堂の index が欠けない検証、index と disk の件数一致 |
 
 ローカル実行:
 ```bash
@@ -947,7 +1017,9 @@ CI 上での自動実行は未設定 (将来的に `.github/workflows/ci.yml` �
 
 | 症状 | 原因 | 対処 |
 |---|---|---|
-| 全 0 件取得 | `menu_load.php` の URL 構造が変わった | [`scripts/scrape.mjs`](scripts/scrape.mjs) `LOAD_URL` を再確認 |
+| 一部食堂が `no-menu` | 夏季休業等でその食堂のメニュー掲載がない | 対処不要。job は緑のまま、他食堂の更新は commit される。UI にはバッジと生協の告知文を表示 |
+| 全食堂が `error` かつログに `unparseable responses` | `menu_load.php` の HTML 構造が変わり抽出に失敗している | [`scripts/scrape.mjs`](scripts/scrape.mjs) `extractItemsFromCategoryHtml()` のセレクタを再確認。既存データは自動保護される |
+| 全食堂が `error` かつログに `fetch failures` | サーバー障害 / URL 構造変更 | 生協サイトを直接確認。既存データは自動保護される |
 | 名前が全部「大阪大学生協○○食堂」 | detail.php の h1 構造変更 | [`scripts/parser.mjs`](scripts/parser.mjs) `SITE_HEADER_NAMES` を該当食堂で更新 |
 | 栄養値欠落 | detail.php のラベル変更 | `NUMERIC_PATTERNS` の正規表現を調整 |
 | push 403 | workflow permissions 未設定 | Settings → Actions → Workflow permissions を "Read and write" に |

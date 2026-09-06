@@ -1,6 +1,12 @@
 import { rankCombinations } from './optimizer.js';
 import { selectDiverseTopK, boltzmannSample } from './diversity.js';
 import { DAILY_RDI, MEAL_TARGET, WEIGHTS, NUTRITION_FILTERS } from './nutrition.js';
+import {
+  CAFETERIA_STATUS_LABEL,
+  findNotice,
+  buildTabStatus,
+  groupEmptyReason,
+} from './cafeteria-status.js';
 
 const CATEGORY_LABELS = {
   main: '主菜',
@@ -56,6 +62,7 @@ const state = {
   items: [],                 // 現在タブの統合済みアイテム (ランキング対象)
   activeToggles: new Set(),  // 栄養トグル (NUTRITION_FILTERS のキー)
   currentCat: 'all',         // メニュー一覧のカテゴリフィルタ
+  loadErrors: [],            // 読み込みに失敗した食堂名 (一覧タブで他食堂を巻き込まないため)
 };
 
 async function loadIndex() {
@@ -149,6 +156,11 @@ function renderNutritionToggles() {
   }
 }
 
+// 一覧タブ (ALL) は特定の食堂を指さないので告知も持たない
+function cafeteriaNotice(id) {
+  return id === ALL_TAB_ID ? null : findNotice(state, id);
+}
+
 function renderCafeteriaMeta() {
   const el = document.querySelector('.cafeteria-meta');
   el.innerHTML = '';
@@ -161,12 +173,21 @@ function renderCafeteriaMeta() {
     card.className = 'cafeteria-meta-card';
     card.style.setProperty('--meta-accent', CAFETERIA_COLORS[c.id] ?? '#2563eb');
     const itemMeta = state.itemsByCafeteria[c.id]?.meta;
-    const updated = formatDate(itemMeta?.lastUpdated ?? c.lastUpdated);
+    const status = itemMeta?.status ?? c.status ?? 'ok';
+    const notice = itemMeta?.notice ?? c.notice ?? null;
+    const itemCount = itemMeta?.itemCount ?? c.itemCount ?? 0;
+    const badge = CAFETERIA_STATUS_LABEL[status];
+    // 掲載 0 件のときは「最終更新」より「いつ確認したか」の方が意味がある
+    const countLine = itemCount > 0
+      ? `📋 ${itemCount} 品 · 最終更新 ${formatDate(itemMeta?.lastUpdated ?? c.lastUpdated)}`
+      : `📋 掲載メニューなし · 最終確認 ${formatDate(itemMeta?.lastAttempt ?? c.lastAttempt ?? c.lastUpdated)}`;
     card.innerHTML = `
       <strong>${escapeHtml(c.fullName)}</strong>
+      ${badge ? `<span class="meta-status" data-kind="${badge.kind}">${escapeHtml(badge.text)}</span>` : ''}
+      ${notice ? `<span class="meta-line meta-notice">📣 ${escapeHtml(notice)}</span>` : ''}
       <span class="meta-line">🕒 ${escapeHtml(c.hours)}</span>
       <span class="meta-line">🚫 定休: ${escapeHtml(c.holidays)}</span>
-      <span class="meta-line">📋 ${c.itemCount} 品 · 最終更新 ${updated}</span>
+      <span class="meta-line">${countLine}</span>
       <a class="meta-source" href="${c.sourceUrl}" target="_blank" rel="noopener">🔗 生協サイトの元メニュー</a>`;
     frag.appendChild(card);
   }
@@ -185,12 +206,16 @@ async function setActiveTab(tabId) {
     if (tabId === ALL_TAB_ID) {
       // 一覧タブ: 3 食堂を個別にロード。各食堂は別々の場所にあり横断注文は不可なので、
       // items は食堂別に保持したまま (メニュー全件表示用にのみマージしたビューを使う)。
-      await Promise.all(state.cafeterias.map((c) => loadCafeteria(c.id)));
-      state.items = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id].items);
+      // 1 食堂の menu.json が壊れていても他食堂の表示を巻き込まない
+      const loads = await Promise.allSettled(state.cafeterias.map((c) => loadCafeteria(c.id)));
+      state.loadErrors = state.cafeterias.filter((_, i) => loads[i].status === 'rejected').map((c) => c.name);
+      for (const r of loads) if (r.status === 'rejected') console.error(r.reason);
+      state.items = state.cafeterias.flatMap((c) => state.itemsByCafeteria[c.id]?.items ?? []);
       document.getElementById('app-title').textContent = '🍱 阪大豊中キャンパス 3食堂おすすめ (各2案)';
     } else {
       const { items } = await loadCafeteria(tabId);
       state.items = items;
+      state.loadErrors = [];
       const info = state.cafeterias.find((c) => c.id === tabId);
       document.getElementById('app-title').textContent = `🍱 ${info?.fullName ?? '阪大豊中キャンパス食堂'}`;
     }
@@ -203,10 +228,16 @@ async function setActiveTab(tabId) {
   renderCafeteriaMeta();
   updateMenuCount();
   renderMenuList(state.currentCat);
-  const label = tabId === ALL_TAB_ID
-    ? `3食堂合計 ${state.items.length} 品 (各2案ずつ計6案を提示)`
-    : `${state.cafeterias.find((c) => c.id === tabId)?.name}: ${state.items.length} 品読込済`;
-  setStatus(`${label}。条件を設定して「組合せを探す」を押してください。`);
+  const tabStatus = buildTabStatus({
+    isAllTab: tabId === ALL_TAB_ID,
+    tabName: state.cafeterias.find((c) => c.id === tabId)?.name ?? '',
+    cafeterias: state.cafeterias,
+    itemsByCafeteria: state.itemsByCafeteria,
+    loadErrors: state.loadErrors,
+    totalItems: state.items.length,
+    notice: cafeteriaNotice(tabId),
+  });
+  setStatus(tabStatus.text, tabStatus.kind);
   // タブ切替時は結果をクリア (前食堂の結果が残ると混乱するため)
   document.getElementById('results').innerHTML = '';
 }
@@ -262,7 +293,14 @@ function getOptions() {
 function run() {
   const opts = getOptions();
   if (state.items.length === 0) {
-    setStatus('メニューデータが未取得です。GitHub Actions が実行されるまでお待ちください。', 'warn');
+    // 休業でメニューが 0 件のケースと、まだ一度も取得できていないケースを区別する
+    const notice = cafeteriaNotice(state.activeTab);
+    setStatus(
+      notice
+        ? `現在この食堂のメニュー掲載がありません (${notice})。`
+        : 'メニューデータが未取得です。GitHub Actions が実行されるまでお待ちください。',
+      'warn'
+    );
     return;
   }
   if (opts.patterns.length === 0) {
@@ -322,7 +360,11 @@ function runAllCafeterias(opts) {
   for (const cafeteria of state.cafeterias) {
     const items = state.itemsByCafeteria[cafeteria.id]?.items ?? [];
     if (items.length === 0) {
-      groups.push({ cafeteria, picks: [], reason: 'メニューデータなし' });
+      const reason = groupEmptyReason({
+        failedLoad: state.loadErrors.includes(cafeteria.name),
+        notice: cafeteriaNotice(cafeteria.id),
+      });
+      groups.push({ cafeteria, picks: [], reason });
       continue;
     }
     const { top, enumerated, kept } = rankCombinations(items, {

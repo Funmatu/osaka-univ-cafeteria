@@ -4,3 +4,4 @@ node_modules/
 debug-*.png
 .env
 .cache/
+public/data/**/*.tmp
