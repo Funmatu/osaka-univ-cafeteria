@@ -128,7 +128,8 @@
                              ▼
 ┌────────────────────────────────────────────────────────┐
 │  GitHub Actions: pages.yml                             │
-│  push (public/** 変更) or workflow_dispatch で発火     │
+│  update-menu.yml の完了 (workflow_run) で発火          │
+│  ※ bot の push は push トリガを発火させない仕様のため    │
 │                                                        │
 │  public/ 配下を artifact にしてそのまま Pages へデプロイ  │
 └────────────────────────────┬───────────────────────────┘
@@ -871,11 +872,15 @@ npm test
 
 | 項目 | 値 |
 |---|---|
-| トリガ | `push` (paths: `public/**`, `.github/workflows/pages.yml`) + `workflow_dispatch` |
+| トリガ | `push` (paths: `public/**`, `.github/workflows/pages.yml`) + **`workflow_run`** (`Update Menu Data` の完了時) + `workflow_dispatch` |
 | 権限 | `contents: read`, `pages: write`, `id-token: write` |
 | 並行性 | group=`pages`, cancel-in-progress=`true` (最新のみ勝つ) |
 | 環境 | `github-pages` (GitHub 管理) |
-| 動作 | `public/` を artifact 化 → `actions/deploy-pages@v4` で公開 |
+| 動作 | `main` の最新を checkout → `public/` を artifact 化 → `actions/deploy-pages@v4` で公開 |
+
+**なぜ `workflow_run` が要るか** (2026-09-06 実測で判明): `update-menu.yml` のデータ commit は `GITHUB_TOKEN` による push なので、GitHub の仕様 (ワークフローの再帰実行防止) により `push` トリガを発火させない。このため 2026-04-28 〜 2026-09-06 の間 `pages.yml` は 1 度も走らず、日次のメニュー更新がサイトに反映されていなかった。`workflow_run` は `GITHUB_TOKEN` 起点の run でも発火するので、これを配信の起点にしている。
+
+**checkout の `ref: main` が要る理由**: `workflow_run` イベントの `github.sha` は「トリガ元の run が開始した時点」の SHA で、その run が作ったデータ commit を含まない。明示的に `main` の最新を取る。
 
 ---
 
