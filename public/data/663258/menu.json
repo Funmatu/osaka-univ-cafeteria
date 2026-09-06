@@ -24,7 +24,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）",
-    "scrapedAt": "2026-09-06T03:42:43.438Z",
+    "scrapedAt": "2026-09-06T23:38:00.329Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -57,7 +57,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）",
-    "scrapedAt": "2026-09-06T03:42:43.441Z",
+    "scrapedAt": "2026-09-06T23:38:00.331Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -90,7 +90,7 @@
       "fiber": 3
     },
     "origin": "精白米（国産）",
-    "scrapedAt": "2026-09-06T03:42:43.443Z",
+    "scrapedAt": "2026-09-06T23:38:00.340Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -99,64 +99,64 @@
     ]
   },
   {
-    "code": "611069",
-    "name": "豚味噌煮",
-    "nameEn": "Simmered pork tofu and vegetables in miso based soup",
+    "code": "611076",
+    "name": "豚すき煮",
+    "nameEn": "Simmered pork tofu vegetables and egg in japanese soup",
     "price": 297,
     "category": "main",
     "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611069.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611076.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 195,
-      "protein": 13.6,
-      "fat": 9,
-      "carbs": 19.2,
+      "energy": 173,
+      "protein": 13.5,
+      "fat": 8.9,
+      "carbs": 12.1,
       "salt": 2.8,
-      "calcium": 87,
-      "iron": 2,
-      "vegetable": 147,
-      "vitaminA": 132,
-      "vitaminB1": 0.36,
-      "vitaminB2": 0.16,
-      "vitaminC": 18,
-      "fiber": 0.1
+      "calcium": 76,
+      "iron": 1.7,
+      "vegetable": 100,
+      "vitaminA": 62,
+      "vitaminB1": 0.3,
+      "vitaminB2": 0.2,
+      "vitaminC": 11,
+      "fiber": 0.8
     },
-    "origin": "豚肉（ブラジル）豆腐（国内製造）キャベツ（中国）大根（中国）里芋（中国）",
-    "scrapedAt": "2026-09-06T03:42:37.995Z",
+    "origin": "豆腐（国内製造）白菜（中国）豚肉（ブラジル）玉葱（中国）鶏卵（国産）",
+    "scrapedAt": "2026-09-06T23:37:55.259Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "食品成分表 八訂 魚料理平均 (煮魚・焼魚)"
+        "source": "category-fallback:main"
       }
     ]
   },
   {
-    "code": "611098",
-    "name": "さば塩焼き",
-    "nameEn": "Grilled mackerel",
+    "code": "611097",
+    "name": "さば生姜煮",
+    "nameEn": "Mackerel simmered with ginger",
     "price": 253,
     "category": "main",
     "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611098.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/611097.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 268,
-      "protein": 15.9,
-      "fat": 22.7,
-      "carbs": 0,
-      "salt": 0.6,
+      "energy": 265,
+      "protein": 12.8,
+      "fat": 19.3,
+      "carbs": 7.6,
+      "salt": 1,
       "calcium": 7,
-      "iron": 0.9,
+      "iron": 0.8,
       "vegetable": 0,
-      "vitaminA": 42,
-      "vitaminB1": 0.13,
-      "vitaminB2": 0.33,
+      "vitaminA": 31,
+      "vitaminB1": 0.1,
+      "vitaminB2": 0.27,
       "vitaminC": 1,
       "fiber": 0.1
     },
     "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-09-06T03:42:37.999Z",
+    "scrapedAt": "2026-09-06T23:37:55.260Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -189,7 +189,7 @@
       "fiber": 2.5
     },
     "origin": "オクラ（インドネシア）鶏卵（国産）",
-    "scrapedAt": "2026-09-06T03:42:38.673Z",
+    "scrapedAt": "2026-09-06T23:37:55.889Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -222,7 +222,7 @@
       "fiber": 0
     },
     "origin": "鶏きも（国産）",
-    "scrapedAt": "2026-09-06T03:42:38.674Z",
+    "scrapedAt": "2026-09-06T23:37:55.892Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -231,31 +231,31 @@
     ]
   },
   {
-    "code": "612008",
-    "name": "ハッシュポテト",
-    "nameEn": "Petit hashed browns",
+    "code": "612010",
+    "name": "ちくわの磯辺揚げ",
+    "nameEn": "Fried roll of grilled fish paste",
     "price": 132,
     "category": "side",
     "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612008.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612010.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 130,
-      "protein": 1.4,
-      "fat": 6.9,
-      "carbs": 14.7,
-      "salt": 0.8,
-      "calcium": 4,
-      "iron": 0.4,
+      "energy": 98,
+      "protein": 8.1,
+      "fat": 3.3,
+      "carbs": 8.9,
+      "salt": 1.4,
+      "calcium": 10,
+      "iron": 0.7,
       "vegetable": 0,
       "vitaminA": 0,
-      "vitaminB1": 0.05,
-      "vitaminB2": 0.02,
-      "vitaminC": 7,
+      "vitaminB1": 0.03,
+      "vitaminB2": 0.05,
+      "vitaminC": 0,
       "fiber": 2
     },
-    "origin": "じゃが芋（ベルギー",
-    "scrapedAt": "2026-09-06T03:42:38.670Z",
+    "origin": "タイ製造",
+    "scrapedAt": "2026-09-06T23:37:55.890Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -264,31 +264,31 @@
     ]
   },
   {
-    "code": "612021",
-    "name": "わかめ玉子サラダ",
-    "nameEn": "Seaweed and egg cabbage salad",
+    "code": "612020",
+    "name": "マカロニコーンサラダ",
+    "nameEn": "Macaroni corn and cabbage salad",
     "price": 132,
     "category": "side",
     "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612021.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612020.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 60,
-      "protein": 2.4,
-      "fat": 4.4,
-      "carbs": 3.6,
-      "salt": 0.6,
-      "calcium": 28,
-      "iron": 0.2,
-      "vegetable": 40,
-      "vitaminA": 6,
-      "vitaminB1": 0.02,
-      "vitaminB2": 0.06,
-      "vitaminC": 16,
+      "energy": 113,
+      "protein": 2.3,
+      "fat": 6.6,
+      "carbs": 12.7,
+      "salt": 0.4,
+      "calcium": 22,
+      "iron": 0.4,
+      "vegetable": 62,
+      "vitaminA": 18,
+      "vitaminB1": 0.06,
+      "vitaminB2": 0.03,
+      "vitaminC": 17,
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-09-06T03:42:38.672Z",
+    "scrapedAt": "2026-09-06T23:37:55.887Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -297,64 +297,64 @@
     ]
   },
   {
-    "code": "612037",
-    "name": "小松菜ときざみ揚げのおひたし",
-    "nameEn": "Blanched komatsuna and chopped fried tofu",
+    "code": "612030",
+    "name": "ほうれん草ソテー",
+    "nameEn": "Stir fried spinach",
     "price": 99,
     "category": "side",
     "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612037.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612030.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 32,
-      "protein": 2.7,
-      "fat": 1.2,
-      "carbs": 2.7,
-      "salt": 1,
-      "calcium": 59,
-      "iron": 0.9,
-      "vegetable": 38,
-      "vitaminA": 124,
+      "energy": 20,
+      "protein": 1.3,
+      "fat": 0.8,
+      "carbs": 1.9,
+      "salt": 0.5,
+      "calcium": 41,
+      "iron": 0.5,
+      "vegetable": 43,
+      "vitaminA": 199,
       "vitaminB1": 0.03,
-      "vitaminB2": 0.03,
-      "vitaminC": 7,
-      "fiber": 2.2
+      "vitaminB2": 0.06,
+      "vitaminC": 8,
+      "fiber": 2.5
     },
-    "origin": "小松菜（中国）人参（中国）油揚げ（中国製造）",
-    "scrapedAt": "2026-09-06T03:42:39.364Z",
+    "origin": "ほうれん草（中国",
+    "scrapedAt": "2026-09-06T23:37:56.519Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "食品成分表 八訂 複合 青菜おひたし (70g)"
+        "source": "食品成分表 八訂 06268 ほうれんそう ゆで (70g)"
       }
     ]
   },
   {
-    "code": "612052",
-    "name": "胡瓜ともやしのナムル",
-    "nameEn": "Boiled vegetables with salt based sauce",
+    "code": "612053",
+    "name": "蒸し鶏ともやしの葱生姜だれ",
+    "nameEn": "Steamed chicken and bean sprouts with green onion and ginger sauce",
     "price": 99,
     "category": "side",
     "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612052.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612053.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 24,
-      "protein": 1.5,
-      "fat": 1,
-      "carbs": 3.9,
-      "salt": 1.1,
-      "calcium": 16,
+      "energy": 66,
+      "protein": 6.7,
+      "fat": 3.5,
+      "carbs": 3.1,
+      "salt": 1,
+      "calcium": 11,
       "iron": 0.2,
-      "vegetable": 72,
-      "vitaminA": 7,
-      "vitaminB1": 0.01,
+      "vegetable": 34,
+      "vitaminA": 47,
+      "vitaminB1": 0.04,
       "vitaminB2": 0.06,
-      "vitaminC": 9,
+      "vitaminC": 5,
       "fiber": 2
     },
-    "origin": "もやし（国産）胡瓜（中国）",
-    "scrapedAt": "2026-09-06T03:42:39.371Z",
+    "origin": "鶏肉（中国）もやし（国産）ほうれん草（国産）",
+    "scrapedAt": "2026-09-06T23:37:56.518Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -363,68 +363,68 @@
     ]
   },
   {
-    "code": "612064",
-    "name": "蒸し鶏オクラ梅だれ和え",
-    "nameEn": "Steamed chicken and okra tossed in plum flavored seasoning",
+    "code": "612069",
+    "name": "ブロッコリーシーザー和え",
+    "nameEn": "Broccoli tossed in Caesar dressing",
     "price": 99,
     "category": "side",
     "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612064.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612069.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 40,
-      "protein": 4.5,
-      "fat": 0.3,
-      "carbs": 5.5,
-      "salt": 0.9,
-      "calcium": 32,
-      "iron": 0.2,
-      "vegetable": 33,
-      "vitaminA": 21,
-      "vitaminB1": 0.05,
-      "vitaminB2": 0.05,
-      "vitaminC": 2,
+      "energy": 45,
+      "protein": 2.5,
+      "fat": 2.7,
+      "carbs": 4.2,
+      "salt": 0.5,
+      "calcium": 27,
+      "iron": 0.6,
+      "vegetable": 63,
+      "vitaminA": 43,
+      "vitaminB1": 0.04,
+      "vitaminB2": 0.06,
+      "vitaminC": 34,
+      "fiber": 3.1
+    },
+    "origin": "ブロッコリー（中国）",
+    "scrapedAt": "2026-09-06T23:37:56.525Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 06264 ブロッコリー ゆで (70g)"
+      }
+    ]
+  },
+  {
+    "code": "612077",
+    "name": "オクラ豆腐",
+    "nameEn": "Tofu topped with Japanese style seasoned okra",
+    "price": 99,
+    "category": "side",
+    "categoryJa": "副菜",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612077.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 60,
+      "protein": 5.4,
+      "fat": 3.1,
+      "carbs": 4.1,
+      "salt": 1,
+      "calcium": 46,
+      "iron": 1.3,
+      "vegetable": 20,
+      "vitaminA": 12,
+      "vitaminB1": 0.12,
+      "vitaminB2": 0.06,
+      "vitaminC": 1,
       "fiber": 2.5
     },
-    "origin": "オクラ（インドネシア）鶏肉（中国）",
-    "scrapedAt": "2026-09-06T03:42:39.356Z",
+    "origin": "豆腐（国内製造）オクラ（インドネシア）",
+    "scrapedAt": "2026-09-06T23:37:56.526Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "食品成分表 八訂 06032 オクラ ゆで (50g)"
-      }
-    ]
-  },
-  {
-    "code": "612081",
-    "name": "しらす豆腐",
-    "nameEn": "Tofu topped with baby sardines",
-    "price": 99,
-    "category": "side",
-    "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612081.png",
-    "cafeteriaId": "663258",
-    "nutrition": {
-      "energy": 58,
-      "protein": 5.9,
-      "fat": 3.1,
-      "carbs": 2.6,
-      "salt": 1.1,
-      "calcium": 38,
-      "iron": 1.2,
-      "vegetable": 0,
-      "vitaminA": 7,
-      "vitaminB1": 0.11,
-      "vitaminB2": 0.04,
-      "vitaminC": 0,
-      "fiber": 2
-    },
-    "origin": "豆腐（国内製造）ちりめん（韓国",
-    "scrapedAt": "2026-09-06T03:42:39.377Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "category-fallback:side"
       }
     ]
   },
@@ -453,7 +453,7 @@
       "fiber": 2.5
     },
     "origin": "ほうれん草（国産）ごま（中南米）",
-    "scrapedAt": "2026-09-06T03:42:40.042Z",
+    "scrapedAt": "2026-09-06T23:37:57.148Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -462,64 +462,64 @@
     ]
   },
   {
-    "code": "612103",
-    "name": "ひじき煮",
-    "nameEn": "Simmered hijiki a kind of edible seaweed in Japanese soup",
+    "code": "612102",
+    "name": "きんぴらごぼう",
+    "nameEn": "Fried burdock in soy sauce and sugar",
     "price": 77,
     "category": "side",
     "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612103.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612102.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 48,
-      "protein": 1.6,
-      "fat": 2.4,
-      "carbs": 4.9,
-      "salt": 0.8,
-      "calcium": 31,
-      "iron": 0.4,
-      "vegetable": 4,
-      "vitaminA": 38,
+      "energy": 39,
+      "protein": 0.8,
+      "fat": 0.9,
+      "carbs": 7,
+      "salt": 0.6,
+      "calcium": 17,
+      "iron": 0.2,
+      "vegetable": 32,
+      "vitaminA": 78,
       "vitaminB1": 0.02,
       "vitaminB2": 0.02,
-      "vitaminC": 0,
-      "fiber": 3.8
+      "vitaminC": 1,
+      "fiber": 2.5
     },
-    "origin": "ひじき（中国",
-    "scrapedAt": "2026-09-06T03:42:40.053Z",
+    "origin": "ごぼう（中国",
+    "scrapedAt": "2026-09-06T23:37:57.147Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "食品成分表 八訂 09051 ひじき 鉄釜ゆで (60g小鉢)"
+        "source": "食品成分表 八訂 06085 ごぼう きんぴら相当 (60g)"
       }
     ]
   },
   {
-    "code": "612117",
-    "name": "パンプキンサラダ",
-    "nameEn": "Pumpkin salad",
+    "code": "612113",
+    "name": "ポテトサラダ",
+    "nameEn": "Potato salad with mayonnaise based sauce",
     "price": 77,
     "category": "side",
     "categoryJa": "副菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612117.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/612113.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 107,
-      "protein": 1.3,
-      "fat": 6.9,
-      "carbs": 9.9,
-      "salt": 0.4,
-      "calcium": 5,
-      "iron": 0.2,
-      "vegetable": 30,
-      "vitaminA": 101,
-      "vitaminB1": 0.02,
-      "vitaminB2": 0.03,
-      "vitaminC": 10,
+      "energy": 98,
+      "protein": 0.9,
+      "fat": 6,
+      "carbs": 10,
+      "salt": 0.6,
+      "calcium": 3,
+      "iron": 0.1,
+      "vegetable": 3,
+      "vitaminA": 9,
+      "vitaminB1": 0.03,
+      "vitaminB2": 0.01,
+      "vitaminC": 6,
       "fiber": 1.8
     },
-    "origin": "南瓜（中国",
-    "scrapedAt": "2026-09-06T03:42:40.057Z",
+    "origin": "じゃが芋（国産）玉葱（国産",
+    "scrapedAt": "2026-09-06T23:37:57.151Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -552,7 +552,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-09-06T03:42:40.060Z",
+    "scrapedAt": "2026-09-06T23:37:57.153Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -585,7 +585,7 @@
       "fiber": 2.2
     },
     "origin": "豚肉（メキシコ）大根（中国）里芋（中国）玉葱（中国）人参（中国）ごぼう（中国）",
-    "scrapedAt": "2026-09-06T03:42:40.721Z",
+    "scrapedAt": "2026-09-06T23:37:57.796Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -618,7 +618,7 @@
       "fiber": 1
     },
     "origin": "若布（中国）豆腐（国内製造）葱（中国）",
-    "scrapedAt": "2026-09-06T03:42:40.733Z",
+    "scrapedAt": "2026-09-06T23:37:57.787Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -627,31 +627,31 @@
     ]
   },
   {
-    "code": "615006",
-    "name": "あまおう苺ムース",
-    "nameEn": "Amaou strawberry mousse cake",
+    "code": "615003",
+    "name": "キャラメルナッツショート",
+    "nameEn": "Sponge cake with caramel and nuts",
     "price": 165,
     "category": "dessert",
     "categoryJa": "デザート",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615006.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615003.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 78,
-      "protein": 0.8,
-      "fat": 5.5,
-      "carbs": 6.4,
-      "salt": 0,
-      "calcium": 9,
-      "iron": 0.1,
+      "energy": 122,
+      "protein": 1.7,
+      "fat": 8.6,
+      "carbs": 9.6,
+      "salt": 0.1,
+      "calcium": 16,
+      "iron": 0.2,
       "vegetable": 0,
-      "vitaminA": 24,
+      "vitaminA": 35,
       "vitaminB1": 0.01,
-      "vitaminB2": 0.02,
-      "vitaminC": 1,
+      "vitaminB2": 0.06,
+      "vitaminC": 0,
       "fiber": 0.5
     },
-    "origin": "ホイップクリーム（国内製造）いちごピューレ（国内製造）",
-    "scrapedAt": "2026-09-06T03:42:44.114Z",
+    "origin": "ホイップクリーム（国内製造）アーモンド（アメリカ）",
+    "scrapedAt": "2026-09-06T23:38:00.956Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -684,7 +684,7 @@
       "fiber": 2.3
     },
     "origin": "さつま芋（国産）",
-    "scrapedAt": "2026-09-06T03:42:44.117Z",
+    "scrapedAt": "2026-09-06T23:38:00.957Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -717,7 +717,7 @@
       "fiber": 0.3
     },
     "origin": "生乳（国産）パインアップル（フィリピン）パパイヤ（フィリピン）ナタデココ（フィリピン）",
-    "scrapedAt": "2026-09-06T03:42:44.119Z",
+    "scrapedAt": "2026-09-06T23:38:00.958Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -726,163 +726,163 @@
     ]
   },
   {
-    "code": "615029",
-    "name": "チョコクレープ",
-    "nameEn": "Chocolate crepe",
+    "code": "615027",
+    "name": "焼きプリンタルト",
+    "nameEn": "Pudding tart",
     "price": 99,
     "category": "dessert",
     "categoryJa": "デザート",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615029.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615027.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 86,
-      "protein": 0.8,
-      "fat": 5.2,
-      "carbs": 8.4,
+      "energy": 117,
+      "protein": 1.8,
+      "fat": 6.5,
+      "carbs": 12.5,
       "salt": 0.1,
-      "calcium": 8,
+      "calcium": 67,
       "iron": 0.1,
       "vegetable": 0,
-      "vitaminA": 3,
-      "vitaminB1": 0.01,
-      "vitaminB2": 0.02,
+      "vitaminA": 12,
+      "vitaminB1": 0.02,
+      "vitaminB2": 0.06,
       "vitaminC": 0,
-      "fiber": 0.5
+      "fiber": 0
     },
-    "origin": "クリーム（国内製造）小麦粉（国産",
-    "scrapedAt": "2026-09-06T03:42:44.121Z",
+    "origin": "小麦粉（国内製造）マーガリン（国内製造）",
+    "scrapedAt": "2026-09-06T23:38:00.968Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "category-fallback:dessert"
+        "source": "食品成分表 八訂 15086 カスタードプリン (80g)"
       }
     ]
   },
   {
-    "code": "616002",
-    "name": "（中）チキン竜田丼",
-    "nameEn": "Bowl of rice topped with deep-fried chicken",
+    "code": "616008",
+    "name": "（中）温玉サーモン丼",
+    "nameEn": "Rice of bowl with salmon， half boiled egg and Japanese style sauce",
     "price": 583,
     "category": "bowl",
     "categoryJa": "丼・カレー",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616002.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616008.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 764,
-      "protein": 23.5,
-      "fat": 27.6,
-      "carbs": 108.9,
-      "salt": 3.4,
-      "calcium": 22,
-      "iron": 0.9,
-      "vegetable": 0,
-      "vitaminA": 47,
-      "vitaminB1": 0.18,
-      "vitaminB2": 0.23,
-      "vitaminC": 0,
-      "fiber": 0.3
+      "energy": 498,
+      "protein": 18,
+      "fat": 10.4,
+      "carbs": 86.8,
+      "salt": 2.4,
+      "calcium": 47,
+      "iron": 1.6,
+      "vegetable": 5,
+      "vitaminA": 115,
+      "vitaminB1": 0.12,
+      "vitaminB2": 0.29,
+      "vitaminC": 4,
+      "fiber": 0
     },
-    "origin": "精白米（国産）鶏肉（中国）",
-    "scrapedAt": "2026-09-06T03:42:42.755Z",
+    "origin": "精白米（国産）ギンザケ（チリ）鶏卵（国産）干のり（国産）",
+    "scrapedAt": "2026-09-06T23:37:59.695Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "食品成分表 八訂 11225 若鶏もも 皮つき (100g)"
+        "source": "食品成分表 八訂 12004 鶏卵 全卵ゆで (50g/1個)"
       }
     ]
   },
   {
-    "code": "616050",
-    "name": "（中）ビビンバ丼",
-    "nameEn": "Bowl of rice with simmered chicken vegetables in Korean chili sauce",
+    "code": "616038",
+    "name": "（中）豚塩カルビ丼",
+    "nameEn": "Bowl of rice with grilled pork with salt based sauce",
     "price": 528,
     "category": "bowl",
     "categoryJa": "丼・カレー",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616050.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616038.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 556,
-      "protein": 16.7,
-      "fat": 11.9,
-      "carbs": 97.8,
-      "salt": 4,
-      "calcium": 90,
+      "energy": 615,
+      "protein": 14.8,
+      "fat": 23.2,
+      "carbs": 88.1,
+      "salt": 1.9,
+      "calcium": 37,
+      "iron": 1,
+      "vegetable": 40,
+      "vitaminA": 186,
+      "vitaminB1": 0.34,
+      "vitaminB2": 0.13,
+      "vitaminC": 9,
+      "fiber": 3
+    },
+    "origin": "精白米（国産）豚肉（スペイン",
+    "scrapedAt": "2026-09-06T23:37:59.699Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "category-fallback:bowl"
+      }
+    ]
+  },
+  {
+    "code": "616104",
+    "name": "ソース海老カツ丼",
+    "nameEn": "Bowl of rice with shrimp cutlet and sauce",
+    "price": 528,
+    "category": "bowl",
+    "categoryJa": "丼・カレー",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616104.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 674,
+      "protein": 16.1,
+      "fat": 17.5,
+      "carbs": 117,
+      "salt": 2.8,
+      "calcium": 58,
       "iron": 1.4,
-      "vegetable": 66,
-      "vitaminA": 142,
-      "vitaminB1": 0.16,
-      "vitaminB2": 0.13,
-      "vitaminC": 12,
-      "fiber": 3
+      "vegetable": 22,
+      "vitaminA": 5,
+      "vitaminB1": 0.1,
+      "vitaminB2": 0.06,
+      "vitaminC": 8,
+      "fiber": 0
     },
-    "origin": "精白米（国産）鶏肉（国産）ぜんまい（中国）小松菜（中国）大根（中国）大豆もやし（中国）鶏卵（国産",
-    "scrapedAt": "2026-09-06T03:42:42.758Z",
+    "origin": "精白米（国産）えび（中国）いか（中国）キャベツ（国産",
+    "scrapedAt": "2026-09-06T23:37:59.705Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "category-fallback:bowl"
+        "source": "食品成分表 八訂 10321 バナメイえび 生 (60g)"
       }
     ]
   },
   {
-    "code": "616086",
-    "name": "（中）おろしカツ丼",
-    "nameEn": "Bowl of rice with fried pork cutlet and Japanese white radish in soy sauce",
+    "code": "616128",
+    "name": "（中）豚塩カルビカレー",
+    "nameEn": "Curry rice with grilled pork",
     "price": 528,
     "category": "bowl",
     "categoryJa": "丼・カレー",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616086.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616128.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 662,
-      "protein": 17.9,
-      "fat": 20.4,
-      "carbs": 104,
-      "salt": 2.7,
-      "calcium": 28,
-      "iron": 0.9,
-      "vegetable": 23,
-      "vitaminA": 32,
-      "vitaminB1": 0.37,
-      "vitaminB2": 0.13,
-      "vitaminC": 5,
-      "fiber": 3
-    },
-    "origin": "精白米（国産）豚肉（チリ",
-    "scrapedAt": "2026-09-06T03:42:42.760Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "category-fallback:bowl"
-      }
-    ]
-  },
-  {
-    "code": "616122",
-    "name": "（中）ロースカツカレー",
-    "nameEn": "Curry rice with fried pork cutlet",
-    "price": 528,
-    "category": "bowl",
-    "categoryJa": "丼・カレー",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/616122.png",
-    "cafeteriaId": "663258",
-    "nutrition": {
-      "energy": 787,
-      "protein": 20.5,
-      "fat": 29.2,
-      "carbs": 112.6,
-      "salt": 3.3,
-      "calcium": 39,
+      "energy": 686,
+      "protein": 15,
+      "fat": 24.8,
+      "carbs": 101.6,
+      "salt": 3.8,
+      "calcium": 35,
       "iron": 1.5,
       "vegetable": 5,
-      "vitaminA": 49,
-      "vitaminB1": 0.38,
-      "vitaminB2": 0.11,
-      "vitaminC": 0,
+      "vitaminA": 50,
+      "vitaminB1": 0.27,
+      "vitaminB2": 0.1,
+      "vitaminC": 1,
       "fiber": 3.5
     },
-    "origin": "精白米（国産）豚肉（チリ",
-    "scrapedAt": "2026-09-06T03:42:42.761Z",
+    "origin": "精白米（国産）豚肉（スペイン",
+    "scrapedAt": "2026-09-06T23:37:59.712Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -915,7 +915,7 @@
       "fiber": 3.5
     },
     "origin": "精白米（国産）じゃが芋（国産）人参（国産）",
-    "scrapedAt": "2026-09-06T03:42:43.436Z",
+    "scrapedAt": "2026-09-06T23:38:00.327Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -924,31 +924,31 @@
     ]
   },
   {
-    "code": "617043",
-    "name": "茄子とツナの冷やしうどん",
-    "nameEn": "Cold whitewheat noodles with eggplant and tuna in Japanese soup",
+    "code": "617033",
+    "name": "冷やしかき揚げおろしうどん",
+    "nameEn": "Cold whitewheat noodles with Tempura fried vegetables and grated Japanese radish in Japanese soup",
     "price": 517,
     "category": "noodle",
     "categoryJa": "麺類",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617043.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617033.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 533,
-      "protein": 16.8,
-      "fat": 17.7,
-      "carbs": 78.5,
-      "salt": 4,
-      "calcium": 49,
-      "iron": 1.7,
-      "vegetable": 95,
-      "vitaminA": 8,
-      "vitaminB1": 0.19,
-      "vitaminB2": 0.1,
-      "vitaminC": 5,
+      "energy": 463,
+      "protein": 12.1,
+      "fat": 4.3,
+      "carbs": 94.3,
+      "salt": 4.7,
+      "calcium": 51,
+      "iron": 1,
+      "vegetable": 64,
+      "vitaminA": 83,
+      "vitaminB1": 0.15,
+      "vitaminB2": 0.08,
+      "vitaminC": 8,
       "fiber": 2.5
     },
-    "origin": "うどん（国内製造）茄子（中国）マグロ（フィリピン）大根（国産）",
-    "scrapedAt": "2026-09-06T03:42:40.735Z",
+    "origin": "うどん（国内製造）玉葱（国産）人参（国産）じゃが芋（国産）大根（国産）",
+    "scrapedAt": "2026-09-06T23:37:57.804Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -957,31 +957,31 @@
     ]
   },
   {
-    "code": "617044",
-    "name": "茄子とツナの冷やしそば",
-    "nameEn": "Cold buckwheat noodles with eggplant and tuna in Japanese soup",
+    "code": "617034",
+    "name": "冷やしかき揚げおろしそば",
+    "nameEn": "Cold buckwheat noodles with Tempura fried vegetables and grated Japanese radish in Japanese soup",
     "price": 517,
     "category": "noodle",
     "categoryJa": "麺類",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617044.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617034.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 508,
-      "protein": 22,
-      "fat": 18.1,
-      "carbs": 66,
-      "salt": 3.6,
-      "calcium": 54,
-      "iron": 3,
-      "vegetable": 95,
-      "vitaminA": 8,
-      "vitaminB1": 0.29,
-      "vitaminB2": 0.13,
-      "vitaminC": 5,
+      "energy": 438,
+      "protein": 17.3,
+      "fat": 4.7,
+      "carbs": 81.8,
+      "salt": 4.3,
+      "calcium": 56,
+      "iron": 2.3,
+      "vegetable": 64,
+      "vitaminA": 83,
+      "vitaminB1": 0.25,
+      "vitaminB2": 0.11,
+      "vitaminC": 8,
       "fiber": 2.8
     },
-    "origin": "そば（国内製造）茄子（中国）マグロ（フィリピン）大根（国産）",
-    "scrapedAt": "2026-09-06T03:42:40.738Z",
+    "origin": "そば（国内製造）玉葱（国産）人参（国産）じゃが芋（国産）大根（国産）",
+    "scrapedAt": "2026-09-06T23:37:57.808Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1014,7 +1014,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）玉葱（国産）人参（国産）じゃが芋（国産）",
-    "scrapedAt": "2026-09-06T03:42:41.398Z",
+    "scrapedAt": "2026-09-06T23:37:58.432Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1047,7 +1047,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）玉葱（国産）人参（国産）じゃが芋（国産）",
-    "scrapedAt": "2026-09-06T03:42:41.408Z",
+    "scrapedAt": "2026-09-06T23:37:58.442Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1080,7 +1080,7 @@
       "fiber": 2.5
     },
     "origin": "うどん（国内製造）",
-    "scrapedAt": "2026-09-06T03:42:42.077Z",
+    "scrapedAt": "2026-09-06T23:37:59.067Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1113,7 +1113,7 @@
       "fiber": 2.8
     },
     "origin": "そば（国内製造）",
-    "scrapedAt": "2026-09-06T03:42:42.083Z",
+    "scrapedAt": "2026-09-06T23:37:59.073Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1122,31 +1122,31 @@
     ]
   },
   {
-    "code": "617081",
-    "name": "ちく天うどん",
-    "nameEn": "Hot whitewheat noodles with fried roll of grilled fish paste in Japanese soup",
+    "code": "617077",
+    "name": "きつねうどん",
+    "nameEn": "Hot whitewheat noodles with fried bean curd in Japanese soup",
     "price": 396,
     "category": "noodle",
     "categoryJa": "麺類",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617081.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617077.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 444,
-      "protein": 16.9,
-      "fat": 5.3,
-      "carbs": 82.3,
-      "salt": 5.6,
-      "calcium": 31,
+      "energy": 446,
+      "protein": 14.6,
+      "fat": 8,
+      "carbs": 79.1,
+      "salt": 4.9,
+      "calcium": 74,
       "iron": 1.4,
       "vegetable": 5,
       "vitaminA": 6,
-      "vitaminB1": 0.13,
-      "vitaminB2": 0.1,
+      "vitaminB1": 0.11,
+      "vitaminB2": 0.06,
       "vitaminC": 2,
       "fiber": 2.5
     },
-    "origin": "うどん（国内製造）竹輪天ぷら（タイ製造）",
-    "scrapedAt": "2026-09-06T03:42:41.413Z",
+    "origin": "うどん（国内製造）味付きつね（国内製造）",
+    "scrapedAt": "2026-09-06T23:37:58.449Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1155,31 +1155,31 @@
     ]
   },
   {
-    "code": "617082",
-    "name": "ちく天そば",
-    "nameEn": "Hot buckwheat noodles with fried roll of grilled fish paste in Japanese soup",
+    "code": "617078",
+    "name": "きつねそば",
+    "nameEn": "Hot buckwheat noodles with fried bean curd in Japanese soup",
     "price": 396,
     "category": "noodle",
     "categoryJa": "麺類",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617082.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617078.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 419,
-      "protein": 22.1,
-      "fat": 5.7,
-      "carbs": 69.8,
-      "salt": 5.2,
-      "calcium": 36,
+      "energy": 421,
+      "protein": 19.8,
+      "fat": 8.4,
+      "carbs": 66.6,
+      "salt": 4.5,
+      "calcium": 79,
       "iron": 2.7,
       "vegetable": 5,
       "vitaminA": 6,
-      "vitaminB1": 0.23,
-      "vitaminB2": 0.13,
+      "vitaminB1": 0.21,
+      "vitaminB2": 0.09,
       "vitaminC": 2,
       "fiber": 2.8
     },
-    "origin": "そば（国内製造）竹輪天ぷら（タイ製造）",
-    "scrapedAt": "2026-09-06T03:42:41.411Z",
+    "origin": "そば（国内製造）味付きつね（国内製造）",
+    "scrapedAt": "2026-09-06T23:37:58.454Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1188,64 +1188,64 @@
     ]
   },
   {
-    "code": "617152",
-    "name": "冷やし担々麺",
-    "nameEn": "Cold Chinese noodles with minced chicken in sesame and chili based soup",
+    "code": "617153",
+    "name": "胡麻チゲ冷麺",
+    "nameEn": "Cold noodle with Korean stew and white sesame seeds and steam chicken",
     "price": 594,
     "category": "noodle",
     "categoryJa": "麺類",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617152.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617153.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 563,
-      "protein": 24.7,
-      "fat": 14.6,
-      "carbs": 83.1,
-      "salt": 4.8,
-      "calcium": 104,
-      "iron": 2.4,
-      "vegetable": 25,
-      "vitaminA": 20,
-      "vitaminB1": 0.24,
-      "vitaminB2": 0.17,
-      "vitaminC": 5,
+      "energy": 649,
+      "protein": 30.3,
+      "fat": 24.2,
+      "carbs": 78.5,
+      "salt": 6.6,
+      "calcium": 100,
+      "iron": 2.6,
+      "vegetable": 21,
+      "vitaminA": 91,
+      "vitaminB1": 0.23,
+      "vitaminB2": 0.33,
+      "vitaminC": 4,
       "fiber": 3
     },
-    "origin": "中華麺（国内製造）鶏肉（国産）胡瓜（中国）",
-    "scrapedAt": "2026-09-06T03:42:42.087Z",
+    "origin": "中華麺（国内製造）鶏卵（国産）鶏肉（中国）胡瓜（中国）",
+    "scrapedAt": "2026-09-06T23:37:59.078Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "食品成分表 八訂 複合 中華麺+具材 (400g)"
+        "source": "category-fallback:noodle"
       }
     ]
   },
   {
-    "code": "617172",
-    "name": "塩ラーメン",
-    "nameEn": "Hot Chinese noodles in salt based soup",
+    "code": "617170",
+    "name": "醤油ラーメン",
+    "nameEn": "Hot Chinese noodles in soy sauce based soup",
     "price": 473,
     "category": "noodle",
     "categoryJa": "麺類",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617172.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/617170.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 439,
-      "protein": 16.9,
-      "fat": 9.3,
-      "carbs": 71.2,
-      "salt": 7.3,
-      "calcium": 30,
-      "iron": 1.1,
+      "energy": 487,
+      "protein": 17.2,
+      "fat": 13.9,
+      "carbs": 72.4,
+      "salt": 6.6,
+      "calcium": 36,
+      "iron": 1.4,
       "vegetable": 20,
       "vitaminA": 8,
-      "vitaminB1": 0.22,
-      "vitaminB2": 0.1,
+      "vitaminB1": 0.24,
+      "vitaminB2": 0.11,
       "vitaminC": 2,
       "fiber": 3
     },
     "origin": "中華麺（国内製造）豚肉（スペイン）メンマ（中国）",
-    "scrapedAt": "2026-09-06T03:42:42.085Z",
+    "scrapedAt": "2026-09-06T23:37:59.083Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1254,31 +1254,64 @@
     ]
   },
   {
-    "code": "621002",
-    "name": "チキン南蛮",
-    "nameEn": "Fried chicken with sweet and sour based sauce with tartarsauce",
+    "code": "621001",
+    "name": "ジューシー唐揚げ",
+    "nameEn": "Fried chicken",
     "price": 341,
     "category": "main",
     "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621002.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621001.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 547,
-      "protein": 18.5,
-      "fat": 36.8,
-      "carbs": 35,
-      "salt": 4,
-      "calcium": 21,
-      "iron": 0.5,
+      "energy": 267,
+      "protein": 21.1,
+      "fat": 13.7,
+      "carbs": 15.2,
+      "salt": 1.7,
+      "calcium": 11,
+      "iron": 0.9,
       "vegetable": 0,
-      "vitaminA": 9,
-      "vitaminB1": 0.09,
-      "vitaminB2": 0.1,
-      "vitaminC": 6,
+      "vitaminA": 46,
+      "vitaminB1": 0.12,
+      "vitaminB2": 0.18,
+      "vitaminC": 3,
       "fiber": 0.3
     },
-    "origin": "鶏肉（中国",
-    "scrapedAt": "2026-09-06T03:42:37.319Z",
+    "origin": "鶏肉（タイ）",
+    "scrapedAt": "2026-09-06T23:37:54.630Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11289 鶏もも皮つき から揚げ (80g)"
+      }
+    ]
+  },
+  {
+    "code": "621007",
+    "name": "ローストチキン塩だれ",
+    "nameEn": "Roast chicken with salt based sauce",
+    "price": 341,
+    "category": "main",
+    "categoryJa": "主菜",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621007.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 243,
+      "protein": 17.1,
+      "fat": 17.2,
+      "carbs": 5,
+      "salt": 2,
+      "calcium": 9,
+      "iron": 0.8,
+      "vegetable": 0,
+      "vitaminA": 40,
+      "vitaminB1": 0.1,
+      "vitaminB2": 0.16,
+      "vitaminC": 2,
+      "fiber": 0.3
+    },
+    "origin": "鶏肉（中国）",
+    "scrapedAt": "2026-09-06T23:37:54.628Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1287,130 +1320,97 @@
     ]
   },
   {
-    "code": "621011",
-    "name": "ジューシー鶏カツ麻婆ソース",
-    "nameEn": "Fried chicken cutlet with pork in spicy sauce",
-    "price": 341,
+    "code": "621024",
+    "name": "豚肉の旨辛みそ炒め",
+    "nameEn": "Stir fried pork with Korean style miso sauce",
+    "price": 297,
     "category": "main",
     "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621011.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621024.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 433,
-      "protein": 15.4,
-      "fat": 31.5,
+      "energy": 281,
+      "protein": 20.5,
+      "fat": 15.5,
+      "carbs": 16.9,
+      "salt": 2,
+      "calcium": 24,
+      "iron": 1.1,
+      "vegetable": 50,
+      "vitaminA": 7,
+      "vitaminB1": 0.69,
+      "vitaminB2": 0.26,
+      "vitaminC": 6,
+      "fiber": 1.5
+    },
+    "origin": "豚肉（ブラジル）玉葱（中国）",
+    "scrapedAt": "2026-09-06T23:37:54.627Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 複合 豚肉野菜炒め (120g)"
+      }
+    ]
+  },
+  {
+    "code": "621035",
+    "name": "ロースカツおろしポン酢",
+    "nameEn": "Fried pork cutlet with grated Japanese radish and citrus sauce",
+    "price": 297,
+    "category": "main",
+    "categoryJa": "主菜",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621035.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 387,
+      "protein": 15.2,
+      "fat": 26,
       "carbs": 22.6,
-      "salt": 1.8,
-      "calcium": 17,
-      "iron": 0.9,
-      "vegetable": 0,
-      "vitaminA": 32,
-      "vitaminB1": 0.09,
+      "salt": 1.9,
+      "calcium": 21,
+      "iron": 0.5,
+      "vegetable": 20,
+      "vitaminA": 4,
+      "vitaminB1": 0.4,
+      "vitaminB2": 0.09,
+      "vitaminC": 1,
+      "fiber": 0.5
+    },
+    "origin": "豚肉（チリ",
+    "scrapedAt": "2026-09-06T23:37:54.629Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "食品成分表 八訂 11276 ぶたロース とんかつ (100g、B1は豚肉由来)"
+      }
+    ]
+  },
+  {
+    "code": "621058",
+    "name": "ハンバーグデミソース",
+    "nameEn": "Hamburg steak with demiglace sauce",
+    "price": 253,
+    "category": "main",
+    "categoryJa": "主菜",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621058.png",
+    "cafeteriaId": "663258",
+    "nutrition": {
+      "energy": 237,
+      "protein": 15,
+      "fat": 12.8,
+      "carbs": 14.3,
+      "salt": 1.7,
+      "calcium": 35,
+      "iron": 1.3,
+      "vegetable": 23,
+      "vitaminA": 25,
+      "vitaminB1": 0.13,
       "vitaminB2": 0.12,
       "vitaminC": 2,
       "fiber": 1.2
     },
-    "origin": "鶏肉（タイ",
-    "scrapedAt": "2026-09-06T03:42:37.320Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "食品成分表 八訂 18042 麻婆豆腐 (150g)"
-      }
-    ]
-  },
-  {
-    "code": "621012",
-    "name": "とり天葱生姜だれ",
-    "nameEn": "Fried chicken with green onion and ginger sauce",
-    "price": 297,
-    "category": "main",
-    "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621012.png",
-    "cafeteriaId": "663258",
-    "nutrition": {
-      "energy": 352,
-      "protein": 17.1,
-      "fat": 23.2,
-      "carbs": 18.7,
-      "salt": 1.6,
-      "calcium": 11,
-      "iron": 0.4,
-      "vegetable": 0,
-      "vitaminA": 67,
-      "vitaminB1": 0.06,
-      "vitaminB2": 0.08,
-      "vitaminC": 1,
-      "fiber": 0.8
-    },
-    "origin": "鶏肉（中国）葱（国産）生姜（中国）",
-    "scrapedAt": "2026-09-06T03:42:37.317Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "category-fallback:main"
-      }
-    ]
-  },
-  {
-    "code": "621021",
-    "name": "豚肉の生姜焼き",
-    "nameEn": "Stir fried pork and vegetables with ginger based sauce",
-    "price": 297,
-    "category": "main",
-    "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621021.png",
-    "cafeteriaId": "663258",
-    "nutrition": {
-      "energy": 240,
-      "protein": 19.6,
-      "fat": 14.7,
-      "carbs": 9.2,
-      "salt": 1.6,
-      "calcium": 15,
-      "iron": 0.8,
-      "vegetable": 50,
-      "vitaminA": 5,
-      "vitaminB1": 0.68,
-      "vitaminB2": 0.25,
-      "vitaminC": 7,
-      "fiber": 0.4
-    },
-    "origin": "豚肉（ブラジル）玉葱（中国）",
-    "scrapedAt": "2026-09-06T03:42:37.321Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "食品成分表 八訂 複合 豚もも + 生姜 (100g)"
-      }
-    ]
-  },
-  {
-    "code": "621059",
-    "name": "ハンバーグチーズソース",
-    "nameEn": "Hamburg steak with cheese sauce",
-    "price": 253,
-    "category": "main",
-    "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621059.png",
-    "cafeteriaId": "663258",
-    "nutrition": {
-      "energy": 256,
-      "protein": 17.6,
-      "fat": 14.5,
-      "carbs": 12.4,
-      "salt": 1.8,
-      "calcium": 132,
-      "iron": 1.2,
-      "vegetable": 23,
-      "vitaminA": 60,
-      "vitaminB1": 0.13,
-      "vitaminB2": 0.19,
-      "vitaminC": 2,
-      "fiber": 1.2
-    },
-    "origin": "鶏肉（国産）玉葱（中国）ナチュラルチーズ（オセアニア",
-    "scrapedAt": "2026-09-06T03:42:37.996Z",
+    "origin": "鶏肉（国産）玉葱（中国）",
+    "scrapedAt": "2026-09-06T23:37:55.256Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -1419,35 +1419,35 @@
     ]
   },
   {
-    "code": "621093",
-    "name": "骨まで食べられるかれい唐揚げ",
-    "nameEn": "Deep-fried flounder， bones and all",
+    "code": "621087",
+    "name": "アジ大葉フライ梅タルソース",
+    "nameEn": "Fried horse mackerel with plum flavored tartar sauce",
     "price": 253,
     "category": "main",
     "categoryJa": "主菜",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621093.png",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/621087.png",
     "cafeteriaId": "663258",
     "nutrition": {
-      "energy": 119,
-      "protein": 12.5,
-      "fat": 5.5,
-      "carbs": 5.1,
-      "salt": 0.4,
-      "calcium": 28,
-      "iron": 0.1,
-      "vegetable": 0,
-      "vitaminA": 4,
-      "vitaminB1": 0.02,
-      "vitaminB2": 0.22,
+      "energy": 286,
+      "protein": 9.6,
+      "fat": 18.3,
+      "carbs": 20.4,
+      "salt": 1.5,
+      "calcium": 38,
+      "iron": 0.6,
+      "vegetable": 3,
+      "vitaminA": 31,
+      "vitaminB1": 0.07,
+      "vitaminB2": 0.06,
       "vitaminC": 1,
-      "fiber": 0.3
+      "fiber": 0.4
     },
-    "origin": "カレイ（国産）",
-    "scrapedAt": "2026-09-06T03:42:37.998Z",
+    "origin": "アジ（中国）",
+    "scrapedAt": "2026-09-06T23:37:55.257Z",
     "_estimated": [
       {
         "key": "fiber",
-        "source": "食品成分表 八訂 11289 鶏もも皮つき から揚げ (80g)"
+        "source": "食品成分表 八訂 複合 (白身魚フライ / メンチ平均)"
       }
     ]
   }
