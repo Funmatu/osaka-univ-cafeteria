@@ -24,7 +24,7 @@
       "fiber": 0.1
     },
     "origin": "鯖（ノルウェー）",
-    "scrapedAt": "2026-10-16T01:34:22.709Z",
+    "scrapedAt": "2026-10-17T01:25:11.449Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -57,7 +57,7 @@
       "fiber": 2.5
     },
     "origin": "オクラ（インドネシア）鶏卵（国産）",
-    "scrapedAt": "2026-10-16T01:34:23.394Z",
+    "scrapedAt": "2026-10-17T01:25:12.079Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -90,7 +90,7 @@
       "fiber": 0
     },
     "origin": "鶏きも（国産）",
-    "scrapedAt": "2026-10-16T01:34:23.390Z",
+    "scrapedAt": "2026-10-17T01:25:12.081Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -123,7 +123,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-10-16T01:34:22.710Z",
+    "scrapedAt": "2026-10-17T01:25:11.454Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -156,7 +156,7 @@
       "fiber": 2
     },
     "origin": "キャベツ（国産）玉葱（国産",
-    "scrapedAt": "2026-10-16T01:34:24.073Z",
+    "scrapedAt": "2026-10-17T01:25:12.713Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -189,7 +189,7 @@
       "fiber": 2
     },
     "origin": "もやし（国産）胡瓜（中国）",
-    "scrapedAt": "2026-10-16T01:34:23.396Z",
+    "scrapedAt": "2026-10-17T01:25:12.087Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -222,7 +222,7 @@
       "fiber": 2.5
     },
     "origin": "ほうれん草（国産）",
-    "scrapedAt": "2026-10-16T01:34:24.077Z",
+    "scrapedAt": "2026-10-17T01:25:12.715Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -255,7 +255,7 @@
       "fiber": 3.4
     },
     "origin": "大豆（アメリカ）",
-    "scrapedAt": "2026-10-16T01:34:24.755Z",
+    "scrapedAt": "2026-10-17T01:25:13.345Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -288,7 +288,7 @@
       "fiber": 1.8
     },
     "origin": "国内製造",
-    "scrapedAt": "2026-10-16T01:34:24.078Z",
+    "scrapedAt": "2026-10-17T01:25:12.716Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -321,7 +321,7 @@
       "fiber": 1.8
     },
     "origin": "キャベツ（国産",
-    "scrapedAt": "2026-10-16T01:34:24.079Z",
+    "scrapedAt": "2026-10-17T01:25:12.719Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -354,7 +354,7 @@
       "fiber": 0.8
     },
     "origin": "玉葱（国産",
-    "scrapedAt": "2026-10-16T01:34:22.708Z",
+    "scrapedAt": "2026-10-17T01:25:11.451Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -387,7 +387,7 @@
       "fiber": 2.5
     },
     "origin": "ほうれん草（国産）あまのり（国産）ひとえぐさ（国産）",
-    "scrapedAt": "2026-10-16T01:34:23.395Z",
+    "scrapedAt": "2026-10-17T01:25:12.083Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -420,11 +420,44 @@
       "fiber": 1
     },
     "origin": "若布（中国）豆腐（国内製造）葱（中国）",
-    "scrapedAt": "2026-10-16T01:34:24.761Z",
+    "scrapedAt": "2026-10-17T01:25:13.346Z",
     "_estimated": [
       {
         "key": "fiber",
         "source": "食品成分表 八訂 複合 わかめ豆腐みそ汁 (200mL)"
+      }
+    ]
+  },
+  {
+    "code": "615003",
+    "name": "キャラメルナッツショート",
+    "nameEn": "Sponge cake with caramel and nuts",
+    "price": 165,
+    "category": "dessert",
+    "categoryJa": "デザート",
+    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615003.png",
+    "cafeteriaId": "663253",
+    "nutrition": {
+      "energy": 122,
+      "protein": 1.7,
+      "fat": 8.6,
+      "carbs": 9.6,
+      "salt": 0.1,
+      "calcium": 16,
+      "iron": 0.2,
+      "vegetable": 0,
+      "vitaminA": 35,
+      "vitaminB1": 0.01,
+      "vitaminB2": 0.06,
+      "vitaminC": 0,
+      "fiber": 0.5
+    },
+    "origin": "ホイップクリーム（国内製造）アーモンド（アメリカ）",
+    "scrapedAt": "2026-10-17T01:25:13.348Z",
+    "_estimated": [
+      {
+        "key": "fiber",
+        "source": "category-fallback:dessert"
       }
     ]
   },
@@ -453,7 +486,7 @@
       "fiber": 2.3
     },
     "origin": "さつま芋（国産）",
-    "scrapedAt": "2026-10-16T01:34:24.760Z",
+    "scrapedAt": "2026-10-17T01:25:13.351Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -486,40 +519,7 @@
       "fiber": 0.5
     },
     "origin": "米粉（国産）豆乳（国産）ブルーベリー（国産）",
-    "scrapedAt": "2026-10-16T01:34:25.439Z",
-    "_estimated": [
-      {
-        "key": "fiber",
-        "source": "category-fallback:dessert"
-      }
-    ]
-  },
-  {
-    "code": "615204",
-    "name": "静岡茶のプチ蒸しパン",
-    "nameEn": "Mini steamed buns made with greentea",
-    "price": 99,
-    "category": "dessert",
-    "categoryJa": "デザート",
-    "imageUrl": "https://west2-univ.jp/menu_img/png_sp/615204.png",
-    "cafeteriaId": "663253",
-    "nutrition": {
-      "energy": 95,
-      "protein": 2.2,
-      "fat": 2.6,
-      "carbs": 16,
-      "salt": 0.3,
-      "calcium": 6,
-      "iron": 0.2,
-      "vegetable": 0,
-      "vitaminA": 7,
-      "vitaminB1": 0.02,
-      "vitaminB2": 0.04,
-      "vitaminC": 95,
-      "fiber": 0.5
-    },
-    "origin": "小麦粉（国内製造）煎茶パウダー（国内製造）",
-    "scrapedAt": "2026-10-16T01:34:24.762Z",
+    "scrapedAt": "2026-10-17T01:25:13.976Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -552,7 +552,7 @@
       "fiber": 0.8
     },
     "origin": "鶏肉（タイ",
-    "scrapedAt": "2026-10-16T01:34:22.027Z",
+    "scrapedAt": "2026-10-17T01:25:10.813Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -585,7 +585,7 @@
       "fiber": 1.5
     },
     "origin": "豚肉（ブラジル）玉葱（中国）キムチ（白菜：国産）",
-    "scrapedAt": "2026-10-16T01:34:22.023Z",
+    "scrapedAt": "2026-10-17T01:25:10.817Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -618,7 +618,7 @@
       "fiber": 1.2
     },
     "origin": "鶏肉（国産）玉葱（中国）胡麻（国産）",
-    "scrapedAt": "2026-10-16T01:34:22.706Z",
+    "scrapedAt": "2026-10-17T01:25:11.447Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -651,7 +651,7 @@
       "fiber": 0.3
     },
     "origin": "鶏肉（中国）",
-    "scrapedAt": "2026-10-16T01:34:22.028Z",
+    "scrapedAt": "2026-10-17T01:25:10.815Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -674,7 +674,7 @@
       "vitaminB2": 0.15
     },
     "origin": null,
-    "scrapedAt": "2026-10-16T01:34:22.031Z",
+    "scrapedAt": "2026-10-17T01:25:10.821Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -715,7 +715,7 @@
       "fiber": 4.7
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-10-16T01:34:25.444Z",
+    "scrapedAt": "2026-10-17T01:25:13.979Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -748,7 +748,7 @@
       "fiber": 3.6
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-10-16T01:34:25.443Z",
+    "scrapedAt": "2026-10-17T01:25:13.980Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -781,7 +781,7 @@
       "fiber": 2.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-10-16T01:34:25.442Z",
+    "scrapedAt": "2026-10-17T01:25:13.983Z",
     "_estimated": [
       {
         "key": "fiber",
@@ -814,7 +814,7 @@
       "fiber": 1.5
     },
     "origin": "米（国産）",
-    "scrapedAt": "2026-10-16T01:34:26.120Z",
+    "scrapedAt": "2026-10-17T01:25:14.608Z",
     "_estimated": [
       {
         "key": "fiber",
