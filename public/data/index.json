@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-17T01:24:50.951Z",
-  "generatedAt": "2026-10-17T01:24:50.951Z",
+  "lastUpdated": "2026-10-18T01:22:41.354Z",
+  "generatedAt": "2026-10-18T01:22:41.354Z",
   "status": "ok",
   "cafeterias": [
     {
@@ -15,9 +15,9 @@
       "notice": "営業時間 平日11:00-19:30 土曜11:30-14:00 日祝休業",
       "status": "ok",
       "itemCount": 45,
-      "lastUpdated": "2026-10-17T01:24:50.951Z",
-      "lastAttempt": "2026-10-17T01:24:50.951Z",
-      "lastSuccessfulUpdate": "2026-10-17T01:24:50.951Z",
+      "lastUpdated": "2026-10-18T01:22:41.354Z",
+      "lastAttempt": "2026-10-18T01:22:41.354Z",
+      "lastSuccessfulUpdate": "2026-10-18T01:22:41.354Z",
       "skipped": false
     },
     {
@@ -32,9 +32,9 @@
       "notice": "営業時間【朝食】8:00～9:00 【昼食】11:00～14:00",
       "status": "ok",
       "itemCount": 35,
-      "lastUpdated": "2026-10-17T01:24:50.951Z",
-      "lastAttempt": "2026-10-17T01:24:50.951Z",
-      "lastSuccessfulUpdate": "2026-10-17T01:24:50.951Z",
+      "lastUpdated": "2026-10-18T01:22:41.354Z",
+      "lastAttempt": "2026-10-18T01:22:41.354Z",
+      "lastSuccessfulUpdate": "2026-10-18T01:22:41.354Z",
       "skipped": false
     },
     {
@@ -49,9 +49,9 @@
       "notice": "営業時間 平日11：30-13：30",
       "status": "ok",
       "itemCount": 25,
-      "lastUpdated": "2026-10-17T01:24:50.951Z",
-      "lastAttempt": "2026-10-17T01:24:50.951Z",
-      "lastSuccessfulUpdate": "2026-10-17T01:24:50.951Z",
+      "lastUpdated": "2026-10-18T01:22:41.354Z",
+      "lastAttempt": "2026-10-18T01:22:41.354Z",
+      "lastSuccessfulUpdate": "2026-10-18T01:22:41.354Z",
       "skipped": false
     }
   ]
