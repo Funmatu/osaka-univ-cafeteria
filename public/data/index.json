@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-01T02:26:11.717Z",
-  "generatedAt": "2026-11-01T02:26:11.717Z",
+  "lastUpdated": "2026-11-02T02:40:26.096Z",
+  "generatedAt": "2026-11-02T02:40:26.096Z",
   "status": "ok",
   "cafeterias": [
     {
@@ -14,10 +14,10 @@
       "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663252",
       "notice": "営業時間 平日11:00-19:30 土曜11:30-14:00 日祝休業",
       "status": "ok",
-      "itemCount": 39,
-      "lastUpdated": "2026-11-01T02:26:11.717Z",
-      "lastAttempt": "2026-11-01T02:26:11.717Z",
-      "lastSuccessfulUpdate": "2026-11-01T02:26:11.717Z",
+      "itemCount": 43,
+      "lastUpdated": "2026-11-02T02:40:26.096Z",
+      "lastAttempt": "2026-11-02T02:40:26.096Z",
+      "lastSuccessfulUpdate": "2026-11-02T02:40:26.096Z",
       "skipped": false
     },
     {
@@ -31,10 +31,10 @@
       "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663258",
       "notice": "営業時間【朝食】8:00～9:00 【昼食】11:00～14:00",
       "status": "ok",
-      "itemCount": 40,
-      "lastUpdated": "2026-11-01T02:26:11.717Z",
-      "lastAttempt": "2026-11-01T02:26:11.717Z",
-      "lastSuccessfulUpdate": "2026-11-01T02:26:11.717Z",
+      "itemCount": 35,
+      "lastUpdated": "2026-11-02T02:40:26.096Z",
+      "lastAttempt": "2026-11-02T02:40:26.096Z",
+      "lastSuccessfulUpdate": "2026-11-02T02:40:26.096Z",
       "skipped": false
     },
     {
@@ -48,10 +48,10 @@
       "sourceUrl": "https://west2-univ.jp/sp/menu.php?t=663253",
       "notice": "営業時間 平日11：30-13：30",
       "status": "ok",
-      "itemCount": 24,
-      "lastUpdated": "2026-11-01T02:26:11.717Z",
-      "lastAttempt": "2026-11-01T02:26:11.717Z",
-      "lastSuccessfulUpdate": "2026-11-01T02:26:11.717Z",
+      "itemCount": 23,
+      "lastUpdated": "2026-11-02T02:40:26.096Z",
+      "lastAttempt": "2026-11-02T02:40:26.096Z",
+      "lastSuccessfulUpdate": "2026-11-02T02:40:26.096Z",
       "skipped": false
     }
   ]
